@@ -8,22 +8,22 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configUI()
+        setupAutoLayout()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Override Method
+    
+    func configUI() {
+        // Override UI
     }
-    */
-
+    
+    func setupAutoLayout() {
+        // Override Layout
+    }
+    
 }

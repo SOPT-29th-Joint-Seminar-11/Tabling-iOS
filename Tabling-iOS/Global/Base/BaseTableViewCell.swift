@@ -8,16 +8,27 @@
 import UIKit
 
 class BaseTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    // MARK: Initializing
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configUI()
+        setupAutoLayout()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init(style: .default, reuseIdentifier: nil)
     }
-
+    
+    // MARK: - Override Method
+    
+    func configUI() {
+        // Override ConfigUI
+    }
+    
+    func setupAutoLayout() {
+        // Override Layout
+    }
+    
 }
