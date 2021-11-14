@@ -16,6 +16,11 @@
 		5B092B3D2740D38D00F5C35F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B3C2740D38D00F5C35F /* BaseViewController.swift */; };
 		5B092B3F2740D3A200F5C35F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B3E2740D3A200F5C35F /* BaseTableViewCell.swift */; };
 		5B092B412740D3B600F5C35F /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B402740D3B600F5C35F /* BaseCollectionViewCell.swift */; };
+		5B092B432740E3E900F5C35F /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B422740E3E900F5C35F /* UIView+.swift */; };
+		5B092B452740E47800F5C35F /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B442740E47800F5C35F /* UIViewController+.swift */; };
+		5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B462740E4BC00F5C35F /* UIStackView+.swift */; };
+		5B092B492740E53400F5C35F /* UICollectionViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B482740E53400F5C35F /* UICollectionViewRegisterable.swift */; };
+		5B092B4B2740E54C00F5C35F /* UITableViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B4A2740E54C00F5C35F /* UITableViewRegisterable.swift */; };
 		5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723142273F92B300BB4FDE /* AppDelegate.swift */; };
 		5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723144273F92B300BB4FDE /* SceneDelegate.swift */; };
 		5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B723148273F92B300BB4FDE /* Main.storyboard */; };
@@ -35,6 +40,11 @@
 		5B092B3C2740D38D00F5C35F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5B092B3E2740D3A200F5C35F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		5B092B402740D3B600F5C35F /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B092B422740E3E900F5C35F /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		5B092B442740E47800F5C35F /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		5B092B462740E4BC00F5C35F /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		5B092B482740E53400F5C35F /* UICollectionViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewRegisterable.swift; sourceTree = "<group>"; };
+		5B092B4A2740E54C00F5C35F /* UITableViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewRegisterable.swift; sourceTree = "<group>"; };
 		5B72313F273F92B300BB4FDE /* Tabling-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabling-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B723142273F92B300BB4FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B723144273F92B300BB4FDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +129,8 @@
 		5B092B342740D1C800F5C35F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				5B092B482740E53400F5C35F /* UICollectionViewRegisterable.swift */,
+				5B092B4A2740E54C00F5C35F /* UITableViewRegisterable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -212,6 +224,9 @@
 		5B72315B273FA67600BB4FDE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5B092B422740E3E900F5C35F /* UIView+.swift */,
+				5B092B442740E47800F5C35F /* UIViewController+.swift */,
+				5B092B462740E4BC00F5C35F /* UIStackView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -422,15 +437,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B092B432740E3E900F5C35F /* UIView+.swift in Sources */,
 				5B092B2F2740D17100F5C35F /* MainModel.swift in Sources */,
+				5B092B4B2740E54C00F5C35F /* UITableViewRegisterable.swift in Sources */,
 				5B092B312740D17800F5C35F /* DetailModel.swift in Sources */,
 				5B092B382740D25500F5C35F /* NamjoonMainVC.swift in Sources */,
 				5B092B362740D21500F5C35F /* YujinMainVC.swift in Sources */,
 				5B092B412740D3B600F5C35F /* BaseCollectionViewCell.swift in Sources */,
 				5B092B332740D1C000F5C35F /* GeneralAPI.swift in Sources */,
+				5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */,
 				5B092B3D2740D38D00F5C35F /* BaseViewController.swift in Sources */,
 				5B092B3A2740D25F00F5C35F /* DetailVC.swift in Sources */,
+				5B092B452740E47800F5C35F /* UIViewController+.swift in Sources */,
 				5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */,
+				5B092B492740E53400F5C35F /* UICollectionViewRegisterable.swift in Sources */,
 				5B092B3F2740D3A200F5C35F /* BaseTableViewCell.swift in Sources */,
 				5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */,
 			);

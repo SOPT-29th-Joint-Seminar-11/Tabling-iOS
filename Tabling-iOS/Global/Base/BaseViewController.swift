@@ -12,6 +12,7 @@ class BaseViewController: UIViewController {
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
+        hideKeyboard()
         configUI()
         setupAutoLayout()
     }
