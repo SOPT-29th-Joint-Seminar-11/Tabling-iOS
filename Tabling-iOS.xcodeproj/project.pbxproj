@@ -161,6 +161,27 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		5B092B5D2740FD5800F5C35F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B092B5E2740FD5F00F5C35F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B092B5F2740FD6400F5C35F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5B723136273F92B300BB4FDE = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +311,7 @@
 		5B723160273FA6CE00BB4FDE /* Namjoon */ = {
 			isa = PBXGroup;
 			children = (
+				5B092B5D2740FD5800F5C35F /* Model */,
 				5B092B2C2740D13D00F5C35F /* Component */,
 				5B092B2B2740D13900F5C35F /* Cell */,
 				5B092B2A2740D13500F5C35F /* VC */,
@@ -300,6 +322,7 @@
 		5B723161273FA6D300BB4FDE /* Yujin */ = {
 			isa = PBXGroup;
 			children = (
+				5B092B5E2740FD5F00F5C35F /* Model */,
 				5B092B292740D12E00F5C35F /* Component */,
 				5B092B282740D12A00F5C35F /* Cell */,
 				5B092B272740D11F00F5C35F /* VC */,
@@ -310,6 +333,7 @@
 		5B723162273FA6D900BB4FDE /* Ruhee */ = {
 			isa = PBXGroup;
 			children = (
+				5B092B5F2740FD6400F5C35F /* Model */,
 				5B092B262740D11900F5C35F /* Component */,
 				5B092B252740D11400F5C35F /* Cell */,
 				5B723163273FA6DD00BB4FDE /* VC */,
