@@ -21,6 +21,10 @@
 		5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B462740E4BC00F5C35F /* UIStackView+.swift */; };
 		5B092B492740E53400F5C35F /* UICollectionViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B482740E53400F5C35F /* UICollectionViewRegisterable.swift */; };
 		5B092B4B2740E54C00F5C35F /* UITableViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B4A2740E54C00F5C35F /* UITableViewRegisterable.swift */; };
+		5B092B522740EE9C00F5C35F /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B512740EE9C00F5C35F /* MyPageVC.swift */; };
+		5B092B542740EF0800F5C35F /* NamjoonMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B092B532740EF0800F5C35F /* NamjoonMain.storyboard */; };
+		5B092B562740EF1600F5C35F /* YujinMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B092B552740EF1600F5C35F /* YujinMain.storyboard */; };
+		5B092B582740F03F00F5C35F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B572740F03F00F5C35F /* Constant.swift */; };
 		5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723142273F92B300BB4FDE /* AppDelegate.swift */; };
 		5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723144273F92B300BB4FDE /* SceneDelegate.swift */; };
 		5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B723148273F92B300BB4FDE /* Main.storyboard */; };
@@ -45,6 +49,10 @@
 		5B092B462740E4BC00F5C35F /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		5B092B482740E53400F5C35F /* UICollectionViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewRegisterable.swift; sourceTree = "<group>"; };
 		5B092B4A2740E54C00F5C35F /* UITableViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewRegisterable.swift; sourceTree = "<group>"; };
+		5B092B512740EE9C00F5C35F /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		5B092B532740EF0800F5C35F /* NamjoonMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NamjoonMain.storyboard; sourceTree = "<group>"; };
+		5B092B552740EF1600F5C35F /* YujinMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YujinMain.storyboard; sourceTree = "<group>"; };
+		5B092B572740F03F00F5C35F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5B72313F273F92B300BB4FDE /* Tabling-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabling-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B723142273F92B300BB4FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B723144273F92B300BB4FDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +153,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		5B092B502740EE7500F5C35F /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				5B092B512740EE9C00F5C35F /* MyPageVC.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		5B723136273F92B300BB4FDE = {
 			isa = PBXGroup;
 			children = (
@@ -166,8 +182,8 @@
 		5B723141273F92B300BB4FDE /* Tabling-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5B723156273FA63900BB4FDE /* Source */,
 				5B72315A273FA66400BB4FDE /* Global */,
+				5B723156273FA63900BB4FDE /* Source */,
 				5B72315D273FA68000BB4FDE /* Resource */,
 			);
 			path = "Tabling-iOS";
@@ -177,8 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				5B723158273FA65500BB4FDE /* Model */,
-				5B723157273FA64A00BB4FDE /* Screen */,
 				5B723159273FA65B00BB4FDE /* Network */,
+				5B723157273FA64A00BB4FDE /* Screen */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -189,6 +205,7 @@
 				5B723162273FA6D900BB4FDE /* Ruhee */,
 				5B723160273FA6CE00BB4FDE /* Namjoon */,
 				5B723161273FA6D300BB4FDE /* Yujin */,
+				5B092B502740EE7500F5C35F /* MyPage */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -234,6 +251,7 @@
 		5B72315C273FA67B00BB4FDE /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				5B092B572740F03F00F5C35F /* Constant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -261,8 +279,10 @@
 		5B72315F273FA6A500BB4FDE /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				5B723148273F92B300BB4FDE /* Main.storyboard */,
 				5B72314D273F92B500BB4FDE /* LaunchScreen.storyboard */,
+				5B723148273F92B300BB4FDE /* Main.storyboard */,
+				5B092B532740EF0800F5C35F /* NamjoonMain.storyboard */,
+				5B092B552740EF1600F5C35F /* YujinMain.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -382,9 +402,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B092B542740EF0800F5C35F /* NamjoonMain.storyboard in Resources */,
 				5B72314F273F92B500BB4FDE /* LaunchScreen.storyboard in Resources */,
 				5B72314C273F92B500BB4FDE /* Assets.xcassets in Resources */,
 				5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */,
+				5B092B562740EF1600F5C35F /* YujinMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,11 +467,13 @@
 				5B092B362740D21500F5C35F /* YujinMainVC.swift in Sources */,
 				5B092B412740D3B600F5C35F /* BaseCollectionViewCell.swift in Sources */,
 				5B092B332740D1C000F5C35F /* GeneralAPI.swift in Sources */,
+				5B092B582740F03F00F5C35F /* Constant.swift in Sources */,
 				5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */,
 				5B092B3D2740D38D00F5C35F /* BaseViewController.swift in Sources */,
 				5B092B3A2740D25F00F5C35F /* DetailVC.swift in Sources */,
 				5B092B452740E47800F5C35F /* UIViewController+.swift in Sources */,
 				5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */,
+				5B092B522740EE9C00F5C35F /* MyPageVC.swift in Sources */,
 				5B092B492740E53400F5C35F /* UICollectionViewRegisterable.swift in Sources */,
 				5B092B3F2740D3A200F5C35F /* BaseTableViewCell.swift in Sources */,
 				5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */,
