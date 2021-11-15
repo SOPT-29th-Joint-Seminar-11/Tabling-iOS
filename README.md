@@ -4,6 +4,7 @@
 
 🔥 [Notion Page](https://huree-can-do-it.notion.site/Tabling-iOS-f3873c78a8ce42dcb3ccbe6284f8aae6)
 
+<br>
 
 ## 🌼 Team Potato [🥔🥔🥔](https://www.notion.so/huree-can-do-it/f039766d16d4490d8515ca5c84987aba?v=856803fc5c43446cad6208c9795761dc)
 
@@ -24,8 +25,7 @@
 
 <aside>
 
-##### 🔥 진짜 꼭 지킵시다!
-
+🔥 진짜 꼭 지킵시다!
 
 🔥 [스타일쉐어](https://github.com/StyleShare/swift-style-guide)의 스위스트 스타일 가이드를 참고합니다.
        
@@ -287,11 +287,11 @@
 <div markdown="2">
 
 ```swift
-[ADD] 홈 테이블뷰 높이 관련 코드 **추가**(#1)
-[FEAT] 홈 기능 **구현**(#2)
-[CHORE] 홈 셀 레이아웃 코드 **수정**(#2)
-[MOVE] 홈 폴더 파일 **이동**(#2)
-[FIX] 홈 셀 리로드 버그 **해결**(#3)
+[ADD] 홈 테이블뷰 높이 관련 코드 추가(#1)
+[FEAT] 홈 기능 구현**(#2)
+[CHORE] 홈 셀 레이아웃 코드 수정(#2)
+[MOVE] 홈 폴더 파일 이동(#2)
+[FIX] 홈 셀 리로드 버그 해결(#3)
 [DEL] 필요없는 주석 삭제(#2)
 ```
 </div>
@@ -343,7 +343,7 @@ feature/10-HomeService
 <summary> 💬 💬 💬 </summary>
 <div markdown="1">
 
-
+<br>
 
 ```
    🗂 Tabling-iOS
