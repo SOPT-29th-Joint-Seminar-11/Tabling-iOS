@@ -30,13 +30,14 @@
 		5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B723148273F92B300BB4FDE /* Main.storyboard */; };
 		5B72314C273F92B500BB4FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B72314B273F92B500BB4FDE /* Assets.xcassets */; };
 		5B72314F273F92B500BB4FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B72314D273F92B500BB4FDE /* LaunchScreen.storyboard */; };
-		6AFDB1A32742C4F000FACA2D /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB19C2742C4F000FACA2D /* NotoSansCJKkr-Black.otf */; };
-		6AFDB1A42742C4F000FACA2D /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB19D2742C4F000FACA2D /* NotoSansCJKkr-Thin.otf */; };
-		6AFDB1A52742C4F000FACA2D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB19E2742C4F000FACA2D /* NotoSansCJKkr-Medium.otf */; };
-		6AFDB1A62742C4F000FACA2D /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB19F2742C4F000FACA2D /* NotoSansCJKkr-DemiLight.otf */; };
-		6AFDB1A72742C4F000FACA2D /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1A02742C4F000FACA2D /* NotoSansCJKkr-Bold.otf */; };
-		6AFDB1A82742C4F000FACA2D /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1A12742C4F000FACA2D /* NotoSansCJKkr-Light.otf */; };
-		6AFDB1A92742C4F000FACA2D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1A22742C4F000FACA2D /* NotoSansCJKkr-Regular.otf */; };
+		6AFDB1AD2742F69100FACA2D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AC2742F69100FACA2D /* UIColor+Extension.swift */; };
+		6AFDB1B52742F98F00FACA2D /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AE2742F98F00FACA2D /* NotoSansCJKkr-Thin.otf */; };
+		6AFDB1B62742F98F00FACA2D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */; };
+		6AFDB1B72742F98F00FACA2D /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B02742F98F00FACA2D /* NotoSansCJKkr-Light.otf */; };
+		6AFDB1B82742F98F00FACA2D /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B12742F98F00FACA2D /* NotoSansCJKkr-DemiLight.otf */; };
+		6AFDB1B92742F98F00FACA2D /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B22742F98F00FACA2D /* NotoSansCJKkr-Bold.otf */; };
+		6AFDB1BA2742F98F00FACA2D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */; };
+		6AFDB1BB2742F98F00FACA2D /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B42742F98F00FACA2D /* NotoSansCJKkr-Black.otf */; };
 		DE13750256F6DEED3F067415 /* Pods_Tabling_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9863C199D1711854D7EB38 /* Pods_Tabling_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,13 +68,14 @@
 		5B72314B273F92B500BB4FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B72314E273F92B500BB4FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B723150273F92B500BB4FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AFDB19C2742C4F000FACA2D /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-Black.otf"; path = "../../../../../tabling_resource/tabling_image/tabling_font/notosans/NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
-		6AFDB19D2742C4F000FACA2D /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-Thin.otf"; path = "../../../../../tabling_resource/tabling_image/tabling_font/notosans/NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
-		6AFDB19E2742C4F000FACA2D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-Medium.otf"; path = "../../../../../tabling_resource/tabling_image/tabling_font/notosans/NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
-		6AFDB19F2742C4F000FACA2D /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-DemiLight.otf"; path = "../../../../../tabling_resource/tabling_image/tabling_font/notosans/NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
-		6AFDB1A02742C4F000FACA2D /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-Bold.otf"; path = "../../../../../tabling_resource/tabling_image/tabling_font/notosans/NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
-		6AFDB1A12742C4F000FACA2D /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-Light.otf"; path = "../../../../../tabling_resource/tabling_image/tabling_font/notosans/NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
-		6AFDB1A22742C4F000FACA2D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-Regular.otf"; path = "../../../../../tabling_resource/tabling_image/tabling_font/notosans/NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		6AFDB1AC2742F69100FACA2D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		6AFDB1AE2742F98F00FACA2D /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
+		6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		6AFDB1B02742F98F00FACA2D /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
+		6AFDB1B12742F98F00FACA2D /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
+		6AFDB1B22742F98F00FACA2D /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		6AFDB1B42742F98F00FACA2D /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
 		95474FF1D81C46FB6AA23BA4 /* Pods-Tabling-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling-iOS.release.xcconfig"; path = "Target Support Files/Pods-Tabling-iOS/Pods-Tabling-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		CB9863C199D1711854D7EB38 /* Pods_Tabling_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabling_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -280,6 +282,7 @@
 				5B092B422740E3E900F5C35F /* UIView+.swift */,
 				5B092B442740E47800F5C35F /* UIViewController+.swift */,
 				5B092B462740E4BC00F5C35F /* UIStackView+.swift */,
+				6AFDB1AC2742F69100FACA2D /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -367,13 +370,13 @@
 		6AFDB19B2742C49D00FACA2D /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				6AFDB19C2742C4F000FACA2D /* NotoSansCJKkr-Black.otf */,
-				6AFDB1A02742C4F000FACA2D /* NotoSansCJKkr-Bold.otf */,
-				6AFDB19F2742C4F000FACA2D /* NotoSansCJKkr-DemiLight.otf */,
-				6AFDB1A12742C4F000FACA2D /* NotoSansCJKkr-Light.otf */,
-				6AFDB19E2742C4F000FACA2D /* NotoSansCJKkr-Medium.otf */,
-				6AFDB1A22742C4F000FACA2D /* NotoSansCJKkr-Regular.otf */,
-				6AFDB19D2742C4F000FACA2D /* NotoSansCJKkr-Thin.otf */,
+				6AFDB1B42742F98F00FACA2D /* NotoSansCJKkr-Black.otf */,
+				6AFDB1B22742F98F00FACA2D /* NotoSansCJKkr-Bold.otf */,
+				6AFDB1B12742F98F00FACA2D /* NotoSansCJKkr-DemiLight.otf */,
+				6AFDB1B02742F98F00FACA2D /* NotoSansCJKkr-Light.otf */,
+				6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */,
+				6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */,
+				6AFDB1AE2742F98F00FACA2D /* NotoSansCJKkr-Thin.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -456,17 +459,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B092B542740EF0800F5C35F /* NamjoonMain.storyboard in Resources */,
-				6AFDB1A92742C4F000FACA2D /* NotoSansCJKkr-Regular.otf in Resources */,
-				6AFDB1A72742C4F000FACA2D /* NotoSansCJKkr-Bold.otf in Resources */,
+				6AFDB1B92742F98F00FACA2D /* NotoSansCJKkr-Bold.otf in Resources */,
+				6AFDB1BB2742F98F00FACA2D /* NotoSansCJKkr-Black.otf in Resources */,
+				6AFDB1B62742F98F00FACA2D /* NotoSansCJKkr-Medium.otf in Resources */,
 				5B72314F273F92B500BB4FDE /* LaunchScreen.storyboard in Resources */,
-				6AFDB1A42742C4F000FACA2D /* NotoSansCJKkr-Thin.otf in Resources */,
-				6AFDB1A32742C4F000FACA2D /* NotoSansCJKkr-Black.otf in Resources */,
 				5B72314C273F92B500BB4FDE /* Assets.xcassets in Resources */,
-				6AFDB1A62742C4F000FACA2D /* NotoSansCJKkr-DemiLight.otf in Resources */,
+				6AFDB1B52742F98F00FACA2D /* NotoSansCJKkr-Thin.otf in Resources */,
+				6AFDB1B82742F98F00FACA2D /* NotoSansCJKkr-DemiLight.otf in Resources */,
+				6AFDB1B72742F98F00FACA2D /* NotoSansCJKkr-Light.otf in Resources */,
 				5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */,
 				5B092B562740EF1600F5C35F /* YujinMain.storyboard in Resources */,
-				6AFDB1A52742C4F000FACA2D /* NotoSansCJKkr-Medium.otf in Resources */,
-				6AFDB1A82742C4F000FACA2D /* NotoSansCJKkr-Light.otf in Resources */,
+				6AFDB1BA2742F98F00FACA2D /* NotoSansCJKkr-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +540,7 @@
 				5B092B492740E53400F5C35F /* UICollectionViewRegisterable.swift in Sources */,
 				5B092B3F2740D3A200F5C35F /* BaseTableViewCell.swift in Sources */,
 				5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */,
+				6AFDB1AD2742F69100FACA2D /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
