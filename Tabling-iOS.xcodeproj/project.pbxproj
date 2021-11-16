@@ -267,7 +267,6 @@
 		5B72315A273FA66400BB4FDE /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				6AFDB19B2742C49D00FACA2D /* Font */,
 				5B092B3B2740D37800F5C35F /* Base */,
 				5B72315C273FA67B00BB4FDE /* Constant */,
 				5B72315B273FA67600BB4FDE /* Extension */,
@@ -299,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				5B72314B273F92B500BB4FDE /* Assets.xcassets */,
+				6AFDB19B2742C49D00FACA2D /* Font */,
 				5B723150273F92B500BB4FDE /* Info.plist */,
 				5B72315F273FA6A500BB4FDE /* Storyboard */,
 				5B72315E273FA6A000BB4FDE /* Support */,
