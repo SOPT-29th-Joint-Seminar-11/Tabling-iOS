@@ -58,6 +58,7 @@ struct Const {
     // MARK: - Tag
     
     public enum Tag {
+        
         //매장 Pick 태그
         public static let calm = UIImage(named: "ic_chip_pick_calm")
         public static let clean = UIImage(named: "ic_chip_pick_clean")
