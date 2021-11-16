@@ -7,6 +7,14 @@
 
 import UIKit
 
+/*
+ 
+ Description:
+ - 1. sutitleLabel.font = Font.mSubtitle
+ - 2. titleLabel.font = .notoBold(ofSize: 12)
+ 
+*/
+
 struct NotoSans {
     
     static let bold = "NotoSansCJKkr-Bold"
