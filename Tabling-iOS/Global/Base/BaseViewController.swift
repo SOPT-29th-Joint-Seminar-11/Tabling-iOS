@@ -26,5 +26,4 @@ class BaseViewController: UIViewController {
     func setupAutoLayout() {
         // Override Layout
     }
-    
 }

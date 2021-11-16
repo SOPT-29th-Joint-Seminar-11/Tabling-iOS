@@ -30,5 +30,4 @@ class BaseCollectionViewCell: UICollectionViewCell {
     func setupAutoLayout() {
         // Override Layout
     }
-    
 }

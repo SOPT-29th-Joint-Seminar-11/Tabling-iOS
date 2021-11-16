@@ -30,5 +30,4 @@ class BaseTableViewCell: UITableViewCell {
     func setupAutoLayout() {
         // Override Layout
     }
-    
 }

@@ -16,13 +16,10 @@ struct Const {
         //탭바 아이콘
         public static let home = UIImage(named: "homeSelected")
         public static let homeUnselected = UIImage(named: "homeUnselected")
-        
         public static let wish = UIImage(named: "wishSelected")
         public static let wishUnselected = UIImage(named: "wishUnselected")
-        
         public static let calendar = UIImage(named: "calendarSelected")
         public static let calendarUnselected = UIImage(named: "calendarUnselected")
-        
         public static let mypage = UIImage(named: "mypageSelected")
         public static let mypageUnselected = UIImage(named: "mypageUnselected")
     
@@ -52,7 +49,6 @@ struct Const {
         
         //로고
         public static let logo = UIImage(named: "ic_logo")
-       
     }
     
     // MARK: - Tag
@@ -70,7 +66,5 @@ struct Const {
         //매장별 옵션정보 태그
         public static let book = UIImage(named: "ic_book")
         public static let line = UIImage(named: "ic_line")
-        
     }
-    
 }
