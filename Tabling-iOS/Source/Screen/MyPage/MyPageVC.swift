@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPageVC: BaseViewController {
+class MyPageVC: UIViewController {
     
     // MARK: - Lifecycle
     
@@ -15,16 +15,14 @@ class MyPageVC: BaseViewController {
         super.viewDidLoad()
     }
     
-    // MARK: - Override Method UI + Layout
+    // MARK: - Method UI + Layout
     
-    override func configUI() {
-        super.configUI()
+    func configUI() {
+
     }
     
-    override func setupAutoLayout() {
-        super.setupAutoLayout()
+    func setupAutoLayout() {
+
     }
-    
-    // MARK: - Custom Method
-    
+        
 }

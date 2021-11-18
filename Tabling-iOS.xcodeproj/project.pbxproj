@@ -14,8 +14,6 @@
 		5B092B382740D25500F5C35F /* NamjoonMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B372740D25500F5C35F /* NamjoonMainVC.swift */; };
 		5B092B3A2740D25F00F5C35F /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B392740D25F00F5C35F /* DetailVC.swift */; };
 		5B092B3D2740D38D00F5C35F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B3C2740D38D00F5C35F /* BaseViewController.swift */; };
-		5B092B3F2740D3A200F5C35F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B3E2740D3A200F5C35F /* BaseTableViewCell.swift */; };
-		5B092B412740D3B600F5C35F /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B402740D3B600F5C35F /* BaseCollectionViewCell.swift */; };
 		5B092B432740E3E900F5C35F /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B422740E3E900F5C35F /* UIView+.swift */; };
 		5B092B452740E47800F5C35F /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B442740E47800F5C35F /* UIViewController+.swift */; };
 		5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B462740E4BC00F5C35F /* UIStackView+.swift */; };
@@ -56,8 +54,6 @@
 		5B092B372740D25500F5C35F /* NamjoonMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonMainVC.swift; sourceTree = "<group>"; };
 		5B092B392740D25F00F5C35F /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		5B092B3C2740D38D00F5C35F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		5B092B3E2740D3A200F5C35F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		5B092B402740D3B600F5C35F /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B092B422740E3E900F5C35F /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		5B092B442740E47800F5C35F /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		5B092B462740E4BC00F5C35F /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -181,8 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				5B092B3C2740D38D00F5C35F /* BaseViewController.swift */,
-				5B092B3E2740D3A200F5C35F /* BaseTableViewCell.swift */,
-				5B092B402740D3B600F5C35F /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -542,7 +536,6 @@
 				5B092B312740D17800F5C35F /* DetailModel.swift in Sources */,
 				5B092B382740D25500F5C35F /* NamjoonMainVC.swift in Sources */,
 				5B092B362740D21500F5C35F /* YujinMainVC.swift in Sources */,
-				5B092B412740D3B600F5C35F /* BaseCollectionViewCell.swift in Sources */,
 				5B092B332740D1C000F5C35F /* GeneralAPI.swift in Sources */,
 				5B092B582740F03F00F5C35F /* Constant.swift in Sources */,
 				5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */,
@@ -559,7 +552,6 @@
 				5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */,
 				5B092B492740E53400F5C35F /* UICollectionViewRegisterable.swift in Sources */,
 				5B429A142746CF9600D4F65D /* YujinModel.swift in Sources */,
-				5B092B3F2740D3A200F5C35F /* BaseTableViewCell.swift in Sources */,
 				5B829DFA2743C25300766144 /* UILabel+.swift in Sources */,
 				5B429A182746CFB100D4F65D /* YujinTVC.swift in Sources */,
 				5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */,
