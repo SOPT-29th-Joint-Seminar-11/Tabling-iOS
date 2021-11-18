@@ -20,6 +20,8 @@ class DetailVC: UIViewController {
         BannerTVC.register(target: $0)
         DetailTVC.register(target: $0)
     }
+    
+    private let bottomView = BottomView()
 
     // MARK: - Lifecycle
 
@@ -36,11 +38,16 @@ class DetailVC: UIViewController {
     }
     
     func setupAutoLayout() {
-        view.addSubviews([detailTV])
+        view.addSubviews([detailTV, bottomView])
         
         detailTV.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.bottom.trailing.equalToSuperview()
+        }
+        
+        bottomView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
         
     }

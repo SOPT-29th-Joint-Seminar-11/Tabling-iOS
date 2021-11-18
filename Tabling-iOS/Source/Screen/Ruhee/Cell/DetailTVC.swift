@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class DetailTVC: UITableViewCell, UITableViewRegisterable {
 
     // MARK: Initializing

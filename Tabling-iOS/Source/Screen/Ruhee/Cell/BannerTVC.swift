@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class BannerTVC: UITableViewCell, UITableViewRegisterable {
 
     // MARK: Initializing
