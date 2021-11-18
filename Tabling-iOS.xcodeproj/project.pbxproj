@@ -29,6 +29,7 @@
 		5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A192746CFBC00D4F65D /* NamjoonModel.swift */; };
 		5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A1B2746CFC500D4F65D /* NamjoonComponent.swift */; };
 		5B429A1E2746CFD100D4F65D /* NamjoonTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A1D2746CFD100D4F65D /* NamjoonTVC.swift */; };
+		5B429A202746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B429A1F2746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf */; };
 		5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723142273F92B300BB4FDE /* AppDelegate.swift */; };
 		5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723144273F92B300BB4FDE /* SceneDelegate.swift */; };
 		5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B723148273F92B300BB4FDE /* Main.storyboard */; };
@@ -39,7 +40,6 @@
 		6AFDB1AD2742F69100FACA2D /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AC2742F69100FACA2D /* UIColor+.swift */; };
 		6AFDB1B62742F98F00FACA2D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */; };
 		6AFDB1BA2742F98F00FACA2D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */; };
-		6AFDB1BB2742F98F00FACA2D /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B42742F98F00FACA2D /* NotoSansCJKkr-Black.otf */; };
 		DE13750256F6DEED3F067415 /* Pods_Tabling_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9863C199D1711854D7EB38 /* Pods_Tabling_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +67,7 @@
 		5B429A192746CFBC00D4F65D /* NamjoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonModel.swift; sourceTree = "<group>"; };
 		5B429A1B2746CFC500D4F65D /* NamjoonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonComponent.swift; sourceTree = "<group>"; };
 		5B429A1D2746CFD100D4F65D /* NamjoonTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonTVC.swift; sourceTree = "<group>"; };
+		5B429A1F2746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		5B72313F273F92B300BB4FDE /* Tabling-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabling-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B723142273F92B300BB4FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B723144273F92B300BB4FDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		6AFDB1AC2742F69100FACA2D /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
-		6AFDB1B42742F98F00FACA2D /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
 		95474FF1D81C46FB6AA23BA4 /* Pods-Tabling-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling-iOS.release.xcconfig"; path = "Target Support Files/Pods-Tabling-iOS/Pods-Tabling-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		CB9863C199D1711854D7EB38 /* Pods_Tabling_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabling_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -380,7 +380,7 @@
 		6AFDB19B2742C49D00FACA2D /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				6AFDB1B42742F98F00FACA2D /* NotoSansCJKkr-Black.otf */,
+				5B429A1F2746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf */,
 				6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */,
 				6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */,
 			);
@@ -465,13 +465,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B092B542740EF0800F5C35F /* NamjoonMain.storyboard in Resources */,
-				6AFDB1BB2742F98F00FACA2D /* NotoSansCJKkr-Black.otf in Resources */,
 				6AFDB1B62742F98F00FACA2D /* NotoSansCJKkr-Medium.otf in Resources */,
 				5B72314F273F92B500BB4FDE /* LaunchScreen.storyboard in Resources */,
 				5B72314C273F92B500BB4FDE /* Assets.xcassets in Resources */,
 				5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */,
 				5B092B562740EF1600F5C35F /* YujinMain.storyboard in Resources */,
 				6AFDB1BA2742F98F00FACA2D /* NotoSansCJKkr-Regular.otf in Resources */,
+				5B429A202746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
