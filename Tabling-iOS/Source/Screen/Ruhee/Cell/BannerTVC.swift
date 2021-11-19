@@ -27,7 +27,7 @@ class BannerTVC: UITableViewCell, UITableViewRegisterable {
         $0.isPagingEnabled = true
         $0.delegate = self
         $0.dataSource = self
-        BannerCVC.register(target: $0)
+        BannerPhotoCVC.register(target: $0)
     }
     
     private let layout = UICollectionViewFlowLayout().then {
@@ -112,7 +112,7 @@ extension BannerTVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCVC.className, for: indexPath) as? BannerCVC
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerPhotoCVC.className, for: indexPath) as? BannerPhotoCVC
         else { return UICollectionViewCell() }
         cell.setData(banner: bannerList[indexPath.row])
         return cell

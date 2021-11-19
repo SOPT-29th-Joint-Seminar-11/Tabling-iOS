@@ -1,5 +1,5 @@
 //
-//  BannerCVC.swift
+//  BannerPhotoCVC.swift
 //  Tabling-iOS
 //
 //  Created by Thisisme Hi on 2021/11/19.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BannerCVC: UICollectionViewCell, UICollectionViewRegisterable {
+class BannerPhotoCVC: UICollectionViewCell, UICollectionViewRegisterable {
     
     // MARK: - Properties
     
