@@ -15,6 +15,7 @@ class DetailVC: UIViewController {
     // MARK: - Properties
 
     private lazy var detailTV = UITableView().then {
+        $0.allowsSelection = false
         $0.separatorStyle = .none
         $0.delegate = self
         $0.dataSource = self

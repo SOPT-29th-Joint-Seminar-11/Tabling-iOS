@@ -83,7 +83,4 @@ class BottomView: UIView {
             make.height.equalTo(53)
         }
     }
-    
-    // MARK: - Custom Method
-    
 }

@@ -94,14 +94,18 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     private lazy var facilityStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 24
+        $0.distribution = .fillEqually
         $0.addArrangedSubviews([petStackView,
                                 wifiStackView,
                                 carStackView])
     }
     
-    private let petStackView = ButtonStackView(image: Const.Icon.dog!, title: "반려동물 동반", space: 2)
-    private let wifiStackView = ButtonStackView(image: Const.Icon.wifi!, title: "무선 인터넷", space: 2)
-    private let carStackView = ButtonStackView(image: Const.Icon.car!, title: "주차 가능", space: 2)
+    private let petStackView = FacilityCardView(image:Const.Icon.dog!,
+                                                title: "반려동물 동반", space: 2)
+    private let wifiStackView = FacilityCardView(image: Const.Icon.wifi!,
+                                                 title: "무선 인터넷", space: 2)
+    private let carStackView = FacilityCardView(image: Const.Icon.car!,
+                                                title: "주차 가능", space: 2)
 
     // MARK: - Initializing
     
@@ -118,6 +122,7 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     // MARK: - UI + Layout
 
     func configUI() {
+        
     }
     
     func setupAutoLayout() {
@@ -126,14 +131,29 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
                                  pickLabel, firstTagStackView, secondTagStackView,
                                  facilityLabel, facilityStackView])
         
+        moreButton.snp.makeConstraints { make in
+            make.centerY.equalTo(infoLabel.snp.centerY)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        
         infoLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(30)
             make.leading.equalToSuperview().inset(20)
         }
         
-        moreButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(33)
-            make.trailing.equalToSuperview().inset(20)
+        onStackView.snp.makeConstraints { make in
+            make.top.equalTo(infoLabel.snp.bottom).offset(9)
+            make.leading.equalToSuperview().inset(20)
+        }
+        
+        offStackView.snp.makeConstraints { make in
+            make.top.equalTo(onStackView.snp.bottom).offset(6)
+            make.leading.equalToSuperview().inset(20)
+        }
+        
+        holidayStackView.snp.makeConstraints { make in
+            make.top.equalTo(offStackView.snp.bottom).offset(6)
+            make.leading.equalToSuperview().inset(20)
         }
         
         [onLabel, offLabel, holidayLabel].forEach {
@@ -141,7 +161,7 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
             make.top.leading.bottom.equalToSuperview()
         }}
         
-        [onTimeLabel, offTimeLabel, holidayLabel].forEach {
+        [onTimeLabel, offTimeLabel, sundayLabel].forEach {
             $0.snp.makeConstraints { make in
                 make.top.trailing.bottom.equalToSuperview()
         }}
@@ -151,9 +171,26 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
             make.leading.equalToSuperview().inset(20)
         }
         
+        firstTagStackView.snp.makeConstraints { make in
+            make.top.equalTo(pickLabel.snp.bottom).offset(9)
+            make.leading.equalToSuperview().inset(20)
+        }
+        
+        secondTagStackView.snp.makeConstraints { make in
+            make.top.equalTo(firstTagStackView.snp.bottom).offset(8)
+            make.leading.equalToSuperview().inset(20)
+        }
+        
         facilityLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(306)
             make.leading.equalToSuperview().inset(20)
         }
+        
+        facilityStackView.snp.makeConstraints { make in
+            make.top.equalTo(facilityLabel.snp.bottom).offset(9)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(87)
+        }
     }
 }
+

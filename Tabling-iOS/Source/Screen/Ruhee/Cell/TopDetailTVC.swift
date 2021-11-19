@@ -63,11 +63,17 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         $0.textColor = .gray
     }
     
-    private let mapStackView = ButtonStackView(image: Const.Icon.map!, title: "위치", space: 7)
-    private let callStackView = ButtonStackView(image: Const.Icon.call!, title: "전화", space: 7)
-    private let shareStackView = ButtonStackView(image: Const.Icon.share!, title: "공유", space: 7)
-    private lazy var likeStackView = ButtonStackView(image: Const.Icon.heartFill!, title: "\(likeNum)", space: 7).then {
-            $0.menuButton.addTarget(self, action: #selector(touchupLikeButton(_:)), for: .touchUpInside)
+    private let mapStackView = ButtonStackView(image: Const.Icon.map!,
+                                               title: "위치", space: 7)
+    private let callStackView = ButtonStackView(image: Const.Icon.call!,
+                                                title: "전화", space: 7)
+    private let shareStackView = ButtonStackView(image: Const.Icon.share!,
+                                                 title: "공유", space: 7)
+    private lazy var likeStackView = ButtonStackView(image: Const.Icon.heartFill!,
+                                                     title: "\(likeNum)", space: 7).then {
+            $0.menuButton.addTarget(self,
+                                    action: #selector(touchupLikeButton(_:)),
+                                    for: .touchUpInside)
     }
     
     private let firstLine = LineView(color: .line, height: 37)
@@ -99,7 +105,8 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
                                  starImageView, rateLabel,
                                  numLabel, descriptionLabel,
                                  mapPinImageView, distanceLabel,
-                                 mapStackView, callStackView, shareStackView, likeStackView,
+                                 mapStackView, callStackView,
+                                 shareStackView, likeStackView,
                                  firstLine, secondLine, thirdLine,
                                  infoLabel, menuLabel, reviewLabel,
                                  menuLineView, lineView])
