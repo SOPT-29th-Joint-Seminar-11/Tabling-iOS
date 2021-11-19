@@ -111,7 +111,6 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configUI()
         setupAutoLayout()
     }
     
@@ -120,10 +119,6 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     // MARK: - UI + Layout
-
-    func configUI() {
-        
-    }
     
     func setupAutoLayout() {
         contentView.addSubviews([infoLabel, moreButton,

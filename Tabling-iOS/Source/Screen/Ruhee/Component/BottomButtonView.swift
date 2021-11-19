@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class BottomView: UIView {
+class BottomButtonView: UIView {
     
     // MARK: - Properties
     

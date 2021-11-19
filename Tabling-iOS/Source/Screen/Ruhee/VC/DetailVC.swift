@@ -24,7 +24,7 @@ class DetailVC: UIViewController {
         BottomDetailTVC.register(target: $0)
     }
     
-    private let bottomView = BottomView()
+    private let bottomView = BottomButtonView()
 
     // MARK: - Lifecycle
 
@@ -53,9 +53,6 @@ class DetailVC: UIViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
-    
-    // MARK: - Custom Method
-
 }
 
 // MARK: - UITableViewDelegate
