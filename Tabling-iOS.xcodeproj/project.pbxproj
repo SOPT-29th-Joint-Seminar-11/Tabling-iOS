@@ -37,6 +37,7 @@
 		5B429A2627477C7900D4F65D /* SubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A2527477C7900D4F65D /* SubtitleLabel.swift */; };
 		5B429A282747916900D4F65D /* ButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A272747916900D4F65D /* ButtonStackView.swift */; };
 		5B429A2A274796F500D4F65D /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A29274796F500D4F65D /* LineView.swift */; };
+		5B429A2C27480AA500D4F65D /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A2B27480AA400D4F65D /* InfoLabel.swift */; };
 		5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723142273F92B300BB4FDE /* AppDelegate.swift */; };
 		5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723144273F92B300BB4FDE /* SceneDelegate.swift */; };
 		5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B723148273F92B300BB4FDE /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		5B429A2527477C7900D4F65D /* SubtitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleLabel.swift; sourceTree = "<group>"; };
 		5B429A272747916900D4F65D /* ButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStackView.swift; sourceTree = "<group>"; };
 		5B429A29274796F500D4F65D /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		5B429A2B27480AA400D4F65D /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
 		5B72313F273F92B300BB4FDE /* Tabling-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabling-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B723142273F92B300BB4FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B723144273F92B300BB4FDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,8 +128,9 @@
 			children = (
 				5B429A112746CB9800D4F65D /* BottomView.swift */,
 				5B429A272747916900D4F65D /* ButtonStackView.swift */,
-				5B429A2527477C7900D4F65D /* SubtitleLabel.swift */,
 				5B429A29274796F500D4F65D /* LineView.swift */,
+				5B429A2527477C7900D4F65D /* SubtitleLabel.swift */,
+				5B429A2B27480AA400D4F65D /* InfoLabel.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				5B092B3A2740D25F00F5C35F /* DetailVC.swift in Sources */,
 				5B429A162746CFA000D4F65D /* YujinComponent.swift in Sources */,
 				5B429A282747916900D4F65D /* ButtonStackView.swift in Sources */,
+				5B429A2C27480AA500D4F65D /* InfoLabel.swift in Sources */,
 				5B429A2627477C7900D4F65D /* SubtitleLabel.swift in Sources */,
 				5B829DF82743B07900766144 /* UIFont+.swift in Sources */,
 				5B092B452740E47800F5C35F /* UIViewController+.swift in Sources */,

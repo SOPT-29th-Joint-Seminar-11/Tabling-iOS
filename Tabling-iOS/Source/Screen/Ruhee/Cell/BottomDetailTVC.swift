@@ -7,13 +7,101 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
 
     // MARK: - Properties
     
     private let infoLabel = SubtitleLabel(title: "영업정보", color: .black)
+    
+    private let moreButton = UIButton().then {
+        $0.setTitle("더보기", for: .normal)
+        $0.titleLabel?.font = UIFont.noto(type: .medium, size: 13)
+        $0.setTitleColor(.gray3, for: .normal)
+    }
+    
+    private lazy var onStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 22
+        $0.addArrangedSubviews([onLabel, onTimeLabel])
+    }
+    
+    private lazy var offStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 22
+        $0.addArrangedSubviews([offLabel, offTimeLabel])
+    }
+    
+    private lazy var holidayStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 35
+        $0.addArrangedSubviews([holidayLabel, sundayLabel])
+    }
+    
+    private let onLabel = InfoLabel(title: "운영시간")
+    private let onTimeLabel = InfoLabel(title: "오늘   11:30  ~  22:00")
+    private let offLabel = InfoLabel(title: "휴식시간")
+    private let offTimeLabel = InfoLabel(title: "16:00  ~ 17:00")
+    private let holidayLabel = InfoLabel(title: "휴무일")
+    private let sundayLabel = InfoLabel(title: "일요일")
+    
     private let pickLabel = SubtitleLabel(title: "매장 Pick", color: .black)
+    
+    private lazy var firstTagStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 8
+        $0.addArrangedSubviews([cleanImageView,
+                                quietImageView,
+                                calmImageView])
+    }
+    
+    private lazy var secondTagStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 8
+        $0.addArrangedSubviews([dateImageView,
+                                dessertImageView,
+                                groupImageView])
+    }
+    
+    private let cleanImageView = UIImageView().then {
+        $0.image = Const.Tag.clean
+    }
+    
+    private let quietImageView = UIImageView().then {
+        $0.image = Const.Tag.quiet
+    }
+    
+    private let calmImageView = UIImageView().then {
+        $0.image = Const.Tag.calm
+    }
+    
+    private let dateImageView = UIImageView().then {
+        $0.image = Const.Tag.date
+    }
+    
+    private let dessertImageView = UIImageView().then {
+        $0.image = Const.Tag.dessert
+    }
+    
+    private let groupImageView = UIImageView().then {
+        $0.image = Const.Tag.group
+    }
+    
     private let facilityLabel = SubtitleLabel(title: "편의시설", color: .black)
+    
+    private lazy var facilityStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 24
+        $0.addArrangedSubviews([petStackView,
+                                wifiStackView,
+                                carStackView])
+    }
+    
+    private let petStackView = ButtonStackView(image: Const.Icon.dog!, title: "반려동물 동반", space: 2)
+    private let wifiStackView = ButtonStackView(image: Const.Icon.wifi!, title: "무선 인터넷", space: 2)
+    private let carStackView = ButtonStackView(image: Const.Icon.car!, title: "주차 가능", space: 2)
 
     // MARK: - Initializing
     
@@ -33,11 +121,45 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     func setupAutoLayout() {
-        contentView.addSubviews([infoLabel, pickLabel, facilityLabel])
+        contentView.addSubviews([infoLabel, moreButton,
+                                 onStackView, offStackView, holidayStackView,
+                                 pickLabel, firstTagStackView, secondTagStackView,
+                                 facilityLabel, facilityStackView])
         
         infoLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(30)
             make.leading.equalToSuperview().inset(20)
+        }
+        
+        moreButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(33)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        
+        [onLabel, offLabel, holidayLabel].forEach {
+            $0.snp.makeConstraints { make in
+            make.top.leading.bottom.equalToSuperview()
+        }}
+        
+        [onTimeLabel, offTimeLabel, holist].forEach {
+            $0.snp.makeConstraints { make in
+                make.top.trailing.bottom.equalToSuperview()
+        }}
+        
+        onTimeLabel.snp.makeConstraints { make in
+            make.top.trailing.bottom.equalToSuperview()
+        }
+        
+        offLabel.snp.makeConstraints { make in
+            make.top.leading.bottom.equalToSuperview()
+        }
+        
+        offTimeLabel.snp.makeConstraints { make in
+            make.top.trailing.bottom.equalToSuperview()
+        }
+        
+        holidayLabel.snp.makeConstraints { make in
+            make.top.leading.bottom.equalToSuperview()
         }
         
         pickLabel.snp.makeConstraints { make in
