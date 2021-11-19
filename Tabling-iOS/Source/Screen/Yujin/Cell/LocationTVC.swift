@@ -1,13 +1,13 @@
 //
-//  YujinTVC.swift
+//  LocationTVC.swift
 //  Tabling-iOS
 //
-//  Created by Thisisme Hi on 2021/11/19.
+//  Created by Thisisme Hi on 2021/11/20.
 //
 
 import UIKit
 
-class YujinTVC: UITableViewCell {
+class LocationTVC: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

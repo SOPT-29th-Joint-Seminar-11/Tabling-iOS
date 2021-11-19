@@ -37,6 +37,8 @@
 		5B429A2627477C7900D4F65D /* SubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A2527477C7900D4F65D /* SubtitleLabel.swift */; };
 		5B429A282747916900D4F65D /* ButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A272747916900D4F65D /* ButtonStackView.swift */; };
 		5B429A2A274796F500D4F65D /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A29274796F500D4F65D /* LineView.swift */; };
+		5B429A352748246E00D4F65D /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A342748246E00D4F65D /* DetailModel.swift */; };
+		5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A36274824F800D4F65D /* LocationTVC.swift */; };
 		5B429A2C27480AA500D4F65D /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A2B27480AA400D4F65D /* InfoLabel.swift */; };
 		5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723142273F92B300BB4FDE /* AppDelegate.swift */; };
 		5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723144273F92B300BB4FDE /* SceneDelegate.swift */; };
@@ -83,6 +85,8 @@
 		5B429A2527477C7900D4F65D /* SubtitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleLabel.swift; sourceTree = "<group>"; };
 		5B429A272747916900D4F65D /* ButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStackView.swift; sourceTree = "<group>"; };
 		5B429A29274796F500D4F65D /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		5B429A342748246E00D4F65D /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		5B429A36274824F800D4F65D /* LocationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTVC.swift; sourceTree = "<group>"; };
 		5B429A2B27480AA400D4F65D /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
 		5B72313F273F92B300BB4FDE /* Tabling-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabling-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B723142273F92B300BB4FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		5B092B282740D12A00F5C35F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5B429A36274824F800D4F65D /* LocationTVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -223,9 +228,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5B092B5F2740FD6400F5C35F /* Model */ = {
+		5B429A332748245F00D4F65D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B429A342748246E00D4F65D /* DetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -385,7 +391,7 @@
 		5B723162273FA6D900BB4FDE /* Ruhee */ = {
 			isa = PBXGroup;
 			children = (
-				5B092B5F2740FD6400F5C35F /* Model */,
+				5B429A332748245F00D4F65D /* Model */,
 				5B092B262740D11900F5C35F /* Component */,
 				5B092B252740D11400F5C35F /* Cell */,
 				5B723163273FA6DD00BB4FDE /* VC */,
@@ -557,6 +563,7 @@
 				5B092B382740D25500F5C35F /* NamjoonMainVC.swift in Sources */,
 				5B092B362740D21500F5C35F /* YujinMainVC.swift in Sources */,
 				5B092B332740D1C000F5C35F /* GeneralAPI.swift in Sources */,
+				5B429A352748246E00D4F65D /* DetailModel.swift in Sources */,
 				5B092B582740F03F00F5C35F /* Constant.swift in Sources */,
 				5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */,
 				5B429A1E2746CFD100D4F65D /* NamjoonTVC.swift in Sources */,
@@ -572,6 +579,7 @@
 				5B092B452740E47800F5C35F /* UIViewController+.swift in Sources */,
 				5B429A0E2746BF1800D4F65D /* BannerTVC.swift in Sources */,
 				5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */,
+				5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */,
 				5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */,
 				5B092B522740EE9C00F5C35F /* MyPageVC.swift in Sources */,
 				5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */,
