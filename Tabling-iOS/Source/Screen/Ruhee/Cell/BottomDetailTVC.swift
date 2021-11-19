@@ -141,26 +141,10 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
             make.top.leading.bottom.equalToSuperview()
         }}
         
-        [onTimeLabel, offTimeLabel, holist].forEach {
+        [onTimeLabel, offTimeLabel, holidayLabel].forEach {
             $0.snp.makeConstraints { make in
                 make.top.trailing.bottom.equalToSuperview()
         }}
-        
-        onTimeLabel.snp.makeConstraints { make in
-            make.top.trailing.bottom.equalToSuperview()
-        }
-        
-        offLabel.snp.makeConstraints { make in
-            make.top.leading.bottom.equalToSuperview()
-        }
-        
-        offTimeLabel.snp.makeConstraints { make in
-            make.top.trailing.bottom.equalToSuperview()
-        }
-        
-        holidayLabel.snp.makeConstraints { make in
-            make.top.leading.bottom.equalToSuperview()
-        }
         
         pickLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(172)
