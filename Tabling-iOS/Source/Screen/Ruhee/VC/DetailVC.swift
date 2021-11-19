@@ -19,7 +19,8 @@ class DetailVC: UIViewController {
         $0.delegate = self
         $0.dataSource = self
         BannerTVC.register(target: $0)
-        DetailTVC.register(target: $0)
+        TopDetailTVC.register(target: $0)
+        BottomDetailTVC.register(target: $0)
     }
     
     private let bottomView = BottomView()
@@ -63,7 +64,8 @@ extension DetailVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0: return 204
-        default: return 887
+        case 1: return 311
+        default: return 542
         }
     }
 }
@@ -72,7 +74,7 @@ extension DetailVC: UITableViewDelegate {
 
 extension DetailVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,10 +82,13 @@ extension DetailVC: UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: BannerTVC.className, for: indexPath) as? BannerTVC
             else { return UITableViewCell() }
-            cell.backgroundColor = .brown
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TopDetailTVC.className, for: indexPath) as? TopDetailTVC
+            else { return UITableViewCell() }
             return cell
         default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTVC.className, for: indexPath) as? DetailTVC
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: BottomDetailTVC.className, for: indexPath) as? BottomDetailTVC
             else { return UITableViewCell() }
             return cell
         }

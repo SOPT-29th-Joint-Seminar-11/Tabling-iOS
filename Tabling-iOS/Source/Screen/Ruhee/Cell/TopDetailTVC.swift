@@ -1,5 +1,5 @@
 //
-//  DetailTVC.swift
+//  TopDetailTVC.swift
 //  Tabling-iOS
 //
 //  Created by Thisisme Hi on 2021/11/19.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class DetailTVC: UITableViewCell, UITableViewRegisterable {
+class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - Properties
     
@@ -38,7 +38,9 @@ class DetailTVC: UITableViewCell, UITableViewRegisterable {
         $0.addSpacing()
     }
     
-    
+    private let lineView = UIView().then {
+        $0.backgroundColor = .line
+    }
 
     // MARK: - Initializing
     
@@ -58,5 +60,11 @@ class DetailTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     func setupAutoLayout() {
+        contentView.addSubviews([lineView])
+        
+        lineView.snp.makeConstraints { make in
+            make.leading.bottom.trailing.equalToSuperview()
+            make.height.equalTo(8)
+        }
     }
 }

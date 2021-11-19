@@ -49,6 +49,7 @@ class BottomView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAutoLayout()
+        configUI()
     }
     
     required init?(coder: NSCoder) {
@@ -56,6 +57,10 @@ class BottomView: UIView {
     }
     
     // MARK: - UI + Layout
+    
+    private func configUI() {
+        backgroundColor = .white
+    }
     
     private func setupAutoLayout() {
         addSubviews([lineView, buttonStackView])
