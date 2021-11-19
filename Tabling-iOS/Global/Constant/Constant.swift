@@ -41,6 +41,11 @@ struct Const {
         //별점 아이콘
         public static let star = UIImage(named: "star_off")
         public static let starFill = UIImage(named: "star_on")
+        public static let oneStar = UIImage(named: "ic_one_star")
+        public static let twoStar = UIImage(named: "ic_two_star")
+        public static let threeStar = UIImage(named: "ic_three_star")
+        public static let fourStar = UIImage(named: "ic_four_star")
+        public static let fiveStar = UIImage(named: "ic_five_star")
         
         //각종 버튼용 아이콘
         public static let chevronDown = UIImage(named: "btn_address")
