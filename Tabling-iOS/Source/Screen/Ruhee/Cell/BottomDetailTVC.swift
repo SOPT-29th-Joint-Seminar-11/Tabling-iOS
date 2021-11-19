@@ -11,9 +11,9 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
 
     // MARK: - Properties
     
-    private let infoLabel = SubtitlLabel(title: "영업정보", color: .black)
-    private let pickLabel = SubtitlLabel(title: "매장 Pick", color: .black)
-    private let facilityLabel = SubtitlLabel(title: "편의시설", color: .black)
+    private let infoLabel = SubtitleLabel(title: "영업정보", color: .black)
+    private let pickLabel = SubtitleLabel(title: "매장 Pick", color: .black)
+    private let facilityLabel = SubtitleLabel(title: "편의시설", color: .black)
 
     // MARK: - Initializing
     

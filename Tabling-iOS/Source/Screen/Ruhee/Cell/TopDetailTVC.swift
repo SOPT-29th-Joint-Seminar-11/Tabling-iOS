@@ -38,9 +38,9 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         $0.addSpacing()
     }
     
-    private let infoLabel = SubtitlLabel(title: "매장정보", color: .black)
-    private let menuLabel = SubtitlLabel(title: "메뉴", color: .gray2)
-    private let reviewLabel = SubtitlLabel(title: "리뷰", color: .gray2)
+    private let infoLabel = SubtitleLabel(title: "매장정보", color: .black)
+    private let menuLabel = SubtitleLabel(title: "메뉴", color: .gray2)
+    private let reviewLabel = SubtitleLabel(title: "리뷰", color: .gray2)
     
     private let menuLineView = LineView(color: .main, height: 2)
     private let lineView = LineView(color: .line, height: 8)

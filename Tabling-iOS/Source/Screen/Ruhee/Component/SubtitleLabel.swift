@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class SubtitlLabel: UILabel {
+class SubtitleLabel: UILabel {
     
     // MARK: - Initializing
 
