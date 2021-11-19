@@ -48,7 +48,6 @@ class BottomView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configUI()
         setupAutoLayout()
     }
     
@@ -58,11 +57,7 @@ class BottomView: UIView {
     
     // MARK: - UI + Layout
     
-    func configUI() {
- 
-    }
-    
-    func setupAutoLayout() {
+    private func setupAutoLayout() {
         addSubviews([lineView, buttonStackView])
         
         lineView.snp.makeConstraints { make in

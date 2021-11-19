@@ -15,6 +15,7 @@ class DetailVC: UIViewController {
     // MARK: - Properties
 
     private lazy var detailTV = UITableView().then {
+        $0.separatorStyle = .none
         $0.delegate = self
         $0.dataSource = self
         BannerTVC.register(target: $0)
@@ -59,7 +60,12 @@ class DetailVC: UIViewController {
 // MARK: - UITableViewDelegate
 
 extension DetailVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0: return 204
+        default: return 887
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -74,12 +80,11 @@ extension DetailVC: UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: BannerTVC.className, for: indexPath) as? BannerTVC
             else { return UITableViewCell() }
-            cell.backgroundColor = .yellow
+            cell.backgroundColor = .brown
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTVC.className, for: indexPath) as? DetailTVC
             else { return UITableViewCell() }
-            cell.backgroundColor = .systemPink
             return cell
         }
     }

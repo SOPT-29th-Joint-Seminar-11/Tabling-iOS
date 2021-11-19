@@ -25,15 +25,14 @@
 		5B092B582740F03F00F5C35F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B572740F03F00F5C35F /* Constant.swift */; };
 		5B429A0E2746BF1800D4F65D /* BannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A0D2746BF1800D4F65D /* BannerTVC.swift */; };
 		5B429A102746C6B300D4F65D /* DetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A0F2746C6B300D4F65D /* DetailTVC.swift */; };
+		5B429A122746CB9800D4F65D /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A112746CB9800D4F65D /* BottomView.swift */; };
 		5B429A142746CF9600D4F65D /* YujinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A132746CF9600D4F65D /* YujinModel.swift */; };
 		5B429A162746CFA000D4F65D /* YujinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A152746CFA000D4F65D /* YujinComponent.swift */; };
 		5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A192746CFBC00D4F65D /* NamjoonModel.swift */; };
 		5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A1B2746CFC500D4F65D /* NamjoonComponent.swift */; };
 		5B429A1E2746CFD100D4F65D /* NamjoonTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A1D2746CFD100D4F65D /* NamjoonTVC.swift */; };
-		5B429A0E2746BF1800D4F65D /* BannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A0D2746BF1800D4F65D /* BannerTVC.swift */; };
-		5B429A102746C6B300D4F65D /* DetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A0F2746C6B300D4F65D /* DetailTVC.swift */; };
-		5B429A122746CB9800D4F65D /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A112746CB9800D4F65D /* BottomView.swift */; };
 		5B429A202746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B429A1F2746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf */; };
+		5B429A222747743500D4F65D /* BannerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A212747743500D4F65D /* BannerCVC.swift */; };
 		5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723142273F92B300BB4FDE /* AppDelegate.swift */; };
 		5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723144273F92B300BB4FDE /* SceneDelegate.swift */; };
 		5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B723148273F92B300BB4FDE /* Main.storyboard */; };
@@ -67,15 +66,14 @@
 		5B092B572740F03F00F5C35F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5B429A0D2746BF1800D4F65D /* BannerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTVC.swift; sourceTree = "<group>"; };
 		5B429A0F2746C6B300D4F65D /* DetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTVC.swift; sourceTree = "<group>"; };
+		5B429A112746CB9800D4F65D /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		5B429A132746CF9600D4F65D /* YujinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YujinModel.swift; sourceTree = "<group>"; };
 		5B429A152746CFA000D4F65D /* YujinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YujinComponent.swift; sourceTree = "<group>"; };
 		5B429A192746CFBC00D4F65D /* NamjoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonModel.swift; sourceTree = "<group>"; };
 		5B429A1B2746CFC500D4F65D /* NamjoonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonComponent.swift; sourceTree = "<group>"; };
 		5B429A1D2746CFD100D4F65D /* NamjoonTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonTVC.swift; sourceTree = "<group>"; };
-		5B429A0D2746BF1800D4F65D /* BannerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTVC.swift; sourceTree = "<group>"; };
-		5B429A0F2746C6B300D4F65D /* DetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTVC.swift; sourceTree = "<group>"; };
-		5B429A112746CB9800D4F65D /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		5B429A1F2746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		5B429A212747743500D4F65D /* BannerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCVC.swift; sourceTree = "<group>"; };
 		5B72313F273F92B300BB4FDE /* Tabling-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabling-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B723142273F92B300BB4FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B723144273F92B300BB4FDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,8 +105,9 @@
 		5B092B252740D11400F5C35F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				5B429A0D2746BF1800D4F65D /* BannerTVC.swift */,
 				5B429A0F2746C6B300D4F65D /* DetailTVC.swift */,
+				5B429A0D2746BF1800D4F65D /* BannerTVC.swift */,
+				5B429A212747743500D4F65D /* BannerCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -538,6 +537,7 @@
 				5B092B2F2740D17100F5C35F /* MainModel.swift in Sources */,
 				5B092B4B2740E54C00F5C35F /* UITableViewRegisterable.swift in Sources */,
 				5B429A122746CB9800D4F65D /* BottomView.swift in Sources */,
+				5B429A222747743500D4F65D /* BannerCVC.swift in Sources */,
 				5B092B312740D17800F5C35F /* DetailModel.swift in Sources */,
 				5B092B382740D25500F5C35F /* NamjoonMainVC.swift in Sources */,
 				5B092B362740D21500F5C35F /* YujinMainVC.swift in Sources */,
