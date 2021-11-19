@@ -51,7 +51,6 @@ class DetailVC: UIViewController {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
-        
     }
     
     // MARK: - Custom Method

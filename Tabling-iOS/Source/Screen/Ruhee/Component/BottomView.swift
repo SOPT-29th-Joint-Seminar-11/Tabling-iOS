@@ -21,10 +21,10 @@ class BottomView: UIView {
         $0.spacing = 13
         $0.alignment = .center
         $0.distribution = .fillEqually
-        $0.addArrangedSubviews([leftButton, rightButton])
+        $0.addArrangedSubviews([waitingButton, reservationButton])
     }
     
-    private let leftButton = UIButton().then {
+    private let waitingButton = UIButton().then {
         $0.layer.cornerRadius = 5
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.main.cgColor
@@ -34,7 +34,7 @@ class BottomView: UIView {
         $0.titleLabel?.addSpacing(kernValue: -0.6, paragraphValue: 0)
     }
     
-    private let rightButton = UIButton().then {
+    private let reservationButton = UIButton().then {
         $0.layer.cornerRadius = 5
         $0.backgroundColor = .main
         $0.setTitle("즉시예약", for: .normal)
@@ -73,18 +73,17 @@ class BottomView: UIView {
             make.leading.trailing.equalToSuperview().inset(20)
         }
         
-        leftButton.snp.makeConstraints { make in
+        waitingButton.snp.makeConstraints { make in
             make.top.leading.bottom.equalToSuperview()
             make.height.equalTo(53)
         }
         
-        rightButton.snp.makeConstraints { make in
+        reservationButton.snp.makeConstraints { make in
             make.top.trailing.bottom.equalToSuperview()
             make.height.equalTo(53)
         }
     }
     
     // MARK: - Custom Method
-    
     
 }
