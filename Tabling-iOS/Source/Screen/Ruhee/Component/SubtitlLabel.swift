@@ -7,11 +7,15 @@
 
 import UIKit
 
-class SubtitlLabel: UILabel {
+import SnapKit
 
-    init(title: String) {
+class SubtitlLabel: UILabel {
+    
+    // MARK: - Initializing
+
+    init(title: String, color: UIColor) {
         super.init(frame: .zero)
-        configUI(title: title)
+        configUI(title: title, color: color)
         setupAutoLayout()
     }
     
@@ -19,9 +23,11 @@ class SubtitlLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configUI(title: String) {
+    // MARK: - UI + Layout
+    
+    private func configUI(title: String, color: UIColor) {
         text = title
-        textColor = .black
+        textColor = color
         font = UIFont.noto(type: .bold, size: 16)
     }
     

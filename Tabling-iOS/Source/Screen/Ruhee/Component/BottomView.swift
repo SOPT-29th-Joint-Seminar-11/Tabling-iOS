@@ -14,9 +14,7 @@ class BottomView: UIView {
     
     // MARK: - Properties
     
-    private let lineView = UIView().then {
-        $0.backgroundColor = .headerLineGray
-    }
+    private let lineView = LineView(color: .headerLineGray, height: 1)
     
     private lazy var buttonStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -44,8 +42,8 @@ class BottomView: UIView {
         $0.titleLabel?.addSpacing(kernValue: -0.6, paragraphValue: 0)
     }
     
-    // MARK: Initializing
-    
+    // MARK: - Initializing
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAutoLayout()

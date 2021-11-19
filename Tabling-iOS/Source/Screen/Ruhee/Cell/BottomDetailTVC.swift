@@ -11,9 +11,9 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
 
     // MARK: - Properties
     
-    private let infoLabel = SubtitlLabel(title: "영업정보")
-    private let pickLabel = SubtitlLabel(title: "매장 Pick")
-    private let facilityLabel = SubtitlLabel(title: "편의시설")
+    private let infoLabel = SubtitlLabel(title: "영업정보", color: .black)
+    private let pickLabel = SubtitlLabel(title: "매장 Pick", color: .black)
+    private let facilityLabel = SubtitlLabel(title: "편의시설", color: .black)
 
     // MARK: - Initializing
     
@@ -49,6 +49,5 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
             make.top.equalToSuperview().inset(306)
             make.leading.equalToSuperview().inset(20)
         }
-
     }
 }

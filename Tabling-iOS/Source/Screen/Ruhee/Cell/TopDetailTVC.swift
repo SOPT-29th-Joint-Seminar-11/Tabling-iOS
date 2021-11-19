@@ -38,9 +38,12 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         $0.addSpacing()
     }
     
-    private let lineView = UIView().then {
-        $0.backgroundColor = .line
-    }
+    private let infoLabel = SubtitlLabel(title: "매장정보", color: .black)
+    private let menuLabel = SubtitlLabel(title: "메뉴", color: .gray2)
+    private let reviewLabel = SubtitlLabel(title: "리뷰", color: .gray2)
+    
+    private let menuLineView = LineView(color: .main, height: 2)
+    private let lineView = LineView(color: .line, height: 8)
 
     // MARK: - Initializing
     
@@ -60,11 +63,16 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     func setupAutoLayout() {
-        contentView.addSubviews([lineView])
+        contentView.addSubviews([menuLineView, lineView])
+        
+        menuLineView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(45)
+            make.bottom.equalTo(lineView.snp.top)
+            make.width.equalTo(95)
+        }
         
         lineView.snp.makeConstraints { make in
             make.leading.bottom.trailing.equalToSuperview()
-            make.height.equalTo(8)
         }
     }
 }
