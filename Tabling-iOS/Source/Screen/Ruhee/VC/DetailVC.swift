@@ -43,8 +43,8 @@ class DetailVC: UIViewController {
         view.addSubviews([detailTV, bottomView])
         
         detailTV.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.leading.bottom.trailing.equalToSuperview()
+            make.top.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview()
         }
         
         bottomView.snp.makeConstraints { make in
