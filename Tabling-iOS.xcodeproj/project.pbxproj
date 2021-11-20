@@ -25,7 +25,7 @@
 		5B092B582740F03F00F5C35F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B572740F03F00F5C35F /* Constant.swift */; };
 		5B429A0E2746BF1800D4F65D /* BannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A0D2746BF1800D4F65D /* BannerTVC.swift */; };
 		5B429A102746C6B300D4F65D /* TopDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A0F2746C6B300D4F65D /* TopDetailTVC.swift */; };
-		5B429A122746CB9800D4F65D /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A112746CB9800D4F65D /* BottomView.swift */; };
+		5B429A122746CB9800D4F65D /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A112746CB9800D4F65D /* BottomButtonView.swift */; };
 		5B429A142746CF9600D4F65D /* YujinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A132746CF9600D4F65D /* YujinModel.swift */; };
 		5B429A162746CFA000D4F65D /* YujinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A152746CFA000D4F65D /* YujinComponent.swift */; };
 		5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A192746CFBC00D4F65D /* NamjoonModel.swift */; };
@@ -40,6 +40,8 @@
 		5B429A2C27480AA500D4F65D /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A2B27480AA400D4F65D /* InfoLabel.swift */; };
 		5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A36274824F800D4F65D /* LocationTVC.swift */; };
 		5B429A3C27483CB500D4F65D /* RuheeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A3B27483CB500D4F65D /* RuheeModel.swift */; };
+		5B429A3E2748413200D4F65D /* FacilityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A3D2748413200D4F65D /* FacilityCardView.swift */; };
+		5B429A402748C7F100D4F65D /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A3F2748C7F100D4F65D /* TagView.swift */; };
 		5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723142273F92B300BB4FDE /* AppDelegate.swift */; };
 		5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723144273F92B300BB4FDE /* SceneDelegate.swift */; };
 		5B72314A273F92B300BB4FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B723148273F92B300BB4FDE /* Main.storyboard */; };
@@ -73,7 +75,7 @@
 		5B092B572740F03F00F5C35F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5B429A0D2746BF1800D4F65D /* BannerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTVC.swift; sourceTree = "<group>"; };
 		5B429A0F2746C6B300D4F65D /* TopDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDetailTVC.swift; sourceTree = "<group>"; };
-		5B429A112746CB9800D4F65D /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		5B429A112746CB9800D4F65D /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		5B429A132746CF9600D4F65D /* YujinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YujinModel.swift; sourceTree = "<group>"; };
 		5B429A152746CFA000D4F65D /* YujinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YujinComponent.swift; sourceTree = "<group>"; };
 		5B429A192746CFBC00D4F65D /* NamjoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonModel.swift; sourceTree = "<group>"; };
@@ -88,6 +90,8 @@
 		5B429A2B27480AA400D4F65D /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
 		5B429A36274824F800D4F65D /* LocationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTVC.swift; sourceTree = "<group>"; };
 		5B429A3B27483CB500D4F65D /* RuheeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuheeModel.swift; sourceTree = "<group>"; };
+		5B429A3D2748413200D4F65D /* FacilityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityCardView.swift; sourceTree = "<group>"; };
+		5B429A3F2748C7F100D4F65D /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		5B72313F273F92B300BB4FDE /* Tabling-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabling-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B723142273F92B300BB4FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B723144273F92B300BB4FDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,11 +134,13 @@
 		5B092B262740D11900F5C35F /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				5B429A112746CB9800D4F65D /* BottomView.swift */,
+				5B429A112746CB9800D4F65D /* BottomButtonView.swift */,
 				5B429A272747916900D4F65D /* ButtonStackView.swift */,
+				5B429A3D2748413200D4F65D /* FacilityCardView.swift */,
 				5B429A29274796F500D4F65D /* LineView.swift */,
 				5B429A2527477C7900D4F65D /* SubtitleLabel.swift */,
 				5B429A2B27480AA400D4F65D /* InfoLabel.swift */,
+				5B429A3F2748C7F100D4F65D /* TagView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -557,7 +563,7 @@
 				5B092B432740E3E900F5C35F /* UIView+.swift in Sources */,
 				5B092B2F2740D17100F5C35F /* MainModel.swift in Sources */,
 				5B092B4B2740E54C00F5C35F /* UITableViewRegisterable.swift in Sources */,
-				5B429A122746CB9800D4F65D /* BottomView.swift in Sources */,
+				5B429A122746CB9800D4F65D /* BottomButtonView.swift in Sources */,
 				5B429A222747743500D4F65D /* BannerPhotoCVC.swift in Sources */,
 				5B092B312740D17800F5C35F /* DetailModel.swift in Sources */,
 				5B092B382740D25500F5C35F /* NamjoonMainVC.swift in Sources */,
@@ -571,7 +577,9 @@
 				5B429A3C27483CB500D4F65D /* RuheeModel.swift in Sources */,
 				5B092B3D2740D38D00F5C35F /* BaseViewController.swift in Sources */,
 				5B092B3A2740D25F00F5C35F /* DetailVC.swift in Sources */,
+				5B429A3E2748413200D4F65D /* FacilityCardView.swift in Sources */,
 				5B429A162746CFA000D4F65D /* YujinComponent.swift in Sources */,
+				5B429A402748C7F100D4F65D /* TagView.swift in Sources */,
 				5B429A282747916900D4F65D /* ButtonStackView.swift in Sources */,
 				5B429A2C27480AA500D4F65D /* InfoLabel.swift in Sources */,
 				5B429A2627477C7900D4F65D /* SubtitleLabel.swift in Sources */,

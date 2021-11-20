@@ -218,6 +218,12 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     // MARK: - @objc
     
     @objc func touchupLikeButton(_ sender: UIButton) {
-        print("하트버튼") // 누르면 하트색 채워지는 걸로 바뀌고, 숫자 올라가는 거 / 토글 형식
+        /// 숫자 반영 안됨, 처음 눌렀을 때 바로 하트 채워지지 않음
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.setImage(Const.Icon.heartFill, for: .normal)
+        } else {
+            sender.setImage(Const.Icon.heart, for: .normal)
+        }
     }
 }
