@@ -1,13 +1,13 @@
 //
-//  NamjoonTVC.swift
+//  NJCafeTVC.swift
 //  Tabling-iOS
 //
-//  Created by Thisisme Hi on 2021/11/19.
+//  Created by 이남준 on 2021/11/21.
 //
 
 import UIKit
 
-class NamjoonTVC: UITableViewCell {
+class NJCafeTVC: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
