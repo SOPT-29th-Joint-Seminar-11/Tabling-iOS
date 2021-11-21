@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		149055B6274A802E00C9AE4E /* NJAddressTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149055B5274A802E00C9AE4E /* NJAddressTVC.swift */; };
+		149055B8274A813400C9AE4E /* NJCafeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149055B7274A813400C9AE4E /* NJCafeTVC.swift */; };
+		149055BC274A816000C9AE4E /* NJReviewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149055BB274A816000C9AE4E /* NJReviewTVC.swift */; };
+		149055BE274A817C00C9AE4E /* NJStoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149055BD274A817C00C9AE4E /* NJStoreTVC.swift */; };
+		149055C0274A819D00C9AE4E /* NJBannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149055BF274A819D00C9AE4E /* NJBannerTVC.swift */; };
 		5B092B2F2740D17100F5C35F /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B2E2740D17100F5C35F /* MainModel.swift */; };
 		5B092B312740D17800F5C35F /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B302740D17800F5C35F /* DetailModel.swift */; };
 		5B092B332740D1C000F5C35F /* GeneralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B092B322740D1C000F5C35F /* GeneralAPI.swift */; };
@@ -30,7 +35,6 @@
 		5B429A162746CFA000D4F65D /* YujinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A152746CFA000D4F65D /* YujinComponent.swift */; };
 		5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A192746CFBC00D4F65D /* NamjoonModel.swift */; };
 		5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A1B2746CFC500D4F65D /* NamjoonComponent.swift */; };
-		5B429A1E2746CFD100D4F65D /* NamjoonTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A1D2746CFD100D4F65D /* NamjoonTVC.swift */; };
 		5B429A202746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B429A1F2746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf */; };
 		5B429A222747743500D4F65D /* BannerPhotoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A212747743500D4F65D /* BannerPhotoCVC.swift */; };
 		5B429A2427477BBD00D4F65D /* BottomDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A2327477BBD00D4F65D /* BottomDetailTVC.swift */; };
@@ -56,6 +60,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		149055B5274A802E00C9AE4E /* NJAddressTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJAddressTVC.swift; sourceTree = "<group>"; };
+		149055B7274A813400C9AE4E /* NJCafeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJCafeTVC.swift; sourceTree = "<group>"; };
+		149055BB274A816000C9AE4E /* NJReviewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJReviewTVC.swift; sourceTree = "<group>"; };
+		149055BD274A817C00C9AE4E /* NJStoreTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJStoreTVC.swift; sourceTree = "<group>"; };
+		149055BF274A819D00C9AE4E /* NJBannerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJBannerTVC.swift; sourceTree = "<group>"; };
 		2B4ED41B5870CF2F11E0FC61 /* Pods-Tabling-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Tabling-iOS/Pods-Tabling-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5B092B2E2740D17100F5C35F /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		5B092B302740D17800F5C35F /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
@@ -80,7 +89,6 @@
 		5B429A152746CFA000D4F65D /* YujinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YujinComponent.swift; sourceTree = "<group>"; };
 		5B429A192746CFBC00D4F65D /* NamjoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonModel.swift; sourceTree = "<group>"; };
 		5B429A1B2746CFC500D4F65D /* NamjoonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonComponent.swift; sourceTree = "<group>"; };
-		5B429A1D2746CFD100D4F65D /* NamjoonTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonTVC.swift; sourceTree = "<group>"; };
 		5B429A1F2746E8AC00D4F65D /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		5B429A212747743500D4F65D /* BannerPhotoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPhotoCVC.swift; sourceTree = "<group>"; };
 		5B429A2327477BBD00D4F65D /* BottomDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDetailTVC.swift; sourceTree = "<group>"; };
@@ -180,7 +188,11 @@
 		5B092B2B2740D13900F5C35F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				5B429A1D2746CFD100D4F65D /* NamjoonTVC.swift */,
+				149055B5274A802E00C9AE4E /* NJAddressTVC.swift */,
+				149055B7274A813400C9AE4E /* NJCafeTVC.swift */,
+				149055BB274A816000C9AE4E /* NJReviewTVC.swift */,
+				149055BD274A817C00C9AE4E /* NJStoreTVC.swift */,
+				149055BF274A819D00C9AE4E /* NJBannerTVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -565,13 +577,15 @@
 				5B092B4B2740E54C00F5C35F /* UITableViewRegisterable.swift in Sources */,
 				5B429A122746CB9800D4F65D /* BottomButtonView.swift in Sources */,
 				5B429A222747743500D4F65D /* BannerPhotoCVC.swift in Sources */,
+				149055BC274A816000C9AE4E /* NJReviewTVC.swift in Sources */,
 				5B092B312740D17800F5C35F /* DetailModel.swift in Sources */,
 				5B092B382740D25500F5C35F /* NamjoonMainVC.swift in Sources */,
+				149055B6274A802E00C9AE4E /* NJAddressTVC.swift in Sources */,
 				5B092B362740D21500F5C35F /* YujinMainVC.swift in Sources */,
 				5B092B332740D1C000F5C35F /* GeneralAPI.swift in Sources */,
 				5B092B582740F03F00F5C35F /* Constant.swift in Sources */,
 				5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */,
-				5B429A1E2746CFD100D4F65D /* NamjoonTVC.swift in Sources */,
+				149055BE274A817C00C9AE4E /* NJStoreTVC.swift in Sources */,
 				5B429A2A274796F500D4F65D /* LineView.swift in Sources */,
 				5B429A2427477BBD00D4F65D /* BottomDetailTVC.swift in Sources */,
 				5B429A3C27483CB500D4F65D /* RuheeModel.swift in Sources */,
@@ -586,8 +600,10 @@
 				5B829DF82743B07900766144 /* UIFont+.swift in Sources */,
 				5B092B452740E47800F5C35F /* UIViewController+.swift in Sources */,
 				5B429A0E2746BF1800D4F65D /* BannerTVC.swift in Sources */,
+				149055B8274A813400C9AE4E /* NJCafeTVC.swift in Sources */,
 				5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */,
 				5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */,
+				149055C0274A819D00C9AE4E /* NJBannerTVC.swift in Sources */,
 				5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */,
 				5B092B522740EE9C00F5C35F /* MyPageVC.swift in Sources */,
 				5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */,
