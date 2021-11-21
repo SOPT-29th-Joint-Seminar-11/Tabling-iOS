@@ -44,7 +44,7 @@ class NamjoonMainVC: UIViewController {
         mainTV.delegate = self
         mainTV.dataSource = self
         //tableView.register(NamjoonAddressTVC.self, forCellReuseIdentifier: NamjoonAddressTVC.className)
-        NamjoonAddressTVC.register(target: mainTV) // UITableViewRegisterable Extension을 활용해서 짧게!
+        NJAddressTVC.register(target: mainTV) // UITableViewRegisterable Extension을 활용해서 짧게!
     }
 }
 
@@ -64,7 +64,7 @@ extension NamjoonMainVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NamjoonAddressTVC.className, for: indexPath) as? NamjoonAddressTVC
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NJAddressTVC.className, for: indexPath) as? NJAddressTVC
         else { return UITableViewCell() }
         
         return cell
