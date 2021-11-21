@@ -53,6 +53,7 @@
 		5B72314F273F92B500BB4FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B72314D273F92B500BB4FDE /* LaunchScreen.storyboard */; };
 		5B829DF82743B07900766144 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B829DF72743B07900766144 /* UIFont+.swift */; };
 		5B829DFA2743C25300766144 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B829DF92743C25300766144 /* UILabel+.swift */; };
+		6AB7AC17274AC45400C234A7 /* SearchHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB7AC16274AC45400C234A7 /* SearchHeader.swift */; };
 		6AFDB1AD2742F69100FACA2D /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AC2742F69100FACA2D /* UIColor+.swift */; };
 		6AFDB1B62742F98F00FACA2D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */; };
 		6AFDB1BA2742F98F00FACA2D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */; };
@@ -109,6 +110,7 @@
 		5B723150273F92B500BB4FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B829DF72743B07900766144 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		5B829DF92743C25300766144 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		6AB7AC16274AC45400C234A7 /* SearchHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeader.swift; sourceTree = "<group>"; };
 		6AFDB1AC2742F69100FACA2D /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				5B429A36274824F800D4F65D /* LocationTVC.swift */,
+				6AB7AC16274AC45400C234A7 /* SearchHeader.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */,
 				5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */,
 				149055C0274A819D00C9AE4E /* NJBannerTVC.swift in Sources */,
+				6AB7AC17274AC45400C234A7 /* SearchHeader.swift in Sources */,
 				5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */,
 				5B092B522740EE9C00F5C35F /* MyPageVC.swift in Sources */,
 				5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */,
