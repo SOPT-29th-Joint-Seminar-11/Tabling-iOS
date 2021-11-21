@@ -20,7 +20,7 @@ extension UILabel {
             let attributedString = NSMutableAttributedString(string: labelText)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = paragraphValue
-            paragraphStyle.alignment = .center
+            paragraphStyle.alignment = .left
             attributedString.addAttribute(NSAttributedString.Key.kern,
                                           value: kernValue,
                                           range: NSRange(location: 0,
