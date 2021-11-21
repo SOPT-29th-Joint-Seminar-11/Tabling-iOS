@@ -12,6 +12,9 @@ class NamjoonMainVC: UIViewController {
     // MARK: - Properties
     
     let mainTV = UITableView()
+    
+    //var location = NJLocationModel(locationText: "마포구 연남동 123", locationImage: Const.Icon.chevronDown)
+    var location = NJLocationModel(locationText: "마포구 연남동 123", locationImage: "btn_address")
 
     // MARK: - Lifecycle
 
@@ -52,7 +55,7 @@ class NamjoonMainVC: UIViewController {
 
 extension NamjoonMainVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 106
+        return 58
     }
 }
 
@@ -66,6 +69,7 @@ extension NamjoonMainVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NJAddressTVC.className, for: indexPath) as? NJAddressTVC
         else { return UITableViewCell() }
+        cell.setData(locationText: location.locationText, imageName: location.locationImage)
         
         return cell
     }
