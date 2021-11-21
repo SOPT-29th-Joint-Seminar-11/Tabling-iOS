@@ -26,7 +26,7 @@
 		5B429A0E2746BF1800D4F65D /* BannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A0D2746BF1800D4F65D /* BannerTVC.swift */; };
 		5B429A102746C6B300D4F65D /* TopDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A0F2746C6B300D4F65D /* TopDetailTVC.swift */; };
 		5B429A122746CB9800D4F65D /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A112746CB9800D4F65D /* BottomButtonView.swift */; };
-		5B429A142746CF9600D4F65D /* YujinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A132746CF9600D4F65D /* YujinModel.swift */; };
+		5B429A142746CF9600D4F65D /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A132746CF9600D4F65D /* LocationModel.swift */; };
 		5B429A162746CFA000D4F65D /* YujinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A152746CFA000D4F65D /* YujinComponent.swift */; };
 		5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A192746CFBC00D4F65D /* NamjoonModel.swift */; };
 		5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A1B2746CFC500D4F65D /* NamjoonComponent.swift */; };
@@ -76,7 +76,7 @@
 		5B429A0D2746BF1800D4F65D /* BannerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTVC.swift; sourceTree = "<group>"; };
 		5B429A0F2746C6B300D4F65D /* TopDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDetailTVC.swift; sourceTree = "<group>"; };
 		5B429A112746CB9800D4F65D /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
-		5B429A132746CF9600D4F65D /* YujinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YujinModel.swift; sourceTree = "<group>"; };
+		5B429A132746CF9600D4F65D /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		5B429A152746CFA000D4F65D /* YujinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YujinComponent.swift; sourceTree = "<group>"; };
 		5B429A192746CFBC00D4F65D /* NamjoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonModel.swift; sourceTree = "<group>"; };
 		5B429A1B2746CFC500D4F65D /* NamjoonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamjoonComponent.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		5B092B5E2740FD5F00F5C35F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5B429A132746CF9600D4F65D /* YujinModel.swift */,
+				5B429A132746CF9600D4F65D /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -592,7 +592,7 @@
 				5B092B522740EE9C00F5C35F /* MyPageVC.swift in Sources */,
 				5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */,
 				5B092B492740E53400F5C35F /* UICollectionViewRegisterable.swift in Sources */,
-				5B429A142746CF9600D4F65D /* YujinModel.swift in Sources */,
+				5B429A142746CF9600D4F65D /* LocationModel.swift in Sources */,
 				5B829DFA2743C25300766144 /* UILabel+.swift in Sources */,
 				5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */,
 				6AFDB1AD2742F69100FACA2D /* UIColor+.swift in Sources */,
