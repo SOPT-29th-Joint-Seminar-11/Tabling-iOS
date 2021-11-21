@@ -15,6 +15,7 @@ class DetailVC: UIViewController {
     // MARK: - Properties
 
     private lazy var detailTV = UITableView().then {
+        $0.allowsSelection = false
         $0.separatorStyle = .none
         $0.delegate = self
         $0.dataSource = self
@@ -23,7 +24,7 @@ class DetailVC: UIViewController {
         BottomDetailTVC.register(target: $0)
     }
     
-    private let bottomView = BottomView()
+    private let bottomView = BottomButtonView()
 
     // MARK: - Lifecycle
 
@@ -43,8 +44,8 @@ class DetailVC: UIViewController {
         view.addSubviews([detailTV, bottomView])
         
         detailTV.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.leading.bottom.trailing.equalToSuperview()
+            make.top.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview()
         }
         
         bottomView.snp.makeConstraints { make in
@@ -52,9 +53,6 @@ class DetailVC: UIViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
-    
-    // MARK: - Custom Method
-
 }
 
 // MARK: - UITableViewDelegate

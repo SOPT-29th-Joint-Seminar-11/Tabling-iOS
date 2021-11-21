@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class BottomView: UIView {
+class BottomButtonView: UIView {
     
     // MARK: - Properties
     
@@ -83,7 +83,4 @@ class BottomView: UIView {
             make.height.equalTo(53)
         }
     }
-    
-    // MARK: - Custom Method
-    
 }

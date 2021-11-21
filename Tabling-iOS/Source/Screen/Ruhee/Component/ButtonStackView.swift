@@ -8,25 +8,25 @@
 import UIKit
 
 import SnapKit
+import Then
 
 class ButtonStackView: UIStackView {
     
     // MARK: - Properties
     
-    let iconImageView = UIImageView().then {
-        $0.image = Const.Icon.map
-    }
+    let menuButton = UIButton()
     
     let menuLabel = UILabel().then {
-        $0.text = "위치"
+        $0.textAlignment = .center
         $0.font = UIFont.noto(type: .regular, size: 11)
+        $0.textColor = .gray3
     }
 
     // MARK: - Initializing
 
-    init(image: String, title: String, space: CGFloat) {
+    init(image: UIImage, title: String, space: CGFloat) {
         super.init(frame: .zero)
-        configUI(space: space)
+        configUI(image: image, title: title, space: space)
         setupAutoLayout()
     }
     
@@ -36,16 +36,18 @@ class ButtonStackView: UIStackView {
     
     // MARK: - UI + Layout
     
-    private func configUI(space: CGFloat) {
+    private func configUI(image: UIImage?, title: String, space: CGFloat) {
         axis = .vertical
         spacing = space
-        distribution = .fillEqually
-        addArrangedSubviews([iconImageView, menuLabel])
+        menuButton.setImage(image, for: .normal)
+        menuLabel.text = title
+        addArrangedSubviews([menuButton, menuLabel])
     }
     
     private func setupAutoLayout() {
-        iconImageView.snp.makeConstraints { make in
+        menuButton.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
+            make.width.height.equalTo(28)
         }
         
         menuLabel.snp.makeConstraints { make in
