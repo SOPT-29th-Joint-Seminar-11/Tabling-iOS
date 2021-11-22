@@ -52,42 +52,25 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     private lazy var firstTagStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 8
-        $0.addArrangedSubviews([cleanImageView,
-                                quietImageView,
-                                calmImageView])
+        $0.addArrangedSubviews([cleanView,
+                                quietView,
+                                calmView])
     }
     
     private lazy var secondTagStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 8
-        $0.addArrangedSubviews([dateImageView,
-                                dessertImageView,
-                                groupImageView])
+        $0.addArrangedSubviews([dateView,
+                                dessertView,
+                                groupView])
     }
     
-    private let cleanImageView = UIImageView().then {
-        $0.image = Const.Tag.clean
-    }
-    
-    private let quietImageView = UIImageView().then {
-        $0.image = Const.Tag.quiet
-    }
-    
-    private let calmImageView = UIImageView().then {
-        $0.image = Const.Tag.calm
-    }
-    
-    private let dateImageView = UIImageView().then {
-        $0.image = Const.Tag.date
-    }
-    
-    private let dessertImageView = UIImageView().then {
-        $0.image = Const.Tag.dessert
-    }
-    
-    private let groupImageView = UIImageView().then {
-        $0.image = Const.Tag.group
-    }
+    private let cleanView = TagView(tag: "깨끗한")
+    private let quietView = TagView(tag: "조용한")
+    private let calmView = TagView(tag: "차분한")
+    private let dateView = TagView(tag: "데이트 하기 좋은")
+    private let dessertView = TagView(tag: "디저트")
+    private let groupView = TagView(tag: "단체석")
     
     private let facilityLabel = SubtitleLabel(title: "편의시설", color: .black)
     
