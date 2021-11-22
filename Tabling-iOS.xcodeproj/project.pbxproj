@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1432C06A274BB4FD00842D90 /* NJStoreCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432C069274BB4FC00842D90 /* NJStoreCVC.swift */; };
+		1432C06C274BB51100842D90 /* NJReviewCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432C06B274BB51100842D90 /* NJReviewCVC.swift */; };
 		149055B6274A802E00C9AE4E /* NJAddressTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149055B5274A802E00C9AE4E /* NJAddressTVC.swift */; };
 		149055B8274A813400C9AE4E /* NJCafeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149055B7274A813400C9AE4E /* NJCafeTVC.swift */; };
 		149055BC274A816000C9AE4E /* NJReviewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149055BB274A816000C9AE4E /* NJReviewTVC.swift */; };
@@ -60,6 +62,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1432C069274BB4FC00842D90 /* NJStoreCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJStoreCVC.swift; sourceTree = "<group>"; };
+		1432C06B274BB51100842D90 /* NJReviewCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJReviewCVC.swift; sourceTree = "<group>"; };
 		149055B5274A802E00C9AE4E /* NJAddressTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJAddressTVC.swift; sourceTree = "<group>"; };
 		149055B7274A813400C9AE4E /* NJCafeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJCafeTVC.swift; sourceTree = "<group>"; };
 		149055BB274A816000C9AE4E /* NJReviewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJReviewTVC.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				149055BB274A816000C9AE4E /* NJReviewTVC.swift */,
 				149055BD274A817C00C9AE4E /* NJStoreTVC.swift */,
 				149055BF274A819D00C9AE4E /* NJBannerTVC.swift */,
+				1432C069274BB4FC00842D90 /* NJStoreCVC.swift */,
+				1432C06B274BB51100842D90 /* NJReviewCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 				5B429A122746CB9800D4F65D /* BottomButtonView.swift in Sources */,
 				5B429A222747743500D4F65D /* BannerPhotoCVC.swift in Sources */,
 				149055BC274A816000C9AE4E /* NJReviewTVC.swift in Sources */,
+				1432C06C274BB51100842D90 /* NJReviewCVC.swift in Sources */,
 				5B092B312740D17800F5C35F /* DetailModel.swift in Sources */,
 				5B092B382740D25500F5C35F /* NamjoonMainVC.swift in Sources */,
 				149055B6274A802E00C9AE4E /* NJAddressTVC.swift in Sources */,
@@ -610,6 +617,7 @@
 				5B092B492740E53400F5C35F /* UICollectionViewRegisterable.swift in Sources */,
 				5B429A142746CF9600D4F65D /* LocationModel.swift in Sources */,
 				5B829DFA2743C25300766144 /* UILabel+.swift in Sources */,
+				1432C06A274BB4FD00842D90 /* NJStoreCVC.swift in Sources */,
 				5B723145273F92B300BB4FDE /* SceneDelegate.swift in Sources */,
 				6AFDB1AD2742F69100FACA2D /* UIColor+.swift in Sources */,
 				5B429A102746C6B300D4F65D /* TopDetailTVC.swift in Sources */,

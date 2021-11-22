@@ -9,6 +9,8 @@ import UIKit
 
 class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     
+    var cafeList: [Store] = []
+    
     var cafeTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .bold, size: 17)
@@ -28,6 +30,22 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        setUpCollectionView()
+        setUpAutoLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUpCollectionView() {
+        cafeCV.delegate = self
+        cafeCV.dataSource = self
+        
+        NJStoreCVC.register(target: cafeCV)
+    }
+    
+    func setUpAutoLayout() {
         contentView.addSubview(cafeTitleLabel)
         contentView.addSubview(cafeCV)
         
@@ -40,12 +58,6 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         
         cafeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         cafeCV.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,4 +66,22 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         // Configure the view for the selected state
     }
 
+}
+
+extension NJCafeTVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cafeList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cafeCV.className, for: IndexPath) as? cafeCV else {return UICollectionViewCell()}
+        
+        return cell
+    }
+    
+    
+}
+
+extension NJCafeTVC: UICollectionViewDelegate {
+    
 }
