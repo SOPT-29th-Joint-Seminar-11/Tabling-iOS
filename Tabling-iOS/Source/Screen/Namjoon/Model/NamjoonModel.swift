@@ -6,8 +6,3 @@
 //
 
 import Foundation
-
-struct NJLocationModel {
-    var locationText: String
-    var locationImage: String
-}

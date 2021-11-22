@@ -12,9 +12,6 @@ class NamjoonMainVC: UIViewController {
     // MARK: - Properties
     
     let mainTV = UITableView()
-    
-    //var location = NJLocationModel(locationText: "마포구 연남동 123", locationImage: Const.Icon.chevronDown)
-    var location = NJLocationModel(locationText: "마포구 연남동 123", locationImage: "btn_address")
 
     // MARK: - Lifecycle
 
@@ -69,7 +66,7 @@ extension NamjoonMainVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NJAddressTVC.className, for: indexPath) as? NJAddressTVC
         else { return UITableViewCell() }
-        cell.setData(locationText: location.locationText, imageName: location.locationImage)
+//        cell.setData(locationText: location[indexPath.row].locationText, imageName: location[indexPath.row].locationImage)
         
         return cell
     }
