@@ -15,6 +15,7 @@ class YujinMainVC: UIViewController {
     let titleModel = TitleModel()
     
     
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class YujinMainVC: UIViewController {
         tableView.register(LocationTVC.self, forCellReuseIdentifier: "LocationTVC")
         tableView.register(SearchHeader.self,forHeaderFooterViewReuseIdentifier: "SearchHeader")
         tableView.register(TitleTVC.self, forCellReuseIdentifier: "TitleTVC")
+        tableView.register(StoreListTVC.self, forCellReuseIdentifier: "StoreListTVC")
     }
     
 
@@ -73,6 +75,7 @@ extension YujinMainVC: UITableViewDataSource{
         return 2
     }
     
+    //헤더 뷰 모양
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0{
            return nil
@@ -86,6 +89,7 @@ extension YujinMainVC: UITableViewDataSource{
         
     }
     
+    //헤더 높이
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section{
         case 0:
@@ -109,6 +113,7 @@ extension YujinMainVC: UITableViewDataSource{
         }
     }
     
+    //행별 반환셀 결정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section{
         case 0://위치 정보가 있는 섹션
@@ -124,12 +129,18 @@ extension YujinMainVC: UITableViewDataSource{
             }
         case 1:
             switch indexPath.row{
-            case 0,2,4:
+            case 0,2,4://타이틀 셀
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTVC.identifier, for: indexPath) as? TitleTVC
                 else { return UITableViewCell() }
                 
                 cell.setData(titleData: titleModel, index: indexPath.row/2)
                 return cell
+            case 1,5://상점 목록 셀
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTVC.identifier, for: indexPath) as? StoreListTVC
+                else { return UITableViewCell() }
+                return cell
+                
+                
             default :
                 return UITableViewCell()
                 
@@ -160,20 +171,18 @@ extension YujinMainVC: UITableViewDelegate{
         case 1:
             switch indexPath.row{
             case 0,2,4 :
-                return 54
-            case 1:
+                return 53
+            case 1,5:
                 return 221
             case 3 :
-                return 341
-            case 5:
-                return 221
+                return 30
             case 6:
                 return 180
             default:
                 return 100
             }
         default:
-            return 100
+            return 10
         }
    
         
