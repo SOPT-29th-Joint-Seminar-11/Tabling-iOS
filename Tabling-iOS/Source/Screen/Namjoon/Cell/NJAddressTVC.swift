@@ -28,12 +28,15 @@ class NJAddressTVC: UITableViewCell, UITableViewRegisterable {
         contentView.addSubview(addressLabel)
         contentView.addSubview(addressIconImageView)
         
-        addressLabel.topAnchor.constraint(equalTo: topAnchor, constant: 18).isActive = true
-        addressLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 125).isActive = true
+        addressLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18).isActive = true
+        addressLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 125).isActive = true
+        addressLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18).isActive = true
+        addressLabel.heightAnchor.constraint(equalToConstant: 22).isActive = true
         
         addressIconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
         addressIconImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -96).isActive = true
         addressIconImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
+        addressIconImageView.heightAnchor.constraint(equalTo: addressIconImageView.widthAnchor, multiplier: 1).isActive = true
         
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         addressIconImageView.translatesAutoresizingMaskIntoConstraints = false
