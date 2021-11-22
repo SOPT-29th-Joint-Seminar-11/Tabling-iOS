@@ -45,7 +45,6 @@ class NamjoonComponent: UIView {
     }
     
     func setupAutoLayout() {
-//        addSubviews([tablingIconImageView, tablingSearchImageView])
         addSubviews([tablingIconImageView, tablingSearchTextField])
         
         tablingIconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true

@@ -33,7 +33,6 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         
         cafeTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 14).isActive = true
         cafeTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-//        cafeTitleLabel.bottomAnchor.constraint(equalTo: cafeCV.topAnchor, constant: -14).isActive = true
         
 //        cafeCV.topAnchor.constraint(equalTo: cafeTitleLabel.bottomAnchor, constant: 14).isActive = true
         cafeCV.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
@@ -56,19 +55,3 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     }
 
 }
-//
-//extension NJCafeTVC: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-//    
-//    
-//}
-//
-//extension NJCafeTVC: UICollectionViewDelegate {
-//    
-//}
