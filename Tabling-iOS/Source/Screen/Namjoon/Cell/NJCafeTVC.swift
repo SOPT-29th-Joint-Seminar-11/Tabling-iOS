@@ -12,7 +12,7 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     var cafeTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .bold, size: 17)
-        //label.text = "마포구 연남동 123" // 위치 테스트용
+        label.text = "디저트가 맛있는 카페"
         return label
     }()
     
@@ -21,13 +21,32 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
         collectionView.isScrollEnabled = true
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .orange
         return collectionView
     }()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(cafeTitleLabel)
+        contentView.addSubview(cafeCV)
+        
+        cafeTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 14).isActive = true
+        cafeTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+//        cafeTitleLabel.bottomAnchor.constraint(equalTo: cafeCV.topAnchor, constant: -14).isActive = true
+        
+//        cafeCV.topAnchor.constraint(equalTo: cafeTitleLabel.bottomAnchor, constant: 14).isActive = true
+        cafeCV.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
+        cafeCV.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -23).isActive = true
+        
+        cafeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        cafeCV.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,4 +55,20 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         // Configure the view for the selected state
     }
 
+}
+
+extension NJCafeTVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
+}
+
+extension NJCafeTVC: UICollectionViewDelegate {
+    
 }
