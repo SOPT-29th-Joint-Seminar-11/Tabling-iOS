@@ -48,11 +48,4 @@ class NJAddressTVC: UITableViewCell, UITableViewRegisterable {
 
         // Configure the view for the selected state
     }
-    
-    func setData(locationText: String, imageName: String) {
-        if let image = UIImage(named: imageName) {
-            addressIconImageView.image = image
-        }
-        addressLabel.text = locationText
-    }
 }

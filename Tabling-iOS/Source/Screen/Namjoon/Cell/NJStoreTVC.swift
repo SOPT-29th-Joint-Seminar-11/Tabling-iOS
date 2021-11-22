@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NJStoreTVC: UITableViewCell {
+class NJStoreTVC: UITableViewCell, UITableViewRegisterable {
 
     override func awakeFromNib() {
         super.awakeFromNib()

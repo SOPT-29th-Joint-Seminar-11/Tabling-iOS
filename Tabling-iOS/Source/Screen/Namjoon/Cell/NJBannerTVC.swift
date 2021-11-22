@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NJBannerTVC: UITableViewCell {
+class NJBannerTVC: UITableViewCell, UITableViewRegisterable {
 
     override func awakeFromNib() {
         super.awakeFromNib()

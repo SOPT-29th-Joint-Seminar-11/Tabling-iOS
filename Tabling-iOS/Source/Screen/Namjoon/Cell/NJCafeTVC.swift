@@ -7,7 +7,23 @@
 
 import UIKit
 
-class NJCafeTVC: UITableViewCell {
+class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
+    
+    var cafeTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.noto(type: .bold, size: 17)
+        //label.text = "마포구 연남동 123" // 위치 테스트용
+        return label
+    }()
+    
+    var cafeCV : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        layout.scrollDirection = .horizontal
+        collectionView.isScrollEnabled = true
+        collectionView.backgroundColor = .white
+        return collectionView
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
