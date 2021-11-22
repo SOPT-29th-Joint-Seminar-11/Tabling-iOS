@@ -5,9 +5,7 @@
 //  Created by Thisisme Hi on 2021/11/19.
 //
 
-import Foundation
 import UIKit
-import Then
 
 class NamjoonComponent: UIView {
     

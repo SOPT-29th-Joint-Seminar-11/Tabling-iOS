@@ -24,7 +24,7 @@ class NJStoreCVC: UICollectionViewCell, UICollectionViewRegisterable {
     var cafeScore: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .medium, size: 13)
-        label.textColor = .red
+        label.textColor = .main
         return label
     }()
     
@@ -37,14 +37,14 @@ class NJStoreCVC: UICollectionViewCell, UICollectionViewRegisterable {
     var cafeCategory: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .regular, size: 13)
-        label.textColor = UIColor.gray
+        label.textColor = .gray
         return label
     }()
     
     var cafeLocation: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .regular, size: 13)
-        label.textColor = UIColor.gray
+        label.textColor = .gray
         return label
     }()
     

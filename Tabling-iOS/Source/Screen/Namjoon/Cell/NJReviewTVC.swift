@@ -21,21 +21,19 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
         collectionView.isScrollEnabled = true
-        collectionView.backgroundColor = .orange
         return collectionView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.addSubview(reviewTitleLabel)
-        contentView.addSubview(reviewCV)
+        contentView.addSubviews([reviewTitleLabel, reviewCV])
         
-        reviewTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 14).isActive = true
-        reviewTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        reviewTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
+        reviewTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         
-        reviewCV.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
-        reviewCV.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -23).isActive = true
+        reviewCV.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
+        reviewCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -23).isActive = true
         
         reviewTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         reviewCV.translatesAutoresizingMaskIntoConstraints = false
