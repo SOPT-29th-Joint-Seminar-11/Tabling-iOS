@@ -18,13 +18,6 @@ class NamjoonComponent: UIView {
     }()
     
     private let tablingSearchTextField = UITextField()
-//
-    
-//    private let tablingSearchImageView: UIImageView = {
-//        let img = UIImageView()
-//        img.image = Const.Icon.search
-//        return img
-//    }()
     
     // MARK: - Init
     
@@ -32,7 +25,6 @@ class NamjoonComponent: UIView {
         super.init(frame: frame)
         configUI()
         setupAutoLayout()
-//        backgroundColor = .orange
     }
     
     required init?(coder: NSCoder) {
@@ -42,7 +34,8 @@ class NamjoonComponent: UIView {
     // MARK: - Custom Method
     
     func configUI() {
-//        tablingSearchTextField.borderStyle = .roundedRect
+        backgroundColor = .white
+        
         tablingSearchTextField.addLeftPadding(width: 20)
         tablingSearchTextField.addRightPadding(width: 20)
         tablingSearchTextField.layer.cornerRadius = 25

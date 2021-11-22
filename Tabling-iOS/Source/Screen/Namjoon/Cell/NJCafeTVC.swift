@@ -56,19 +56,19 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     }
 
 }
-
-extension NJCafeTVC: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
-    }
-    
-    
-}
-
-extension NJCafeTVC: UICollectionViewDelegate {
-    
-}
+//
+//extension NJCafeTVC: UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
+//    
+//    
+//}
+//
+//extension NJCafeTVC: UICollectionViewDelegate {
+//    
+//}
