@@ -27,8 +27,8 @@ struct Const {
         public static let map = UIImage(named: "ic_map")
         public static let call = UIImage(named: "ic_call")
         public static let share = UIImage(named: "ic_share")
-        public static let heart = UIImage(named: "ic_wish_on")
-        public static let heartFill = UIImage(named: "ic_wish_off")
+        public static let heart = UIImage(named: "ic_wish_off")
+        public static let heartFill = UIImage(named: "ic_wish_on")
         
         //현재위치로부터 거리 아이콘
         public static let mapLight = UIImage(named: "ic_map_light")

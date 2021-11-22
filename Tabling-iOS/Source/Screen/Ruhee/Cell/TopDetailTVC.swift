@@ -69,11 +69,12 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
                                                 title: "전화", space: 7)
     private let shareStackView = ButtonStackView(image: Const.Icon.share!,
                                                  title: "공유", space: 7)
-    private lazy var likeStackView = ButtonStackView(image: Const.Icon.heartFill!,
+    private lazy var likeStackView = ButtonStackView(image: Const.Icon.heart!,
                                                      title: "\(likeNum)", space: 7).then {
-            $0.menuButton.addTarget(self,
-                                    action: #selector(touchupLikeButton(_:)),
-                                    for: .touchUpInside)
+        $0.menuButton.addTarget(self,
+                                action: #selector(touchupLikeButton(_:)),
+                                for: .touchUpInside)
+        $0.menuButton.isSelected = false
     }
     
     private let firstLine = LineView(color: .line, height: 37)
@@ -222,8 +223,11 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             sender.setImage(Const.Icon.heartFill, for: .normal)
+            likeNum += 1
         } else {
             sender.setImage(Const.Icon.heart, for: .normal)
+            likeNum -= 1
         }
+        likeStackView.menuTitleLabel.text = "\(likeNum)"
     }
 }

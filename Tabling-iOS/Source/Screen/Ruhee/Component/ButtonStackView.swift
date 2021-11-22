@@ -16,7 +16,7 @@ class ButtonStackView: UIStackView {
     
     let menuButton = UIButton()
     
-    let menuLabel = UILabel().then {
+    let menuTitleLabel = UILabel().then {
         $0.textAlignment = .center
         $0.font = UIFont.noto(type: .regular, size: 11)
         $0.textColor = .gray3
@@ -40,8 +40,8 @@ class ButtonStackView: UIStackView {
         axis = .vertical
         spacing = space
         menuButton.setImage(image, for: .normal)
-        menuLabel.text = title
-        addArrangedSubviews([menuButton, menuLabel])
+        menuTitleLabel.text = title
+        addArrangedSubviews([menuButton, menuTitleLabel])
     }
     
     private func setupAutoLayout() {
@@ -50,7 +50,7 @@ class ButtonStackView: UIStackView {
             make.width.height.equalTo(28)
         }
         
-        menuLabel.snp.makeConstraints { make in
+        menuTitleLabel.snp.makeConstraints { make in
             make.leading.bottom.trailing.equalToSuperview()
         }
     }
