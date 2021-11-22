@@ -30,6 +30,7 @@ class SearchHeader: UITableViewHeaderFooterView {
     }
     
     func setupAutoLayout(){
+        
         contentView.addSubviews([logoImage,searchTextField])
         logoImage.translatesAutoresizingMaskIntoConstraints = false
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +39,7 @@ class SearchHeader: UITableViewHeaderFooterView {
                    logoImage.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 16),
                    logoImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 12),
                    logoImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -16),
-                   logoImage.widthAnchor.constraint(equalTo:heightAnchor,multiplier: 1),
+                   logoImage.widthAnchor.constraint(equalTo: logoImage.heightAnchor, multiplier: 1.0),
                
                   
                    
@@ -52,7 +53,9 @@ class SearchHeader: UITableViewHeaderFooterView {
         
         searchTextField.layer.borderColor = UIColor.gray.cgColor
         searchTextField.layer.borderWidth = 1.0
-        searchTextField.layer.cornerRadius = 30
+        searchTextField.layer.cornerRadius = 25
+        
+        
         
         
     }

@@ -12,6 +12,7 @@ class YujinMainVC: UIViewController {
     // MARK: - Properties
     let tableView = UITableView()
     let locationModel = LocationModel()
+    let titleModel = TitleModel()
     
     
     // MARK: - Lifecycle
@@ -32,6 +33,8 @@ class YujinMainVC: UIViewController {
     func setupAutoLayout() {
         view.addSubview(tableView)
         
+        tableView.sectionHeaderTopPadding = 0
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
@@ -39,7 +42,7 @@ class YujinMainVC: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: 0).isActive =  true
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: 0).isActive = true
         
-        tableView.sectionHeaderHeight = 86
+        
        
         
        
@@ -55,6 +58,7 @@ class YujinMainVC: UIViewController {
     func registerCell(){
         tableView.register(LocationTVC.self, forCellReuseIdentifier: "LocationTVC")
         tableView.register(SearchHeader.self,forHeaderFooterViewReuseIdentifier: "SearchHeader")
+        tableView.register(TitleTVC.self, forCellReuseIdentifier: "TitleTVC")
     }
     
 
@@ -70,13 +74,27 @@ extension YujinMainVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
+        if section == 0{
+           return nil
+        }
         if section == 1{
             let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SearchHeader") as! SearchHeader
+            view.backgroundConfiguration?.backgroundColor = .white
             return view
         }
        return nil
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section{
+        case 0:
+            return 0
+        case 1:
+            return 86
+        default:
+            return 0
+        }
     }
     
     //섹션별 셀 개수 반환
@@ -104,6 +122,18 @@ extension YujinMainVC: UITableViewDataSource{
             default :
                 return UITableViewCell()
             }
+        case 1:
+            switch indexPath.row{
+            case 0,2,4:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTVC.identifier, for: indexPath) as? TitleTVC
+                else { return UITableViewCell() }
+                
+                cell.setData(titleData: titleModel, index: indexPath.row/2)
+                return cell
+            default :
+                return UITableViewCell()
+                
+            }
         default :
             return UITableViewCell()
         }
@@ -118,12 +148,34 @@ extension YujinMainVC: UITableViewDataSource{
     //MARK: - UITableViewDelegate
 extension YujinMainVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row{
+        switch indexPath.section{
         case 0:
-            return 58
-        default :
-            return 80
+            switch indexPath.row{
+            case 0:
+                return 58
+            default :
+                return 100
+            }
+            
+        case 1:
+            switch indexPath.row{
+            case 0,2,4 :
+                return 54
+            case 1:
+                return 221
+            case 3 :
+                return 341
+            case 5:
+                return 221
+            case 6:
+                return 180
+            default:
+                return 100
+            }
+        default:
+            return 100
         }
+   
         
     }
 }

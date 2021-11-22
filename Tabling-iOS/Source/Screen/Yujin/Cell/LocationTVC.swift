@@ -24,6 +24,7 @@ class LocationTVC: UITableViewCell {
         return button
     }()
     
+    var line = LineView(color: .headerLineGray, height: 1.0)
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupAutoLayout()
@@ -37,19 +38,26 @@ class LocationTVC: UITableViewCell {
     func setupAutoLayout() {
         contentView.addSubview(locationLabel)
         contentView.addSubview(locationButton)
+        contentView.addSubview(line)
         
         
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        locationLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18).isActive = true
-        locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 125).isActive = true
-        
         locationButton.translatesAutoresizingMaskIntoConstraints = false
         
-        locationButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        
+        locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 125).isActive = true
+        locationLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        
+        
+       
         locationButton.leadingAnchor.constraint(equalTo: locationLabel.leadingAnchor, constant:106).isActive = true
-        locationButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        locationButton.centerYAnchor.constraint(equalTo: locationLabel.centerYAnchor).isActive = true
         locationButton.heightAnchor.constraint(equalTo: locationButton.widthAnchor,multiplier: 1).isActive = true
+        
+        line.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        line.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        line.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        
         
         
         
