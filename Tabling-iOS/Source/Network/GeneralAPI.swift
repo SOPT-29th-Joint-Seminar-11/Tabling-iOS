@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct GeneralAPI {
+    static let baseURL = "여기에 넣어주세요 베이스유알엘"
+}

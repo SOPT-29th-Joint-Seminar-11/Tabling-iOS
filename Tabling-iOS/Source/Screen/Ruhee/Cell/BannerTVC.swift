@@ -14,12 +14,11 @@ class BannerTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - DummyData
     
-    private let bannerList = ["img_uni", "img_uni"]
+    private let bannerList = ["img_uni", "img_uni", "img_uni", "img_uni"]
     
     // MARK: - Properties
     
     private var num: Int = 3
-    private var page: Int = 1
     
     private lazy var bannerCV = UICollectionView(frame: .zero,
                                                   collectionViewLayout: layout).then {
@@ -53,7 +52,7 @@ class BannerTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     private lazy var pageLabel = UILabel().then {
-        $0.text = "\(page)/\(bannerList.count)"
+        $0.text = "1/\(bannerList.count)"
         $0.textColor = .white
         $0.font = UIFont.noto(type: .bold, size: 13)
     }
@@ -136,5 +135,12 @@ extension BannerTVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let xOffset = targetContentOffset.pointee.x
+        let cellWidth = self.contentView.frame.size.width
+        let page = Int((xOffset / cellWidth) + 1)
+        pageLabel.text = "\(page)/\(bannerList.count)"
     }
 }
