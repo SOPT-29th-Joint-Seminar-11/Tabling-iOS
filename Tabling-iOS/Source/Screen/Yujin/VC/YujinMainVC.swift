@@ -18,8 +18,7 @@ class YujinMainVC: UIViewController {
 
     override func viewDidLoad() {
         setupAutoLayout()
-        setDelegate()
-        registerCell()
+        setupTableView()
     }
     
     // MARK: - UI + Layout
@@ -41,12 +40,9 @@ class YujinMainVC: UIViewController {
     
     // MARK: - Custom Method
     
-    func setDelegate(){
+    func setupTableView(){
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    func registerCell(){
         tableView.register(LocationTVC.self, forCellReuseIdentifier: "LocationTVC")
         tableView.register(SearchHeader.self,forHeaderFooterViewReuseIdentifier: "SearchHeader")
         tableView.register(TitleTVC.self, forCellReuseIdentifier: "TitleTVC")

@@ -73,12 +73,7 @@ class StoreListTVC: UITableViewCell {
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 0).isActive =  true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 0).isActive = true
-        
-        
     }
-    
-   
-
 }
 
 extension StoreListTVC: UICollectionViewDataSource{
