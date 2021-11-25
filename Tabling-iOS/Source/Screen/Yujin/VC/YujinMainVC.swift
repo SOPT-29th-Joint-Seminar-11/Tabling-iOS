@@ -14,12 +14,9 @@ class YujinMainVC: UIViewController {
     let locationModel = LocationModel()
     let titleModel = TitleModel()
     
-    
-    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
-       
         setupAutoLayout()
         setDelegate()
         registerCell()
@@ -35,18 +32,11 @@ class YujinMainVC: UIViewController {
         view.addSubview(tableView)
         
         tableView.sectionHeaderTopPadding = 0
-        
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: 0).isActive =  true
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: 0).isActive = true
-        
-        
-       
-        
-       
     }
     
     // MARK: - Custom Method
@@ -62,8 +52,6 @@ class YujinMainVC: UIViewController {
         tableView.register(TitleTVC.self, forCellReuseIdentifier: "TitleTVC")
         tableView.register(StoreListTVC.self, forCellReuseIdentifier: "StoreListTVC")
     }
-    
-
 }
 
     //MARK: - UITableViewDataSource
@@ -139,21 +127,13 @@ extension YujinMainVC: UITableViewDataSource{
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTVC.identifier, for: indexPath) as? StoreListTVC
                 else { return UITableViewCell() }
                 return cell
-                
-                
             default :
                 return UITableViewCell()
-                
             }
         default :
             return UITableViewCell()
         }
     }
-    
-    
-    
-    
-    
 }
 
     //MARK: - UITableViewDelegate
@@ -167,7 +147,6 @@ extension YujinMainVC: UITableViewDelegate{
             default :
                 return 100
             }
-            
         case 1:
             switch indexPath.row{
             case 0,2,4 :
@@ -184,8 +163,6 @@ extension YujinMainVC: UITableViewDelegate{
         default:
             return 10
         }
-   
-        
     }
 }
 

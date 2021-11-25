@@ -10,8 +10,6 @@ import UIKit
 class StoreCVC: UICollectionViewCell {
     static let identifier = "StoreCVC"
     
-    
-    
     var thumnail: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "img_uni")
@@ -72,9 +70,7 @@ class StoreCVC: UICollectionViewCell {
     
     func setupAutoLayout() {
         contentView.addSubviews([thumnail,nameLabel,starImage,ratingLabel,numOfReview,categoryLabel,optionStackView])
-
-        
-        
+ 
         thumnail.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         starImage.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +78,6 @@ class StoreCVC: UICollectionViewCell {
         numOfReview.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         optionStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         
         thumnail.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         thumnail.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
@@ -109,8 +104,6 @@ class StoreCVC: UICollectionViewCell {
         optionStackView.heightAnchor.constraint(equalToConstant: 23).isActive = true
         
         optionStackView.backgroundColor = .gray
-        
-         
         
     }
     override func awakeFromNib() {

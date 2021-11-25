@@ -36,19 +36,12 @@ class LocationTVC: UITableViewCell {
     
     
     func setupAutoLayout() {
-        contentView.addSubview(locationLabel)
-        contentView.addSubview(locationButton)
-        contentView.addSubview(line)
-        
+        contentView.addSubviews([locationLabel,locationButton,line])
         
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         locationButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 125).isActive = true
         locationLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        
-        
        
         locationButton.leadingAnchor.constraint(equalTo: locationLabel.leadingAnchor, constant:106).isActive = true
         locationButton.centerYAnchor.constraint(equalTo: locationLabel.centerYAnchor).isActive = true
@@ -57,11 +50,8 @@ class LocationTVC: UITableViewCell {
         line.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         line.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         line.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-        
-        
-        
-        
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

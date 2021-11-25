@@ -11,8 +11,6 @@ class StoreListTVC: UITableViewCell {
 
     static let identifier = "StoreListTVC"
     var storeModelList: [StoreModel] = []
-    
-    
 
     let collectionView: UICollectionView = {
             
@@ -49,6 +47,7 @@ class StoreListTVC: UITableViewCell {
     func registerCVC(){
         collectionView.register(StoreCVC.self, forCellWithReuseIdentifier: "StoreCVC")
     }
+    
     func setDelegate(){
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -65,12 +64,11 @@ class StoreListTVC: UITableViewCell {
         ])
         
     }
+    
     func setupAutoLayout() {
         contentView.addSubview(collectionView)
-        
-        
+
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 0).isActive =  true
@@ -84,19 +82,20 @@ class StoreListTVC: UITableViewCell {
 }
 
 extension StoreListTVC: UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoreCVC.identifier, for: indexPath) as? StoreCVC else {return UICollectionViewCell()}
         cell.setData(storeData: storeModelList[indexPath.row])
         return cell
-                
-                
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return storeModelList.count
     }
 }
 
 extension StoreListTVC: UICollectionViewDelegateFlowLayout{
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 140, height: 215)
     }
@@ -104,14 +103,13 @@ extension StoreListTVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 }
-extension StoreListTVC: UICollectionViewDelegate{
-    
-    
-}
+

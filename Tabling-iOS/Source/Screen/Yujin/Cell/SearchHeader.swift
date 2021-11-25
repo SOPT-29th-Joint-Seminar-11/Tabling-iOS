@@ -51,8 +51,6 @@ class SearchHeader: UITableViewHeaderFooterView {
                    logoImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -16),
                    logoImage.widthAnchor.constraint(equalTo: logoImage.heightAnchor, multiplier: 1.0),
                
-                  
-                   
                    searchTextField.leadingAnchor.constraint(equalTo: logoImage.trailingAnchor,
                           constant: 1),
                    searchTextField.trailingAnchor.constraint(equalTo:
@@ -67,15 +65,5 @@ class SearchHeader: UITableViewHeaderFooterView {
         searchTextField.layer.borderColor = UIColor.gray.cgColor
         searchTextField.layer.borderWidth = 1.0
         searchTextField.layer.cornerRadius = 25
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
 }
