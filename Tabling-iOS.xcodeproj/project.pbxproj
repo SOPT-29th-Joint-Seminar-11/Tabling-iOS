@@ -55,6 +55,12 @@
 		5B72314F273F92B500BB4FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B72314D273F92B500BB4FDE /* LaunchScreen.storyboard */; };
 		5B829DF82743B07900766144 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B829DF72743B07900766144 /* UIFont+.swift */; };
 		5B829DFA2743C25300766144 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B829DF92743C25300766144 /* UILabel+.swift */; };
+		6AB7AC17274AC45400C234A7 /* SearchHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB7AC16274AC45400C234A7 /* SearchHeader.swift */; };
+		6ACA6418274B7F3400F4198D /* TitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACA6417274B7F3400F4198D /* TitleTVC.swift */; };
+		6ACA641C274B8CDD00F4198D /* TitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACA641B274B8CDD00F4198D /* TitleModel.swift */; };
+		6ACA641E274B971600F4198D /* StoreListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACA641D274B971600F4198D /* StoreListTVC.swift */; };
+		6ACA6420274B9C8B00F4198D /* StoreCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACA641F274B9C8B00F4198D /* StoreCVC.swift */; };
+		6ACA6422274BB3CE00F4198D /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACA6421274BB3CE00F4198D /* StoreModel.swift */; };
 		6AFDB1AD2742F69100FACA2D /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AC2742F69100FACA2D /* UIColor+.swift */; };
 		6AFDB1B62742F98F00FACA2D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */; };
 		6AFDB1BA2742F98F00FACA2D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */; };
@@ -113,6 +119,12 @@
 		5B723150273F92B500BB4FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B829DF72743B07900766144 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		5B829DF92743C25300766144 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		6AB7AC16274AC45400C234A7 /* SearchHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeader.swift; sourceTree = "<group>"; };
+		6ACA6417274B7F3400F4198D /* TitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTVC.swift; sourceTree = "<group>"; };
+		6ACA641B274B8CDD00F4198D /* TitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModel.swift; sourceTree = "<group>"; };
+		6ACA641D274B971600F4198D /* StoreListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTVC.swift; sourceTree = "<group>"; };
+		6ACA641F274B9C8B00F4198D /* StoreCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCVC.swift; sourceTree = "<group>"; };
+		6ACA6421274BB3CE00F4198D /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		6AFDB1AC2742F69100FACA2D /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		6AFDB1AF2742F98F00FACA2D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		6AFDB1B32742F98F00FACA2D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
@@ -169,6 +181,10 @@
 			isa = PBXGroup;
 			children = (
 				5B429A36274824F800D4F65D /* LocationTVC.swift */,
+				6AB7AC16274AC45400C234A7 /* SearchHeader.swift */,
+				6ACA6417274B7F3400F4198D /* TitleTVC.swift */,
+				6ACA641D274B971600F4198D /* StoreListTVC.swift */,
+				6ACA641F274B9C8B00F4198D /* StoreCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -248,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				5B429A132746CF9600D4F65D /* LocationModel.swift */,
+				6ACA641B274B8CDD00F4198D /* TitleModel.swift */,
+				6ACA6421274BB3CE00F4198D /* StoreModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -590,12 +608,15 @@
 				149055B6274A802E00C9AE4E /* NJAddressTVC.swift in Sources */,
 				5B092B362740D21500F5C35F /* YujinMainVC.swift in Sources */,
 				5B092B332740D1C000F5C35F /* GeneralAPI.swift in Sources */,
+				6ACA6422274BB3CE00F4198D /* StoreModel.swift in Sources */,
 				5B092B582740F03F00F5C35F /* Constant.swift in Sources */,
+				6ACA6418274B7F3400F4198D /* TitleTVC.swift in Sources */,
 				5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */,
 				149055BE274A817C00C9AE4E /* NJStoreTVC.swift in Sources */,
 				5B429A2A274796F500D4F65D /* LineView.swift in Sources */,
 				5B429A2427477BBD00D4F65D /* BottomDetailTVC.swift in Sources */,
 				5B429A3C27483CB500D4F65D /* RuheeModel.swift in Sources */,
+				6ACA641C274B8CDD00F4198D /* TitleModel.swift in Sources */,
 				5B092B3D2740D38D00F5C35F /* BaseViewController.swift in Sources */,
 				5B092B3A2740D25F00F5C35F /* DetailVC.swift in Sources */,
 				5B429A3E2748413200D4F65D /* FacilityCardView.swift in Sources */,
@@ -607,10 +628,13 @@
 				5B829DF82743B07900766144 /* UIFont+.swift in Sources */,
 				5B092B452740E47800F5C35F /* UIViewController+.swift in Sources */,
 				5B429A0E2746BF1800D4F65D /* BannerTVC.swift in Sources */,
+				6ACA6420274B9C8B00F4198D /* StoreCVC.swift in Sources */,
 				149055B8274A813400C9AE4E /* NJCafeTVC.swift in Sources */,
 				5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */,
 				5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */,
 				149055C0274A819D00C9AE4E /* NJBannerTVC.swift in Sources */,
+				6AB7AC17274AC45400C234A7 /* SearchHeader.swift in Sources */,
+				6ACA641E274B971600F4198D /* StoreListTVC.swift in Sources */,
 				5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */,
 				5B092B522740EE9C00F5C35F /* MyPageVC.swift in Sources */,
 				5B429A1C2746CFC500D4F65D /* NamjoonComponent.swift in Sources */,
