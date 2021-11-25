@@ -44,4 +44,11 @@ extension UIColor {
   @nonobjc class var tabbarLineGray: UIColor {
     return UIColor(white: 193.0 / 255.0, alpha: 1.0)
   }
+    
+  @nonobjc class var boxFillGray: UIColor {
+      return UIColor(red: 251.0 / 255.0, green: 251.0 / 255.0, blue: 252.0 / 255.0, alpha: 1.0)
+  }
+    
+    
+    
 }
