@@ -32,8 +32,6 @@ class AdBannerTVC: UITableViewCell {
         return label
     }()
     
-    
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupAutoLayout()
@@ -42,7 +40,6 @@ class AdBannerTVC: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -66,22 +63,17 @@ class AdBannerTVC: UITableViewCell {
         line.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor, constant: 26).isActive = true
         line.widthAnchor.constraint(equalToConstant: 26).isActive = true
         
-        
         titleLabel.topAnchor.constraint(equalTo: backgroundImage.topAnchor, constant: 31).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor,constant: 24).isActive = true
        
         subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0).isActive = true
         subTitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        
-        
     }
     
     func setData(bannerData: AdBannerModel){
         backgroundImage.image = bannerData.image
         titleLabel.text = bannerData.title
         subTitleLabel.text = bannerData.subTitle
-        
     }
-
 }
 

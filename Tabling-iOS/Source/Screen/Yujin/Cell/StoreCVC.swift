@@ -71,7 +71,6 @@ class StoreCVC: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     func setupAutoLayout() {
         contentView.addSubviews([thumbnailImageView,nameLabel,starImageView,
                                  ratingLabel,numOfReviewLabel,categoryLabel,
@@ -85,7 +84,6 @@ class StoreCVC: UICollectionViewCell {
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         bookImageView.translatesAutoresizingMaskIntoConstraints = false
         lineImageView.translatesAutoresizingMaskIntoConstraints = false
-        
         
         thumbnailImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         thumbnailImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
@@ -111,15 +109,13 @@ class StoreCVC: UICollectionViewCell {
         
         lineImageView.topAnchor.constraint(equalTo: ratingLabel.bottomAnchor, constant: 14).isActive = true
         lineImageView.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 4).isActive = true
-        
-        
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-   
     func setData(storeData: StoreModel){
         nameLabel.text = storeData.storeName
         ratingLabel.text = String(storeData.rating)
@@ -140,11 +136,5 @@ class StoreCVC: UICollectionViewCell {
             lineImageView.isHidden = false
             
         }
-        
     }
-    
-    func setOptionTag(){
-        
-    }
-    
 }

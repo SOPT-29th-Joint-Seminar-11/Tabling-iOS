@@ -10,7 +10,6 @@ import UIKit
 class ReviewCVC: UICollectionViewCell {
     static let identifier = "ReviewCVC"
     
-    
     var nameLabel: UILabel = {
         let label =  UILabel()
         label.font = UIFont.noto(type: .medium, size: 15)
@@ -51,7 +50,6 @@ class ReviewCVC: UICollectionViewCell {
         return imageView
     }()
     
-    
     var reviewLabel: UILabel = {
         let label =  UILabel()
         label.font = UIFont.noto(type: .medium, size: 13)
@@ -66,8 +64,6 @@ class ReviewCVC: UICollectionViewCell {
         return label
     }()
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAutoLayout()
@@ -76,7 +72,6 @@ class ReviewCVC: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     func setupAutoLayout() {
         contentView.addSubviews([nameLabel,categoryLabel,starImageView,
@@ -127,12 +122,12 @@ class ReviewCVC: UICollectionViewCell {
         reviewLabel.lineBreakMode = .byCharWrapping
         
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-   
     func setData(reviewData: ReviewModel){
         nameLabel.text = reviewData.storeName
         categoryLabel.text = reviewData.category + "·" + reviewData.area
@@ -142,8 +137,5 @@ class ReviewCVC: UICollectionViewCell {
         photoImageView.image = reviewData.photo
         reviewLabel.text = reviewData.review
         uploadTimeLabel.text = reviewData.uploadTime + " 전"
-        
-        
     }
-    
 }

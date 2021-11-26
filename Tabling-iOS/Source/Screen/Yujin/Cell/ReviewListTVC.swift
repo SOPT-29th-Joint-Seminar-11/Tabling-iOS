@@ -38,7 +38,6 @@ class ReviewListTVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
     func setupCollectionView(){
         collectionView.register(ReviewCVC.self, forCellWithReuseIdentifier: "ReviewCVC")
         collectionView.delegate = self

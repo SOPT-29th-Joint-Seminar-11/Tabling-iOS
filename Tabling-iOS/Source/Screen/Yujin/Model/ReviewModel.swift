@@ -45,8 +45,5 @@ struct ReviewModel {
         default:
             self.starImage = Const.Icon.fiveStar
         }
-        
     }
-    
-   
 }

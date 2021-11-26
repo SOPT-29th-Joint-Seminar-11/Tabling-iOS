@@ -13,6 +13,4 @@ struct AdBannerModel {
     var subTitle: String = "맛과 멋을 즐길 수 있는 곳"
     var imageName: String = "img_rooftop"
     var image: UIImage? = UIImage(named: "img_rooftop")
-    
-  
 }
