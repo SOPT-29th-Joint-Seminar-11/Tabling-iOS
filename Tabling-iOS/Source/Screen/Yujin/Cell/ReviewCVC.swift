@@ -105,7 +105,7 @@ class ReviewCVC: UICollectionViewCell {
         ratingLabel.centerYAnchor.constraint(equalTo: starImageView.centerYAnchor).isActive = true
         
         distanceLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 14).isActive = true
-        distanceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 19).isActive = true
+        distanceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -19).isActive = true
         
         photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 0).isActive = true
         photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 0).isActive = true
@@ -113,14 +113,18 @@ class ReviewCVC: UICollectionViewCell {
         
         reviewLabel.topAnchor.constraint(equalTo: photoImageView.bottomAnchor,constant: 13).isActive = true
         reviewLabel.leadingAnchor.constraint(equalTo: starImageView.leadingAnchor).isActive = true
+        reviewLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -19).isActive = true
         
         uploadTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 20).isActive = true
-        uploadTimeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 16).isActive = true
+        uploadTimeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -16).isActive = true
         
         self.layer.borderWidth = 1.0
-        self.layer.borderColor = .
+        self.layer.borderColor = UIColor.boxStrokeGray.cgColor
+        self.layer.cornerRadius = 13
         self.backgroundColor = .boxFillGray
-
+        
+        reviewLabel.numberOfLines = 2
+        reviewLabel.lineBreakMode = .byCharWrapping
         
     }
     override func awakeFromNib() {
