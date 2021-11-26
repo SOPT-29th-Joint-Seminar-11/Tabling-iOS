@@ -50,12 +50,16 @@ class StoreCVC: UICollectionViewCell {
         return label
     }()
     
-    var optionStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.spacing = 4.0
-        return stackView
+    var bookImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Const.Tag.book
+        return imageView
+    }()
+    
+    var lineImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Const.Tag.line
+        return imageView
     }()
     
     override init(frame: CGRect) {
@@ -67,11 +71,10 @@ class StoreCVC: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     func setupAutoLayout() {
         contentView.addSubviews([thumbnailImageView,nameLabel,starImageView,
                                  ratingLabel,numOfReviewLabel,categoryLabel,
-                                 optionStackView])
+                                 bookImageView,lineImageView])
  
         thumbnailImageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +82,8 @@ class StoreCVC: UICollectionViewCell {
         ratingLabel.translatesAutoresizingMaskIntoConstraints = false
         numOfReviewLabel.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
-        optionStackView.translatesAutoresizingMaskIntoConstraints = false
+        bookImageView.translatesAutoresizingMaskIntoConstraints = false
+        lineImageView.translatesAutoresizingMaskIntoConstraints = false
         
         thumbnailImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         thumbnailImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
@@ -100,26 +104,32 @@ class StoreCVC: UICollectionViewCell {
         categoryLabel.leadingAnchor.constraint(equalTo: numOfReviewLabel.trailingAnchor,constant: 4).isActive = true
         categoryLabel.centerYAnchor.constraint(equalTo: numOfReviewLabel.centerYAnchor).isActive = true
         
-        optionStackView.topAnchor.constraint(equalTo: starImageView.bottomAnchor,constant: 17).isActive = true
-        optionStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 3).isActive = true
-        optionStackView.widthAnchor.constraint(equalToConstant: 116).isActive = true
-        optionStackView.heightAnchor.constraint(equalToConstant: 23).isActive = true
+        bookImageView.topAnchor.constraint(equalTo: ratingLabel.bottomAnchor, constant: 14).isActive = true
+        bookImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3).isActive = true
         
-        optionStackView.backgroundColor = .gray
-        
+        lineImageView.topAnchor.constraint(equalTo: ratingLabel.bottomAnchor, constant: 14).isActive = true
+        lineImageView.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 4).isActive = true
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-   
+    
     func setData(storeData: StoreModel){
         nameLabel.text = storeData.storeName
         ratingLabel.text = String(storeData.rating)
         numOfReviewLabel.text = "("+String(storeData.numOfReview)+")"
         categoryLabel.text = storeData.category + "·" + storeData.area
         
+        switch(storeData.option){
+        case [true,false]:
+            lineImageView.isHidden = true
+        case [false,true]:
+            bookImageView.isHidden = true
+            lineImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3).isActive = true
+        case [false,false]:
+            bookImageView.isHidden = true
+            lineImageView.isHidden = true
+        default :
+            bookImageView.isHidden = false
+            lineImageView.isHidden = false
+            
+        }
     }
-    
 }
