@@ -111,11 +111,6 @@ class StoreCVC: UICollectionViewCell {
         lineImageView.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 4).isActive = true
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     func setData(storeData: StoreModel){
         nameLabel.text = storeData.storeName
         ratingLabel.text = String(storeData.rating)
