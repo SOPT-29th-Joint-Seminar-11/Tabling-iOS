@@ -72,9 +72,6 @@ class NJStoreCVC: UICollectionViewCell, UICollectionViewRegisterable {
         let stack = UIStackView(arrangedSubviews: [canBookNowImage, canLineUpImage])
         stack.axis = .horizontal
         stack.spacing = 8.0
-//        stack.alignment = .leading
-//        stack.distribution = .fillEqually
-//        stack.backgroundColor = .gray
         return stack
     }()
     
@@ -99,15 +96,15 @@ class NJStoreCVC: UICollectionViewCell, UICollectionViewRegisterable {
         cafeLocationLabel.text = location
         if (canBookNow == false) {
             self.canBookNowImage.isHidden = true
+            self.cafeFunction.widthAnchor.constraint(equalToConstant: 61).isActive = true
         }
         if (canLineUpNow == false) {
             self.canLineUpImage.isHidden = true
+            self.cafeFunction.widthAnchor.constraint(equalToConstant: 51).isActive = true
         }
-
     }
     
     func setUpAutoLayout() {
-//        backgroundColor = .gray2
         
         self.contentView.addSubviews([
             cafeImageView, cafeLabel, cafeScoreIcon, cafeScoreLabel,
@@ -145,12 +142,6 @@ class NJStoreCVC: UICollectionViewCell, UICollectionViewRegisterable {
         self.cafeFunction.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 3).isActive = true
         self.cafeFunction.widthAnchor.constraint(equalToConstant: 117).isActive = true
         self.cafeFunction.heightAnchor.constraint(equalToConstant: 23).isActive = true
-        
-        self.canBookNowImage.topAnchor.constraint(equalTo: self.cafeFunction.topAnchor, constant: 0).isActive = true
-        self.canBookNowImage.leftAnchor.constraint(equalTo: self.cafeFunction.leftAnchor, constant: 0).isActive = true
-
-        self.canLineUpImage.topAnchor.constraint(equalTo: self.cafeFunction.topAnchor, constant: 0).isActive = true
-        self.canLineUpImage.leftAnchor.constraint(equalTo: self.cafeFunction.leftAnchor, constant: 0).isActive = true
         
         [cafeImageView, cafeLabel, cafeScoreIcon, cafeScoreLabel, cafeReviewCountLabel,
          cafeCategoryLabel, cafeLocationLabel, cafeFunction].forEach {

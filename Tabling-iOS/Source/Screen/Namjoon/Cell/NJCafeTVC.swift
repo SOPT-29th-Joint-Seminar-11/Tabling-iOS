@@ -60,15 +60,12 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         cafeCV.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
         cafeCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         cafeCV.heightAnchor.constraint(equalToConstant: 195).isActive = true
+        cafeCV.showsHorizontalScrollIndicator = false
+        cafeCV.showsVerticalScrollIndicator = false
         
-        cafeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        cafeCV.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        [cafeTitleLabel, cafeCV].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
 
 }
@@ -92,8 +89,6 @@ extension NJCafeTVC: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension NJCafeTVC: UICollectionViewDelegateFlowLayout {
