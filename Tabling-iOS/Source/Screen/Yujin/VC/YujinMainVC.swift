@@ -47,6 +47,7 @@ class YujinMainVC: UIViewController {
         tableView.register(SearchHeader.self,forHeaderFooterViewReuseIdentifier: "SearchHeader")
         tableView.register(TitleTVC.self, forCellReuseIdentifier: "TitleTVC")
         tableView.register(StoreListTVC.self, forCellReuseIdentifier: "StoreListTVC")
+        tableView.register(ReviewListTVC.self, forCellReuseIdentifier: "ReviewListTVC")
     }
 }
 
@@ -123,6 +124,10 @@ extension YujinMainVC: UITableViewDataSource{
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTVC.identifier, for: indexPath) as? StoreListTVC
                 else { return UITableViewCell() }
                 return cell
+            case 3: //리뷰 셀
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewListTVC.identifier,for: indexPath) as? ReviewListTVC
+                else { return UITableViewCell()}
+                return cell
             default :
                 return UITableViewCell()
             }
@@ -150,7 +155,7 @@ extension YujinMainVC: UITableViewDelegate{
             case 1,5:
                 return 221
             case 3 :
-                return 30
+                return 341
             case 6:
                 return 180
             default:

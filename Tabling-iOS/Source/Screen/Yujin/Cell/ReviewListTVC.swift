@@ -1,16 +1,16 @@
 //
-//  StoreListTVC.swift
+//  ReviewListTVC.swift
 //  Tabling-iOS
 //
-//  Created by 이유진 on 2021/11/22.
+//  Created by 이유진 on 2021/11/26.
 //
 
 import UIKit
 
-class StoreListTVC: UITableViewCell {
+class ReviewListTVC: UITableViewCell {
 
-    static let identifier = "StoreListTVC"
-    var storeModelList: [StoreModel] = []
+    static let identifier = "ReviewListTVC"
+    var reviewModelList: [ReviewModel] = []
 
     let collectionView: UICollectionView = {
             
@@ -32,34 +32,25 @@ class StoreListTVC: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+    
     func setupCollectionView(){
-        collectionView.register(StoreCVC.self, forCellWithReuseIdentifier: "StoreCVC")
-        
+        collectionView.register(ReviewCVC.self, forCellWithReuseIdentifier: "ReviewCVC")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
     func initData(){
-        storeModelList.append(contentsOf:[
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true])
+        reviewModelList.append(contentsOf:[
+            ReviewModel(storeName: "이태리집", category: "이탈리안", area: "김포", rating: 4.0, distance: 1, photoName: "img_italy", review: "다음날도 생각나는 맛, 모든 요리가 다 괜찮았습니다.", uploadTime: "46초"),
+            ReviewModel(storeName: "하루", category: "일식", area: "방화", rating: 5.0, distance: 3, photoName: "img_italy", review: "정성이 한땀 한땀 느껴지는 음식!셰프님 최고!", uploadTime: "5시간"),
+            ReviewModel(storeName: "후지일식", category: "일식", area: "홍대", rating: 3.0, distance: 5, photoName: "img_italy", review: "셰프님의 장인정신,직접 경험해보세요!", uploadTime: "6시간")
         ])
-        
     }
     
     func setupAutoLayout() {
@@ -70,26 +61,27 @@ class StoreListTVC: UITableViewCell {
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 0).isActive =  true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 0).isActive = true
+        
     }
 }
 
-extension StoreListTVC: UICollectionViewDataSource{
+extension ReviewListTVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoreCVC.identifier, for: indexPath) as? StoreCVC else {return UICollectionViewCell()}
-        cell.setData(storeData: storeModelList[indexPath.row])
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewCVC.identifier, for: indexPath) as? ReviewCVC else {return UICollectionViewCell()}
+        cell.setData(reviewData: reviewModelList[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return storeModelList.count
+        return reviewModelList.count
     }
 }
 
-extension StoreListTVC: UICollectionViewDelegateFlowLayout{
+extension ReviewListTVC: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 140, height: 215)
+        return CGSize(width: 230, height: 319)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -97,7 +89,7 @@ extension StoreListTVC: UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
