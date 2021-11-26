@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Store {
     var name: String
@@ -14,6 +15,10 @@ struct Store {
     var reviewCount: Int
     var category: String
     var location: String
-    var canReservateNow: Bool
+    var canBookNow: Bool
     var canLineUpNow: Bool
+    
+    func makeImage() -> UIImage? {
+        return UIImage(named: imageName)
+    }
 }

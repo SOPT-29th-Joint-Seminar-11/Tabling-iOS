@@ -42,6 +42,8 @@ class NamjoonMainVC: UIViewController {
         mainTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         mainTV.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         mainTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        
+        mainTV.separatorStyle = .none
     }
     
     func setUpTableView() {
