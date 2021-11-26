@@ -84,6 +84,10 @@ extension NamjoonMainVC: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     // footer
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
@@ -114,7 +118,7 @@ extension NamjoonMainVC: UITableViewDataSource {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: NJCafeTVC.className, for: indexPath) as? NJCafeTVC
                 else { return UITableViewCell() }
-                
+                    
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: NJReviewTVC.className, for: indexPath) as? NJReviewTVC

@@ -50,15 +50,15 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     func setUpAutoLayout() {
-        contentView.addSubviews([cafeTitleLabel, cafeCV])
+        addSubviews([cafeTitleLabel, cafeCV])
         
-        cafeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
-        cafeTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
+        cafeTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 14).isActive = true
+        cafeTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
         
         cafeCV.topAnchor.constraint(equalTo: cafeTitleLabel.bottomAnchor, constant: 17).isActive = true
-        cafeCV.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
-        cafeCV.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
-        cafeCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        cafeCV.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        cafeCV.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        cafeCV.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         cafeCV.heightAnchor.constraint(equalToConstant: 195).isActive = true
         cafeCV.showsHorizontalScrollIndicator = false
         cafeCV.showsVerticalScrollIndicator = false
