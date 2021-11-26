@@ -39,6 +39,7 @@ class YujinMainVC: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: 0).isActive = true
         
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
     }
     
     // MARK: - Custom Method

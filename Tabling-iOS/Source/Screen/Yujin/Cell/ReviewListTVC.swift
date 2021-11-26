@@ -62,6 +62,7 @@ class ReviewListTVC: UITableViewCell {
         collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 0).isActive =  true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 0).isActive = true
         
+        collectionView.showsHorizontalScrollIndicator = false
     }
 }
 

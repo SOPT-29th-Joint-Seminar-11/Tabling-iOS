@@ -53,9 +53,9 @@ class StoreListTVC: UITableViewCell {
     func initData(){
         storeModelList.append(contentsOf:[
             StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
-            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
+            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [false,true]),
+            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,false]),
+            StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [false,false]),
             StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true]),
             StoreModel(storeName: "유니유니", rating: 5.0, numOfReview: 7, category: "카페", area: "상수", option: [true,true])
         ])
@@ -70,6 +70,8 @@ class StoreListTVC: UITableViewCell {
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 0).isActive =  true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 0).isActive = true
+        
+        collectionView.showsHorizontalScrollIndicator = false
     }
 }
 
