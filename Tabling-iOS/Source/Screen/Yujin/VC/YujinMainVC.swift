@@ -13,6 +13,7 @@ class YujinMainVC: UIViewController {
     let tableView = UITableView()
     let locationModel = LocationModel()
     let titleModel = TitleModel()
+    let adBannerModel = AdBannerModel()
     
     // MARK: - Lifecycle
 
@@ -36,6 +37,9 @@ class YujinMainVC: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: 0).isActive =  true
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: 0).isActive = true
+        
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
     }
     
     // MARK: - Custom Method
@@ -47,6 +51,8 @@ class YujinMainVC: UIViewController {
         tableView.register(SearchHeader.self,forHeaderFooterViewReuseIdentifier: "SearchHeader")
         tableView.register(TitleTVC.self, forCellReuseIdentifier: "TitleTVC")
         tableView.register(StoreListTVC.self, forCellReuseIdentifier: "StoreListTVC")
+        tableView.register(ReviewListTVC.self, forCellReuseIdentifier: "ReviewListTVC")
+        tableView.register(AdBannerTVC.self, forCellReuseIdentifier: "AdBannerTVC")
     }
 }
 
@@ -91,7 +97,7 @@ extension YujinMainVC: UITableViewDataSource{
         case 0:
             return 1
         case 1:
-            return 8
+            return 7
         default:
             return 0
         }
@@ -123,6 +129,17 @@ extension YujinMainVC: UITableViewDataSource{
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTVC.identifier, for: indexPath) as? StoreListTVC
                 else { return UITableViewCell() }
                 return cell
+            case 3: //리뷰 셀
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewListTVC.identifier,for: indexPath) as? ReviewListTVC
+                else { return UITableViewCell()}
+                return cell
+            case 6:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: AdBannerTVC.identifier, for: indexPath) as? AdBannerTVC
+                else { return UITableViewCell() }
+                
+                cell.setData(bannerData: adBannerModel)
+                return cell
+                
             default :
                 return UITableViewCell()
             }
@@ -150,9 +167,9 @@ extension YujinMainVC: UITableViewDelegate{
             case 1,5:
                 return 221
             case 3 :
-                return 30
+                return 341
             case 6:
-                return 180
+                return 170
             default:
                 return 100
             }
