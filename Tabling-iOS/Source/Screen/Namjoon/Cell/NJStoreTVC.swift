@@ -51,18 +51,18 @@ class NJStoreTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     func setUpAutoLayout() {
-        addSubviews([storeTitleLabel, storeCV])
+        contentView.addSubviews([storeTitleLabel, storeCV])
         
-        storeTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 14).isActive = true
-        storeTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        storeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
+        storeTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         
         storeCV.topAnchor.constraint(equalTo: storeTitleLabel.bottomAnchor, constant: 15).isActive = true
-        storeCV.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        storeCV.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
-        storeCV.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        storeCV.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
+        storeCV.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
+        storeCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         storeCV.heightAnchor.constraint(equalToConstant: 195).isActive = true
-//        storeCV.showsHorizontalScrollIndicator = false
-//        storeCV.showsVerticalScrollIndicator = false
+        storeCV.showsHorizontalScrollIndicator = false
+        storeCV.showsVerticalScrollIndicator = false
         
         ([storeTitleLabel, storeCV]).forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
