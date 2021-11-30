@@ -10,9 +10,9 @@ import UIKit
 class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
     
     var reviewList: [Review] = [
-        Review(name: "이태리집", category: "이탈리안", location: "김포", reviewCount: 4, fromHere: 1, imageName: "", description: "다음날도 생각나는 맛,\n모든 요리가 다 괜찮았습니다.", fromNow: "46초전"),
-        Review(name: "하루", category: "일식", location: "방화", reviewCount: 5, fromHere: 3, imageName: "", description: "정성이 한땀한땀 느껴지는 음식!\n셰프님 최고!", fromNow: "5시간 전"),
-        Review(name: "후지일식", category: "일식", location: "홍대", reviewCount: 3, fromHere: 5, imageName: "", description: "셰프님의 장인정신,\n직접 경험해보세요!", fromNow: "6시간 전")
+        Review(name: "이태리집", category: "이탈리안", location: "김포", reviewCount: 4, fromHere: 1, imageName: "img_italy", description: "다음날도 생각나는 맛,\n모든 요리가 다 괜찮았습니다.", fromNow: "46초전"),
+        Review(name: "하루", category: "일식", location: "방화", reviewCount: 5, fromHere: 3, imageName: "img_italy", description: "정성이 한땀한땀 느껴지는 음식!\n셰프님 최고!", fromNow: "5시간 전"),
+        Review(name: "후지일식", category: "일식", location: "홍대", reviewCount: 3, fromHere: 5, imageName: "img_italy", description: "셰프님의 장인정신,\n직접 경험해보세요!", fromNow: "6시간 전")
     ]
     
     var reviewTitleLabel: UILabel = {
@@ -44,6 +44,7 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
     func setUpCollectionView() {
         reviewCV.delegate = self
         reviewCV.dataSource = self
+        reviewCV.backgroundColor = .orange
         
         NJReviewCVC.register(target: reviewCV)
     }
@@ -54,8 +55,11 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
         reviewTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
         reviewTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         
-        reviewCV.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
-        reviewCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -23).isActive = true
+        reviewCV.topAnchor.constraint(equalTo: reviewTitleLabel.bottomAnchor, constant: 15).isActive = true
+        reviewCV.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        reviewCV.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        reviewCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+//        reviewCV.heightAnchor.constraint(equalToConstant: 19).isActive = true
         
         [reviewTitleLabel, reviewCV].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -83,8 +87,6 @@ extension NJReviewTVC: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension NJReviewTVC: UICollectionViewDelegateFlowLayout {

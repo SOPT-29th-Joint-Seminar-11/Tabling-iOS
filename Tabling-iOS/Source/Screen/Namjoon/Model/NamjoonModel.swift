@@ -31,4 +31,8 @@ struct Review {
     var imageName: String
     var description: String
     var fromNow: String
+    
+    func makeImage() -> UIImage? {
+        return UIImage(named: imageName)
+    }
 }
