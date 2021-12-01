@@ -45,7 +45,6 @@
 		5B429A2A274796F500D4F65D /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A29274796F500D4F65D /* LineView.swift */; };
 		5B429A2C27480AA500D4F65D /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A2B27480AA400D4F65D /* InfoLabel.swift */; };
 		5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A36274824F800D4F65D /* LocationTVC.swift */; };
-		5B429A3C27483CB500D4F65D /* RuheeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A3B27483CB500D4F65D /* RuheeModel.swift */; };
 		5B429A3E2748413200D4F65D /* FacilityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A3D2748413200D4F65D /* FacilityCardView.swift */; };
 		5B429A402748C7F100D4F65D /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B429A3F2748C7F100D4F65D /* TagView.swift */; };
 		5B723143273F92B300BB4FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723142273F92B300BB4FDE /* AppDelegate.swift */; };
@@ -55,6 +54,8 @@
 		5B72314F273F92B500BB4FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B72314D273F92B500BB4FDE /* LaunchScreen.storyboard */; };
 		5B829DF82743B07900766144 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B829DF72743B07900766144 /* UIFont+.swift */; };
 		5B829DFA2743C25300766144 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B829DF92743C25300766144 /* UILabel+.swift */; };
+		5B8A19192757F9A300D0065B /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A19182757F9A300D0065B /* DetailService.swift */; };
+		5B8A191B2757FA3C00D0065B /* DetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A191A2757FA3C00D0065B /* DetailRequest.swift */; };
 		6A6B16B52750C28800497608 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B16B42750C28800497608 /* ReviewModel.swift */; };
 		6A6B16B72750C7C500497608 /* ReviewCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B16B62750C7C500497608 /* ReviewCVC.swift */; };
 		6A6B16B92750D08700497608 /* ReviewListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B16B82750D08700497608 /* ReviewListTVC.swift */; };
@@ -112,7 +113,6 @@
 		5B429A29274796F500D4F65D /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		5B429A2B27480AA400D4F65D /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
 		5B429A36274824F800D4F65D /* LocationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTVC.swift; sourceTree = "<group>"; };
-		5B429A3B27483CB500D4F65D /* RuheeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuheeModel.swift; sourceTree = "<group>"; };
 		5B429A3D2748413200D4F65D /* FacilityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityCardView.swift; sourceTree = "<group>"; };
 		5B429A3F2748C7F100D4F65D /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		5B72313F273F92B300BB4FDE /* Tabling-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabling-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +124,8 @@
 		5B723150273F92B500BB4FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B829DF72743B07900766144 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		5B829DF92743C25300766144 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		5B8A19182757F9A300D0065B /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
+		5B8A191A2757FA3C00D0065B /* DetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRequest.swift; sourceTree = "<group>"; };
 		6A6B16B42750C28800497608 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		6A6B16B62750C7C500497608 /* ReviewCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCVC.swift; sourceTree = "<group>"; };
 		6A6B16B82750D08700497608 /* ReviewListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListTVC.swift; sourceTree = "<group>"; };
@@ -288,7 +290,6 @@
 		5B429A3A27483CAA00D4F65D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5B429A3B27483CB500D4F65D /* RuheeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +348,7 @@
 			children = (
 				5B092B2E2740D17100F5C35F /* MainModel.swift */,
 				5B092B302740D17800F5C35F /* DetailModel.swift */,
+				5B8A191A2757FA3C00D0065B /* DetailRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				5B092B322740D1C000F5C35F /* GeneralAPI.swift */,
+				5B8A19182757F9A300D0065B /* DetailService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -631,8 +634,8 @@
 				5B092B472740E4BC00F5C35F /* UIStackView+.swift in Sources */,
 				149055BE274A817C00C9AE4E /* NJStoreTVC.swift in Sources */,
 				5B429A2A274796F500D4F65D /* LineView.swift in Sources */,
+				5B8A19192757F9A300D0065B /* DetailService.swift in Sources */,
 				5B429A2427477BBD00D4F65D /* BottomDetailTVC.swift in Sources */,
-				5B429A3C27483CB500D4F65D /* RuheeModel.swift in Sources */,
 				6ACA641C274B8CDD00F4198D /* TitleModel.swift in Sources */,
 				5B092B3D2740D38D00F5C35F /* BaseViewController.swift in Sources */,
 				5B092B3A2740D25F00F5C35F /* DetailVC.swift in Sources */,
@@ -653,6 +656,7 @@
 				5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */,
 				149055C0274A819D00C9AE4E /* NJBannerTVC.swift in Sources */,
 				6AB7AC17274AC45400C234A7 /* SearchHeader.swift in Sources */,
+				5B8A191B2757FA3C00D0065B /* DetailRequest.swift in Sources */,
 				6ACA641E274B971600F4198D /* StoreListTVC.swift in Sources */,
 				5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */,
 				5B092B522740EE9C00F5C35F /* MyPageVC.swift in Sources */,

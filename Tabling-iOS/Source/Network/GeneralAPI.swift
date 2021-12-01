@@ -8,5 +8,6 @@
 import Foundation
 
 struct GeneralAPI {
-    static let baseURL = "여기에 넣어주세요 베이스유알엘"
+    
+    static let baseURL = "https://asia-northeast3-joint-seminar-tabling.cloudfunctions.net/api"
 }
