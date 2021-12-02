@@ -12,11 +12,12 @@ class NamjoonMainVC: UIViewController {
     // MARK: - Properties
     
     let mainTV = UITableView()
-
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
         
         configureUI()
         setUpAutoLayout()
@@ -38,10 +39,14 @@ class NamjoonMainVC: UIViewController {
         
         mainTV.translatesAutoresizingMaskIntoConstraints = false
         
-        mainTV.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        mainTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-        mainTV.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        mainTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        mainTV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        mainTV.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
+        mainTV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        mainTV.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
+        
+        mainTV.showsVerticalScrollIndicator = false
+        
+        mainTV.separatorStyle = .none
     }
     
     func setUpTableView() {
@@ -82,6 +87,10 @@ extension NamjoonMainVC: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     // footer
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
@@ -90,7 +99,7 @@ extension NamjoonMainVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
-
+    
 }
 
 // MARK: - UITableViewDataSource
