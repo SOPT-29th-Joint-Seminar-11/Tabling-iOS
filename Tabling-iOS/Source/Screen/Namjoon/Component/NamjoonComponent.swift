@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreMedia
 
 class NamjoonComponent: UIView {
+    
+    // MARK: - Properties
     
     private let tablingIconImageView: UIImageView = {
         let img = UIImageView()
@@ -16,6 +19,12 @@ class NamjoonComponent: UIView {
     }()
     
     private let tablingSearchTextField = UITextField()
+    
+    private let tablingSearchButton: UIImageView = {
+        let img = UIImageView()
+        img.image = Const.Icon.search
+        return img
+    }()
     
     // MARK: - Init
     
@@ -39,11 +48,11 @@ class NamjoonComponent: UIView {
         tablingSearchTextField.layer.cornerRadius = 25
         tablingSearchTextField.layer.borderWidth = 1
         tablingSearchTextField.layer.borderColor = UIColor.gray.cgColor
-        tablingSearchTextField.placeholder = "지역/음식종류/레스토랑 검색"
+        tablingSearchTextField.attributedPlaceholder = NSAttributedString(string: "지역/음식종류/레스토랑 검색", attributes: [NSAttributedString.Key.font: UIFont.noto(type: .regular, size: 14)])
     }
     
     func setupAutoLayout() {
-        addSubviews([tablingIconImageView, tablingSearchTextField])
+        addSubviews([tablingIconImageView, tablingSearchTextField, tablingSearchButton])
         
         tablingIconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         tablingIconImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
@@ -55,10 +64,18 @@ class NamjoonComponent: UIView {
         tablingSearchTextField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -19).isActive = true
         tablingSearchTextField.rightAnchor.constraint(equalTo: rightAnchor, constant: -29).isActive = true
         
-        tablingIconImageView.translatesAutoresizingMaskIntoConstraints = false
-        tablingSearchTextField.translatesAutoresizingMaskIntoConstraints = false
+        tablingSearchButton.topAnchor.constraint(equalTo: tablingSearchTextField.topAnchor).isActive = true
+        tablingSearchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33).isActive = true
+        tablingSearchButton.bottomAnchor.constraint(equalTo: tablingSearchTextField.bottomAnchor).isActive = true
+        tablingSearchButton.heightAnchor.constraint(equalTo: tablingSearchButton.widthAnchor, multiplier: 1).isActive = true
+        
+        [tablingIconImageView, tablingSearchTextField, tablingSearchButton].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
 }
+
+// MARK: - AddPadding
 
 extension UITextField {
     func addLeftPadding(width: CGFloat = 14) {

@@ -36,3 +36,8 @@ struct Review {
         return UIImage(named: imageName)
     }
 }
+
+struct Banner {
+    var title: String
+    var description: String
+}

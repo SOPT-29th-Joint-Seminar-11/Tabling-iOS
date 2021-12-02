@@ -9,6 +9,8 @@ import UIKit
 
 class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
     
+    // MARK: - Properties
+    
     var reviewStoreLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .bold, size: 14)
@@ -55,6 +57,7 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
     var reviewDescriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .medium, size: 13)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -65,6 +68,8 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
         return label
     }()
     
+    // MARK: - Init
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -74,6 +79,8 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Custom Method
     
     func setData(name: String, category: String, location: String, reviewCount: Int, fromHere: Int, imageName: String, description: String, fromNow: String) {
         reviewStoreLabel.text = name
@@ -103,16 +110,8 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
     }
     
     func setUpAutoLayout() {
-        contentView.addSubviews([reviewStoreLabel,
-                                 reviewCategoryLabel,
-                                 reviewLocationLabel,
-                                 reviewStarImageView,
-                                 reviewScoreLabel,
-                                 reviewFromHereLabel,
-                                 reviewImageView,
-                                 reviewDescriptionLabel,
-                                 reviewFromNowLabel
-                                ])
+        contentView.addSubviews([reviewStoreLabel, reviewCategoryLabel, reviewLocationLabel, reviewStarImageView,
+                                 reviewScoreLabel, reviewFromHereLabel, reviewImageView, reviewDescriptionLabel, reviewFromNowLabel])
         
         contentView.backgroundColor = .boxFillGray
         contentView.layer.borderWidth = 1.0
@@ -131,7 +130,7 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
         reviewStarImageView.topAnchor.constraint(equalTo: reviewCategoryLabel.bottomAnchor, constant: 5).isActive = true
         reviewStarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 19).isActive = true
         
-        reviewScoreLabel.topAnchor.constraint(equalTo: reviewLocationLabel.bottomAnchor, constant: 3).isActive = true
+        reviewScoreLabel.centerYAnchor.constraint(equalTo: reviewStarImageView.centerYAnchor).isActive = true
         reviewScoreLabel.leadingAnchor.constraint(equalTo: reviewStarImageView.trailingAnchor, constant: 6).isActive = true
         
         reviewFromHereLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
@@ -148,16 +147,8 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
         reviewFromNowLabel.topAnchor.constraint(equalTo: reviewDescriptionLabel.bottomAnchor, constant: 7).isActive = true
         reviewFromNowLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
-        [reviewStoreLabel,
-         reviewCategoryLabel,
-         reviewLocationLabel,
-         reviewStarImageView,
-         reviewScoreLabel,
-         reviewFromHereLabel,
-         reviewImageView,
-         reviewDescriptionLabel,
-         reviewFromNowLabel
-        ].forEach {
+        [reviewStoreLabel, reviewCategoryLabel, reviewLocationLabel, reviewStarImageView,
+         reviewScoreLabel, reviewFromHereLabel, reviewImageView, reviewDescriptionLabel, reviewFromNowLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }

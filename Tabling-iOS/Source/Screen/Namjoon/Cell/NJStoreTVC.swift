@@ -9,6 +9,8 @@ import UIKit
 
 class NJStoreTVC: UITableViewCell, UITableViewRegisterable {
     
+    // MARK: - Properties
+    
     var storeList: [Store] = [
         Store(name: "애드에그", imageName: "img_egg", score: 4, reviewCount: 9, category: "버거", location: "마곡", canBookNow: false, canLineUpNow: true),
         Store(name: "예담밥상", imageName: "img_egg", score: 5, reviewCount: 3, category: "한식", location: "화양", canBookNow: false, canLineUpNow: true),
@@ -28,10 +30,11 @@ class NJStoreTVC: UITableViewCell, UITableViewRegisterable {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
         collectionView.isScrollEnabled = true
-//        collectionView.backgroundColor = .orange
         return collectionView
     }()
 
+    // MARK: - Init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -42,6 +45,8 @@ class NJStoreTVC: UITableViewCell, UITableViewRegisterable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Custom Method
     
     func setUpCollectionView() {
         storeCV.delegate = self
@@ -54,21 +59,23 @@ class NJStoreTVC: UITableViewCell, UITableViewRegisterable {
         contentView.addSubviews([storeTitleLabel, storeCV])
         
         storeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 38).isActive = true
-        storeTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
+        storeTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
         storeCV.topAnchor.constraint(equalTo: storeTitleLabel.bottomAnchor, constant: 15).isActive = true
-        storeCV.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
-        storeCV.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
+        storeCV.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        storeCV.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         storeCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         storeCV.heightAnchor.constraint(equalToConstant: 195).isActive = true
+        
         storeCV.showsHorizontalScrollIndicator = false
-        storeCV.showsVerticalScrollIndicator = false
         
         ([storeTitleLabel, storeCV]).forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension NJStoreTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -91,13 +98,15 @@ extension NJStoreTVC: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension NJStoreTVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 140, height: 195)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

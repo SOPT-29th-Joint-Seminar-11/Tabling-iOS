@@ -9,6 +9,8 @@ import UIKit
 
 class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     
+    // MARK: - Properties
+    
     var cafeList: [Store] = [
         Store(name: "유니유니", imageName: "image_main", score: 5, reviewCount: 7, category: "카페", location: "성수", canBookNow: true, canLineUpNow: true),
         Store(name: "카페 모이아", imageName: "image_main", score: 4, reviewCount: 7, category: "카페", location: "연남", canBookNow: false, canLineUpNow: true),
@@ -31,6 +33,8 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         return collectionView
     }()
     
+    // MARK: - Init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -41,6 +45,8 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Custom Method
     
     func setUpCollectionView() {
         cafeCV.delegate = self
@@ -53,15 +59,15 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         contentView.addSubviews([cafeTitleLabel, cafeCV])
         
         cafeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
-        cafeTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
+        cafeTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
         cafeCV.topAnchor.constraint(equalTo: cafeTitleLabel.bottomAnchor, constant: 17).isActive = true
-        cafeCV.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
-        cafeCV.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
+        cafeCV.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        cafeCV.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         cafeCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         cafeCV.heightAnchor.constraint(equalToConstant: 195).isActive = true
+        
         cafeCV.showsHorizontalScrollIndicator = false
-        cafeCV.showsVerticalScrollIndicator = false
         
         [cafeTitleLabel, cafeCV].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -69,6 +75,8 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     }
 
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension NJCafeTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -91,13 +99,15 @@ extension NJCafeTVC: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension NJCafeTVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 140, height: 195)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

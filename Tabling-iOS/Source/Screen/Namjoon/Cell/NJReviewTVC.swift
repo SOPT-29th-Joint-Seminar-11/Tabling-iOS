@@ -9,6 +9,8 @@ import UIKit
 
 class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
     
+    // MARK: - Properties
+    
     var reviewList: [Review] = [
         Review(name: "이태리집", category: "이탈리안", location: "김포", reviewCount: 4, fromHere: 1, imageName: "img_italy", description: "다음날도 생각나는 맛,\n모든 요리가 다 괜찮았습니다.", fromNow: "46초전"),
         Review(name: "하루", category: "일식", location: "방화", reviewCount: 5, fromHere: 3, imageName: "img_italy", description: "정성이 한땀한땀 느껴지는 음식!\n셰프님 최고!", fromNow: "5시간 전"),
@@ -30,6 +32,8 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
         return collectionView
     }()
     
+    // MARK: - Init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -40,6 +44,8 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Custom Method
     
     func setUpCollectionView() {
         reviewCV.delegate = self
@@ -52,15 +58,15 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
         contentView.addSubviews([reviewTitleLabel, reviewCV])
         
         reviewTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 37).isActive = true
-        reviewTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
+        reviewTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
         reviewCV.topAnchor.constraint(equalTo: reviewTitleLabel.bottomAnchor, constant: 15).isActive = true
-        reviewCV.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
-        reviewCV.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        reviewCV.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        reviewCV.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         reviewCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         reviewCV.heightAnchor.constraint(equalToConstant: 319).isActive = true
+        
         reviewCV.showsHorizontalScrollIndicator = false
-        reviewCV.showsVerticalScrollIndicator = false
         
         [reviewTitleLabel, reviewCV].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -68,6 +74,8 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
     }
 
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension NJReviewTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -90,13 +98,15 @@ extension NJReviewTVC: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension NJReviewTVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 230, height: 319)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
