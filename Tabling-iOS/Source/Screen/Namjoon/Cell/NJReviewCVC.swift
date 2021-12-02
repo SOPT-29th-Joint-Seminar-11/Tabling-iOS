@@ -43,6 +43,7 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
     var reviewFromHereLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .medium, size: 13)
+        label.textColor = .gray
         return label
     }()
     
@@ -60,6 +61,7 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
     var reviewFromNowLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .medium, size: 12)
+        label.textColor = .gray
         return label
     }()
     
@@ -77,8 +79,22 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
         reviewStoreLabel.text = name
         reviewCategoryLabel.text = "\(category) •"
         reviewLocationLabel.text = location
-        reviewScoreLabel.text = String(reviewCount)
-        reviewFromHereLabel.text = String(fromHere)
+        switch reviewCount {
+        case 1:
+            reviewStarImageView.image = Const.Icon.oneStar
+        case 2:
+            reviewStarImageView.image = Const.Icon.twoStar
+        case 3:
+            reviewStarImageView.image = Const.Icon.threeStar
+        case 4:
+            reviewStarImageView.image = Const.Icon.fourStar
+        case 5:
+            reviewStarImageView.image = Const.Icon.fiveStar
+        default:
+            reviewStarImageView.image = Const.Icon.star
+        }
+        reviewScoreLabel.text = String(reviewCount) + ".0"
+        reviewFromHereLabel.text = String(fromHere) + "km"
         if let image = UIImage(named: imageName) {
             reviewImageView.image = image
         }
@@ -87,17 +103,29 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
     }
     
     func setUpAutoLayout() {
-        contentView.addSubviews([reviewStoreLabel, reviewCategoryLabel, reviewLocationLabel,
-                                reviewScoreLabel, reviewFromHereLabel, reviewImageView,
-                                reviewDescriptionLabel, reviewFromNowLabel])
+        contentView.addSubviews([reviewStoreLabel,
+                                 reviewCategoryLabel,
+                                 reviewLocationLabel,
+                                 reviewStarImageView,
+                                 reviewScoreLabel,
+                                 reviewFromHereLabel,
+                                 reviewImageView,
+                                 reviewDescriptionLabel,
+                                 reviewFromNowLabel
+                                ])
+        
+        contentView.backgroundColor = .boxFillGray
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.boxStrokeGray.cgColor
+        contentView.layer.cornerRadius = 13
         
         reviewStoreLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 13).isActive = true
         reviewStoreLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 19).isActive = true
         
-        reviewCategoryLabel.topAnchor.constraint(equalTo: reviewStoreLabel.topAnchor, constant: 0).isActive = true
+        reviewCategoryLabel.topAnchor.constraint(equalTo: reviewStoreLabel.bottomAnchor, constant: 0).isActive = true
         reviewCategoryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 19).isActive = true
         
-        reviewLocationLabel.topAnchor.constraint(equalTo: reviewStoreLabel.topAnchor, constant: 0).isActive = true
+        reviewLocationLabel.topAnchor.constraint(equalTo: reviewStoreLabel.bottomAnchor, constant: 0).isActive = true
         reviewLocationLabel.leadingAnchor.constraint(equalTo: reviewCategoryLabel.trailingAnchor, constant: 0).isActive = true
         
         reviewStarImageView.topAnchor.constraint(equalTo: reviewCategoryLabel.bottomAnchor, constant: 5).isActive = true
@@ -106,20 +134,30 @@ class NJReviewCVC: UICollectionViewCell, UICollectionViewRegisterable {
         reviewScoreLabel.topAnchor.constraint(equalTo: reviewLocationLabel.bottomAnchor, constant: 3).isActive = true
         reviewScoreLabel.leadingAnchor.constraint(equalTo: reviewStarImageView.trailingAnchor, constant: 6).isActive = true
         
+        reviewFromHereLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
+        reviewFromHereLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -19).isActive = true
+        
         reviewImageView.topAnchor.constraint(equalTo: reviewStarImageView.bottomAnchor, constant: 19).isActive = true
         reviewImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
         reviewImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         reviewImageView.heightAnchor.constraint(equalToConstant: 134).isActive = true
-        
+
         reviewDescriptionLabel.topAnchor.constraint(equalTo: reviewImageView.bottomAnchor, constant: 13).isActive = true
         reviewDescriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 19).isActive = true
-        
+
         reviewFromNowLabel.topAnchor.constraint(equalTo: reviewDescriptionLabel.bottomAnchor, constant: 7).isActive = true
         reviewFromNowLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
-        [reviewStoreLabel, reviewCategoryLabel, reviewLocationLabel,
-         reviewScoreLabel, reviewFromHereLabel, reviewImageView,
-         reviewDescriptionLabel, reviewFromNowLabel].forEach {
+        [reviewStoreLabel,
+         reviewCategoryLabel,
+         reviewLocationLabel,
+         reviewStarImageView,
+         reviewScoreLabel,
+         reviewFromHereLabel,
+         reviewImageView,
+         reviewDescriptionLabel,
+         reviewFromNowLabel
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }

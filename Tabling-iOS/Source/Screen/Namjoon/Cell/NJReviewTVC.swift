@@ -44,7 +44,6 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
     func setUpCollectionView() {
         reviewCV.delegate = self
         reviewCV.dataSource = self
-        reviewCV.backgroundColor = .orange
         
         NJReviewCVC.register(target: reviewCV)
     }
@@ -52,14 +51,16 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
     func setUpAutoLayout() {
         contentView.addSubviews([reviewTitleLabel, reviewCV])
         
-        reviewTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
+        reviewTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 37).isActive = true
         reviewTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         
         reviewCV.topAnchor.constraint(equalTo: reviewTitleLabel.bottomAnchor, constant: 15).isActive = true
-        reviewCV.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        reviewCV.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        reviewCV.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
+        reviewCV.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
         reviewCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-//        reviewCV.heightAnchor.constraint(equalToConstant: 19).isActive = true
+        reviewCV.heightAnchor.constraint(equalToConstant: 319).isActive = true
+        reviewCV.showsHorizontalScrollIndicator = false
+        reviewCV.showsVerticalScrollIndicator = false
         
         [reviewTitleLabel, reviewCV].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false

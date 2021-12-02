@@ -53,7 +53,7 @@ class NJStoreTVC: UITableViewCell, UITableViewRegisterable {
     func setUpAutoLayout() {
         contentView.addSubviews([storeTitleLabel, storeCV])
         
-        storeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
+        storeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 38).isActive = true
         storeTitleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         
         storeCV.topAnchor.constraint(equalTo: storeTitleLabel.bottomAnchor, constant: 15).isActive = true
