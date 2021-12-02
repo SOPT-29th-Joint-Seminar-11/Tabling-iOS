@@ -17,7 +17,7 @@ enum DetailService {
 
 extension DetailService: TargetType {
     var baseURL: URL {
-        return URL(string: GeneralAPI.baseURL)!
+        return URL(string: APIConstant.baseURL)!
     }
     
     var path: String {
