@@ -16,6 +16,10 @@ class YujinMainVC: UIViewController {
     let adBannerModel = AdBannerModel()
     
     // MARK: - Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
     override func viewDidLoad() {
         setupAutoLayout()

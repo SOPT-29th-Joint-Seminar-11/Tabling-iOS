@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class StoreCVC: UICollectionViewCell {
     static let identifier = "StoreCVC"
@@ -111,13 +112,13 @@ class StoreCVC: UICollectionViewCell {
         lineImageView.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 4).isActive = true
     }
     
-    func setData(storeData: StoreModel){
-        nameLabel.text = storeData.storeName
+    func setData(storeData: MainData){
+        thumbnailImageView.kf.setImage(with: URL(string: storeData.titleImage))
+        nameLabel.text = storeData.name
         ratingLabel.text = String(storeData.rating)
-        numOfReviewLabel.text = "("+String(storeData.numOfReview)+")"
-        categoryLabel.text = storeData.category + "·" + storeData.area
-        
-        switch(storeData.option){
+        numOfReviewLabel.text = "("+String(storeData.reviewCount)+")"
+        categoryLabel.text = storeData.groupType + "·" + storeData.location
+        switch([storeData.reserveFlag,storeData.lineupFlag]){
         case [true,false]:
             lineImageView.isHidden = true
         case [false,true]:
