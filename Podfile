@@ -10,5 +10,5 @@ target 'Tabling-iOS' do
   pod 'Moya', '~> 14.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Then'
-
+  pod 'Kingfisher', '~> 7.0'
 end
