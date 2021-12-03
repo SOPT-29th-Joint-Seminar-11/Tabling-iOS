@@ -89,6 +89,11 @@ class StoreCVC: UICollectionViewCell {
         thumbnailImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         thumbnailImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         thumbnailImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        thumbnailImageView.widthAnchor.constraint(equalToConstant: 140).isActive = true
+        thumbnailImageView.heightAnchor.constraint(equalToConstant: 108).isActive = true
+        
+        thumbnailImageView.layer.masksToBounds = true
+        thumbnailImageView.layer.cornerRadius = 5
         
         nameLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor,constant: 9).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 4).isActive = true

@@ -48,6 +48,7 @@ class YujinMainVC: UIViewController {
     
     // MARK: - Custom Method
     
+
     func setupTableView(){
         tableView.dataSource = self
         tableView.delegate = self

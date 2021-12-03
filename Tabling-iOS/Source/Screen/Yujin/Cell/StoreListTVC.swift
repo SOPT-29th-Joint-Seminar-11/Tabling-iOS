@@ -24,6 +24,7 @@ class StoreListTVC: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         //initData()
+        fetchCafeList()
         setupAutoLayout()
         setupCollectionView()
        
@@ -45,29 +46,7 @@ class StoreListTVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fetchCafeList(){
-       
-        YJMainService.shared.requestGetCafeList(){responseData in
-            switch responseData{
-            case .success(let getResponse):
-                guard let response = getResponse as? MainModel else {return}
-                if let cafeList = response.data{
-                    self.storeModelList = cafeList
-                }
-            case .requestErr(let msg):
-                print("requestErr \(msg)")
-            case .pathErr(let msg):
-                print("pathErr \(msg)")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-            
-            
-        }
-        
-    }
+    
     
     func setupCollectionView(){
         collectionView.register(StoreCVC.self, forCellWithReuseIdentifier: "StoreCVC")
@@ -88,6 +67,33 @@ class StoreListTVC: UITableViewCell {
 //
 //    }
     
+    func fetchCafeList(){
+       
+        YJMainService.shared.requestGetCafeList(){responseData in
+            switch responseData{
+            case .success(let getResponse):
+                guard let response = getResponse as? MainModel else {return}
+                if let cafeList = response.data{
+                    self.storeModelList = cafeList
+                }
+                self.collectionView.reloadData()
+                print(self.storeModelList.count)
+            case .requestErr(let msg):
+                print("requestErr \(msg)")
+            case .pathErr(let msg):
+                print("pathErr \(msg)")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+            
+        }
+        
+    }
+    
+    
     func setupAutoLayout() {
         contentView.addSubview(collectionView)
 
@@ -98,7 +104,11 @@ class StoreListTVC: UITableViewCell {
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 0).isActive = true
         
         collectionView.showsHorizontalScrollIndicator = false
+        
+        
     }
+    
+    
 }
 
 extension StoreListTVC: UICollectionViewDataSource{
