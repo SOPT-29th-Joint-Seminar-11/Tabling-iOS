@@ -54,7 +54,6 @@
 		5B829DF82743B07900766144 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B829DF72743B07900766144 /* UIFont+.swift */; };
 		5B829DFA2743C25300766144 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B829DF92743C25300766144 /* UILabel+.swift */; };
 		5B8A19192757F9A300D0065B /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A19182757F9A300D0065B /* DetailService.swift */; };
-		5B8A191B2757FA3C00D0065B /* DetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A191A2757FA3C00D0065B /* DetailRequest.swift */; };
 		5B8A191D2758040500D0065B /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A191C2758040500D0065B /* DetailManager.swift */; };
 		5B8A19222758DEEE00D0065B /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A19212758DEEE00D0065B /* APIConstant.swift */; };
 		5B8A19262758E0AD00D0065B /* YJMainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A19252758E0AD00D0065B /* YJMainService.swift */; };
@@ -130,7 +129,6 @@
 		5B829DF72743B07900766144 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		5B829DF92743C25300766144 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		5B8A19182757F9A300D0065B /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
-		5B8A191A2757FA3C00D0065B /* DetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRequest.swift; sourceTree = "<group>"; };
 		5B8A191C2758040500D0065B /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
 		5B8A19212758DEEE00D0065B /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		5B8A19252758E0AD00D0065B /* YJMainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJMainService.swift; sourceTree = "<group>"; };
@@ -360,7 +358,6 @@
 			children = (
 				5B092B2E2740D17100F5C35F /* MainModel.swift */,
 				5B092B302740D17800F5C35F /* DetailModel.swift */,
-				5B8A191A2757FA3C00D0065B /* DetailRequest.swift */,
 				5B8A192B2759F2E100D0065B /* LikeModel.swift */,
 				5B8A192D2759F55A00D0065B /* ReserveModel.swift */,
 			);
@@ -685,7 +682,6 @@
 				5B429A37274824F800D4F65D /* LocationTVC.swift in Sources */,
 				149055C0274A819D00C9AE4E /* NJBannerTVC.swift in Sources */,
 				6AB7AC17274AC45400C234A7 /* SearchHeader.swift in Sources */,
-				5B8A191B2757FA3C00D0065B /* DetailRequest.swift in Sources */,
 				6ACA641E274B971600F4198D /* StoreListTVC.swift in Sources */,
 				5B8A192E2759F55A00D0065B /* ReserveModel.swift in Sources */,
 				5B429A1A2746CFBC00D4F65D /* NamjoonModel.swift in Sources */,
