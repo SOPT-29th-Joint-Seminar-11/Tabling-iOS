@@ -12,10 +12,10 @@ class NJStoreTVC: UITableViewCell, UITableViewRegisterable {
     // MARK: - Properties
     
     var storeList: [Store] = [
-        Store(name: "애드에그", imageName: "img_egg", score: 4, reviewCount: 9, category: "버거", location: "마곡", canBookNow: false, canLineUpNow: true),
-        Store(name: "예담밥상", imageName: "img_egg", score: 5, reviewCount: 3, category: "한식", location: "화양", canBookNow: false, canLineUpNow: true),
-        Store(name: "리틀넥 연남", imageName: "img_egg", score: 4, reviewCount: 2, category: "양식", location: "연남", canBookNow: true, canLineUpNow: true),
-        Store(name: "우동 카덴", imageName: "img_egg", score: 5, reviewCount: 1, category: "일식", location: "합정", canBookNow: true, canLineUpNow: true)
+        Store(name: "애드에그", imageLink: "img_egg", score: 4, reviewCount: 9, category: "버거", location: "마곡", canBookNow: false, canLineUpNow: true),
+        Store(name: "예담밥상", imageLink: "img_bob", score: 5, reviewCount: 3, category: "한식", location: "화양", canBookNow: false, canLineUpNow: true),
+        Store(name: "리틀넥 연남", imageLink: "img_little", score: 4, reviewCount: 2, category: "양식", location: "연남", canBookNow: true, canLineUpNow: true),
+        Store(name: "우동 카덴", imageLink: "img-woodong", score: 5, reviewCount: 1, category: "일식", location: "합정", canBookNow: true, canLineUpNow: true)
     ]
     
     var storeTitleLabel: UILabel = {
@@ -85,14 +85,7 @@ extension NJStoreTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NJStoreCVC.className, for: indexPath) as? NJStoreCVC else {return UICollectionViewCell()}
         
-        cell.setData(name: storeList[indexPath.row].name,
-                     imageName: storeList[indexPath.row].imageName,
-                     score: storeList[indexPath.row].score,
-                     reviewCount: storeList[indexPath.row].reviewCount,
-                     category: storeList[indexPath.row].category,
-                     location: storeList[indexPath.row].location,
-                     canBookNow: storeList[indexPath.row].canBookNow,
-                     canLineUpNow: storeList[indexPath.row].canLineUpNow)
+        cell.setData(storeData: storeList[indexPath.row])
         
         return cell
     }

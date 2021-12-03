@@ -51,7 +51,7 @@ class NJAddressTVC: UITableViewCell, UITableViewRegisterable {
         addressLabel.heightAnchor.constraint(equalToConstant: 22).isActive = true
         
         addressIconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
-        addressIconImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -96).isActive = true
+        addressIconImageView.leadingAnchor.constraint(equalTo: addressLabel.trailingAnchor, constant: -10).isActive = true
         addressIconImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
         addressIconImageView.heightAnchor.constraint(equalTo: addressIconImageView.widthAnchor, multiplier: 1).isActive = true
         

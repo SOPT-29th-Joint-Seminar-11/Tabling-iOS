@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NJStoreCVC: UICollectionViewCell, UICollectionViewRegisterable {
     
@@ -91,20 +92,46 @@ class NJStoreCVC: UICollectionViewCell, UICollectionViewRegisterable {
     
     // MARK: - Custom Method
     
-    func setData(name: String, imageName: String, score: Int, reviewCount: Int, category: String, location: String, canBookNow: Bool, canLineUpNow: Bool) {
-        cafeLabel.text = name
-        if let image = UIImage(named: imageName) {
-            cafeImageView.image = image
+    // setData(storeData: MainData) method overloading
+    func setData(storeData: MainData) {
+        cafeLabel.text = storeData.name
+        switch storeData.groupType {
+        case "카페":
+            cafeImageView.kf.setImage(with: URL(string: storeData.titleImage))
+        default:
+            if let image = UIImage(named: storeData.titleImage) {
+                cafeImageView.image = image
+            }
         }
-        cafeScoreLabel.text = String(score) + ".0"
-        cafeReviewCountLabel.text = "(\(String(reviewCount)))"
-        cafeCategoryLabel.text = "\(category) •"
-        cafeLocationLabel.text = location
-        if (canBookNow == false) {
+        cafeScoreLabel.text = String(storeData.rating) + ".0"
+        cafeReviewCountLabel.text = "(\(String(storeData.reviewCount)))"
+        cafeCategoryLabel.text = "\(storeData.groupType) •"
+        cafeLocationLabel.text = storeData.location
+        if (storeData.reserveFlag == false) {
             self.canBookNowImage.isHidden = true
             self.cafeFunction.widthAnchor.constraint(equalToConstant: 61).isActive = true
         }
-        if (canLineUpNow == false) {
+        if (storeData.lineupFlag == false) {
+            self.canLineUpImage.isHidden = true
+            self.cafeFunction.widthAnchor.constraint(equalToConstant: 51).isActive = true
+        }
+    }
+    
+    // setData(storeData: Store) method overloading
+    func setData(storeData: Store) {
+        cafeLabel.text = storeData.name
+        if let image = UIImage(named: storeData.imageLink) {
+            cafeImageView.image = image
+        }
+        cafeScoreLabel.text = String(storeData.score) + ".0"
+        cafeReviewCountLabel.text = "(\(String(storeData.reviewCount)))"
+        cafeCategoryLabel.text = "\(storeData.category) •"
+        cafeLocationLabel.text = storeData.location
+        if (storeData.canBookNow == false) {
+            self.canBookNowImage.isHidden = true
+            self.cafeFunction.widthAnchor.constraint(equalToConstant: 61).isActive = true
+        }
+        if (storeData.canLineUpNow == false) {
             self.canLineUpImage.isHidden = true
             self.cafeFunction.widthAnchor.constraint(equalToConstant: 51).isActive = true
         }
@@ -121,6 +148,7 @@ class NJStoreCVC: UICollectionViewCell, UICollectionViewRegisterable {
         cafeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
         cafeImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         cafeImageView.heightAnchor.constraint(equalToConstant: 108).isActive = true
+        cafeImageView.contentMode = .scaleAspectFill
         
         cafeLabel.topAnchor.constraint(equalTo: cafeImageView.bottomAnchor, constant: 9).isActive = true
         cafeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4).isActive = true

@@ -11,14 +11,9 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - Properties
     
-    var cafeList: [Store] = [
-        Store(name: "유니유니", imageName: "image_main", score: 5, reviewCount: 7, category: "카페", location: "성수", canBookNow: true, canLineUpNow: true),
-        Store(name: "카페 모이아", imageName: "image_main", score: 4, reviewCount: 7, category: "카페", location: "연남", canBookNow: false, canLineUpNow: true),
-        Store(name: "레이어드", imageName: "image_main", score: 4, reviewCount: 7, category: "카페", location: "연남", canBookNow: true, canLineUpNow: true),
-        Store(name: "홍대 마카롱", imageName: "image_main", score: 5, reviewCount: 9, category: "카페", location: "상수", canBookNow: true, canLineUpNow: true)
-    ]
+    var cafeList: [MainData] = []
     
-    var cafeTitleLabel: UILabel = {
+    private let cafeTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.noto(type: .bold, size: 17)
         label.text = "디저트가 맛있는 카페"
@@ -40,6 +35,7 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         
         setUpCollectionView()
         setUpAutoLayout()
+        requestStoreList()
     }
     
     required init?(coder: NSCoder) {
@@ -74,6 +70,26 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         }
     }
 
+    func requestStoreList() {
+        NJMainService.shared.getStoreList() { responseData in
+            switch responseData {
+            case .success(let storeData):
+                guard let decodedData = storeData as? MainModel else {return}
+                if let cafeList = decodedData.data {
+                    self.cafeList = cafeList
+                }
+                self.cafeCV.reloadData()
+            case .requestErr(let bookData):
+                print("requestERR", bookData)
+            case .pathErr:
+                print("pathERR")
+            case .serverErr:
+                print("serverERR")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -86,14 +102,7 @@ extension NJCafeTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NJStoreCVC.className, for: indexPath) as? NJStoreCVC else {return UICollectionViewCell()}
         
-        cell.setData(name: cafeList[indexPath.row].name,
-                     imageName: cafeList[indexPath.row].imageName,
-                     score: cafeList[indexPath.row].score,
-                     reviewCount: cafeList[indexPath.row].reviewCount,
-                     category: cafeList[indexPath.row].category,
-                     location: cafeList[indexPath.row].location,
-                     canBookNow: cafeList[indexPath.row].canBookNow,
-                     canLineUpNow: cafeList[indexPath.row].canLineUpNow)
+        cell.setData(storeData: cafeList[indexPath.row])
         
         return cell
     }
