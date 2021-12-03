@@ -66,4 +66,3 @@ extension DetailService: TargetType {
         return ["Content-Type": "application/json"]
     }
 }
-

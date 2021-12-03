@@ -16,7 +16,7 @@ class FacilityCardView: UIView {
     
     private var networkMG = DetailManager.shared
     
-    var hiddenNum: Int?
+    public var hiddenNum = 1
     
     private lazy var iconStackView = UIStackView().then {
         $0.axis = .vertical
@@ -33,11 +33,11 @@ class FacilityCardView: UIView {
 
     // MARK: - Initializing
 
-    init(image: UIImage, title: String, space: CGFloat, hidden: Int?) {
+    init(image: UIImage, title: String, space: CGFloat) {
         super.init(frame: .zero)
         configUI(image: image, title: title, space: space)
         setupAutoLayout()
-        self.hiddenNum = hidden
+
         if hiddenNum == 0 {
             self.isHidden = true
         } else if hiddenNum == 1 {
@@ -77,4 +77,3 @@ class FacilityCardView: UIView {
         }
     }
 }
-

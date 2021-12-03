@@ -34,7 +34,6 @@ class DetailManager {
                     self.detailModel = try result.map(DetailModel.self)
                     self.info = self.detailModel?.data?.info
                     self.detail = self.detailModel?.data?.detail
-                    print(self.detailModel?.status, self.detailModel?.message)
                     completion()
                 } catch(let err) {
                     print(err.localizedDescription, "상세가져오기에러이유")
@@ -54,7 +53,6 @@ class DetailManager {
             case .success(let result):
                 do {
                     self.likeModel = try result.map(LikeModel.self)
-                    print("조아요",self.likeModel?.status, self.likeModel?.message)
                     completion()
                 } catch(let err) {
                     print(err.localizedDescription, "좋아요에러이유")
@@ -75,8 +73,6 @@ class DetailManager {
                 do {
                     self.reserveModel = try result.map(ReserveModel.self)
                     self.reserveData = self.reserveModel?.data
-                    print(self.reserveData)
-                    print("postpostpost")
                     completion()
                 } catch(let err) {
                     print(err.localizedDescription, "예약하기에러이유")

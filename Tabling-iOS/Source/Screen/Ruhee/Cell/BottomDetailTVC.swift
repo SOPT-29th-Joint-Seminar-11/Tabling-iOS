@@ -84,13 +84,13 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     
     private lazy var petStackView = FacilityCardView(
         image:Const.Icon.dog!,
-        title: "반려동물 동반", space: 2, hidden: 1)
+        title: "반려동물 동반", space: 2)
     private lazy var wifiStackView = FacilityCardView(
         image: Const.Icon.wifi!,
-        title: "무선 인터넷", space: 2, hidden: 1)
+        title: "무선 인터넷", space: 2)
     private lazy var carStackView = FacilityCardView(
         image: Const.Icon.car!,
-        title: "주차 가능", space: 2, hidden: 1)
+        title: "주차 가능", space: 2)
     
     // MARK: - Initializing
     
@@ -175,7 +175,7 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
         
         facilityStackView.snp.makeConstraints { make in
             make.top.equalTo(facilityLabel.snp.bottom).offset(9)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.equalToSuperview().inset(20)
             make.height.equalTo(87)
         }
     }
@@ -184,9 +184,27 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     
     func setData() {
         guard let detail = networkMG.detail else { return }
+
         self.petStackView.hiddenNum = detail.pet
         self.wifiStackView.hiddenNum = detail.wifi
         self.carStackView.hiddenNum = detail.parking
+        
+        if self.petStackView.hiddenNum == 0 {
+            self.petStackView.isHidden = true
+        } else if self.petStackView.hiddenNum == 1 {
+            self.petStackView.isHidden = false
+        }
+        
+        if self.wifiStackView.hiddenNum == 0 {
+            self.wifiStackView.isHidden = true
+        } else if self.wifiStackView.hiddenNum == 1 {
+            self.wifiStackView.isHidden = false
+        }
+        
+        if self.carStackView.hiddenNum == 0 {
+            self.carStackView.isHidden = true
+        } else if self.carStackView.hiddenNum == 1 {
+            self.carStackView.isHidden = false
+        }
     }
 }
-

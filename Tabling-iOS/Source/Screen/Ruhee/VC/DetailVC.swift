@@ -40,9 +40,6 @@ class DetailVC: UIViewController, ReserveButtonDelegate {
         super.viewDidLoad()
         configUI()
         setupAutoLayout()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         networkMG.fetchDetail {
             self.detailTV.reloadData()
         }

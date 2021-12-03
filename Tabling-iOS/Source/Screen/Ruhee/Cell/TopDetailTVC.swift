@@ -210,8 +210,6 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     // MARK: - @objc
     
     @objc func touchupLikeButton(_ sender: UIButton) {
-        /// 좋아요 수 올라가는 거 반영하기
-
         networkMG.postLike(cafeID: cafeID) {
             guard var like = self.networkMG.info?.likeCount else { return }
             sender.isSelected = !sender.isSelected
