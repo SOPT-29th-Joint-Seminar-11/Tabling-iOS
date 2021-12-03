@@ -17,7 +17,7 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     public var cafeID = 1
     private var networkMG = DetailManager.shared
     
-    private lazy var likeNum = 1
+    private var likeNum = 1
     
     private let nameLabel = UILabel().then {
         $0.textColor = .black
@@ -57,14 +57,14 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         $0.textColor = .gray
     }
     
-    private let mapStackView = ButtonStackView(image: Const.Icon.map!,
-                                               title: "위치", space: 7)
-    private let callStackView = ButtonStackView(image: Const.Icon.call!,
-                                                title: "전화", space: 7)
-    private let shareStackView = ButtonStackView(image: Const.Icon.share!,
-                                                 title: "공유", space: 7)
-    private lazy var likeStackView = ButtonStackView(image: Const.Icon.heart!,
-                                                     title: String(describing: likeNum), space: 7).then {
+    private let mapStackView = ButtonStackView(
+        image: Const.Icon.map!, title: "위치", space: 7)
+    private let callStackView = ButtonStackView(
+        image: Const.Icon.call!, title: "전화", space: 7)
+    private let shareStackView = ButtonStackView(
+        image: Const.Icon.share!, title: "공유", space: 7)
+    private lazy var likeStackView = ButtonStackView(
+        image: Const.Icon.heart!, title: String(describing: likeNum), space: 7).then {
         $0.menuButton.addTarget(self, action: #selector(touchupLikeButton(_:)), for: .touchUpInside)
     }
     
@@ -84,7 +84,6 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupAutoLayout()
-        setData()
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -212,16 +211,18 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     
     @objc func touchupLikeButton(_ sender: UIButton) {
         /// 좋아요 수 올라가는 거 반영하기
+
         networkMG.postLike(cafeID: cafeID) {
+            guard var like = self.networkMG.info?.likeCount else { return }
             sender.isSelected = !sender.isSelected
-            guard let like = self.networkMG.info?.likeCount else { return }
             self.likeNum = like
             if sender.isSelected {
                 sender.setImage(Const.Icon.heartFill, for: .normal)
-                self.likeNum += 1
+                like += 1
+                self.likeStackView.menuTitleLabel.text = String(like)
             } else {
                 sender.setImage(Const.Icon.heart, for: .normal)
-                self.likeNum -= 1
+                self.likeStackView.menuTitleLabel.text = String(like)
             }
         }
     }

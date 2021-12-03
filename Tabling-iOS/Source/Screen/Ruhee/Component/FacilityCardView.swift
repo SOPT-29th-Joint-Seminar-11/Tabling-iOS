@@ -14,6 +14,8 @@ class FacilityCardView: UIView {
 
     // MARK: - Properties
     
+    private var networkMG = DetailManager.shared
+    
     var hiddenNum: Int?
     
     private lazy var iconStackView = UIStackView().then {
