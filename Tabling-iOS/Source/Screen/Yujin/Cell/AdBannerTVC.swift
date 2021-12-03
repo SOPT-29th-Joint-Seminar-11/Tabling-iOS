@@ -56,8 +56,10 @@ class AdBannerTVC: UITableViewCell {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        backgroundImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 9).isActive = true
+       // backgroundImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 9).isActive = true
         backgroundImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        backgroundImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        backgroundImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         line.topAnchor.constraint(equalTo: backgroundImage.topAnchor, constant: 26).isActive = true
         line.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor, constant: 26).isActive = true

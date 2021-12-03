@@ -20,6 +20,7 @@ class SearchHeader: UITableViewHeaderFooterView {
         textfield.addLeftPadding(width: 20)
         textfield.addRightPadding(width: 20)
         textfield.placeholder = "지역/음식종류/레스토랑 검색"
+        textfield.font = UIFont.noto(type: .regular, size: 14)
         return textfield
     }()
     
