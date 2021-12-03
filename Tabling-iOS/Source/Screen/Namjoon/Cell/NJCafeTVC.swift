@@ -9,7 +9,14 @@ import UIKit
 
 class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     
-    var cafeList: [Store] = []
+    // MARK: - Properties
+    
+    var cafeList: [Store] = [
+        Store(name: "유니유니", imageName: "image_main", score: 5, reviewCount: 7, category: "카페", location: "성수", canBookNow: true, canLineUpNow: true),
+        Store(name: "카페 모이아", imageName: "image_main", score: 4, reviewCount: 7, category: "카페", location: "연남", canBookNow: false, canLineUpNow: true),
+        Store(name: "레이어드", imageName: "image_main", score: 4, reviewCount: 7, category: "카페", location: "연남", canBookNow: true, canLineUpNow: true),
+        Store(name: "홍대 마카롱", imageName: "image_main", score: 5, reviewCount: 9, category: "카페", location: "상수", canBookNow: true, canLineUpNow: true)
+    ]
     
     var cafeTitleLabel: UILabel = {
         let label = UILabel()
@@ -26,6 +33,8 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         return collectionView
     }()
     
+    // MARK: - Init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -37,6 +46,8 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Custom Method
+    
     func setUpCollectionView() {
         cafeCV.delegate = self
         cafeCV.dataSource = self
@@ -47,23 +58,25 @@ class NJCafeTVC: UITableViewCell, UITableViewRegisterable {
     func setUpAutoLayout() {
         contentView.addSubviews([cafeTitleLabel, cafeCV])
         
-        cafeTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 14).isActive = true
-        cafeTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        cafeTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
+        cafeTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
-        cafeCV.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
-        cafeCV.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -23).isActive = true
+        cafeCV.topAnchor.constraint(equalTo: cafeTitleLabel.bottomAnchor, constant: 17).isActive = true
+        cafeCV.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        cafeCV.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
+        cafeCV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        cafeCV.heightAnchor.constraint(equalToConstant: 195).isActive = true
         
-        cafeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        cafeCV.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        cafeCV.showsHorizontalScrollIndicator = false
+        
+        [cafeTitleLabel, cafeCV].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
 
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension NJCafeTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,23 +86,32 @@ extension NJCafeTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NJStoreCVC.className, for: indexPath) as? NJStoreCVC else {return UICollectionViewCell()}
         
+        cell.setData(name: cafeList[indexPath.row].name,
+                     imageName: cafeList[indexPath.row].imageName,
+                     score: cafeList[indexPath.row].score,
+                     reviewCount: cafeList[indexPath.row].reviewCount,
+                     category: cafeList[indexPath.row].category,
+                     location: cafeList[indexPath.row].location,
+                     canBookNow: cafeList[indexPath.row].canBookNow,
+                     canLineUpNow: cafeList[indexPath.row].canLineUpNow)
+        
         return cell
     }
-    
-    
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension NJCafeTVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 140, height: 215)
+        return CGSize(width: 140, height: 195)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return CGFloat(8)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

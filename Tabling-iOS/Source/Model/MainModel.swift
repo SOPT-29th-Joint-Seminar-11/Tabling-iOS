@@ -12,7 +12,8 @@ import Foundation
 struct MainModel: Codable {
     let status: Int
     let success: Bool
-    let data: [MainData]
+    let message: String?
+    let data: [MainData]?
 }
 
 // MARK: - MainData
