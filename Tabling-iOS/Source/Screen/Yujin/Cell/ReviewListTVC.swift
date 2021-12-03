@@ -47,8 +47,8 @@ class ReviewListTVC: UITableViewCell {
     func initData(){
         reviewModelList.append(contentsOf:[
             ReviewModel(storeName: "이태리집", category: "이탈리안", area: "김포", rating: 4.0, distance: 1, photoName: "img_italy", review: "다음날도 생각나는 맛, \n모든 요리가 다 괜찮았습니다.", uploadTime: "46초"),
-            ReviewModel(storeName: "하루", category: "일식", area: "방화", rating: 5.0, distance: 3, photoName: "img_italy", review: "정성이 한땀 한땀 느껴지는 음식!\n셰프님 최고!", uploadTime: "5시간"),
-            ReviewModel(storeName: "후지일식", category: "일식", area: "홍대", rating: 3.0, distance: 5, photoName: "img_italy", review: "셰프님의 장인정신,\n직접 경험해보세요!", uploadTime: "6시간")
+            ReviewModel(storeName: "하루", category: "일식", area: "방화", rating: 5.0, distance: 3, photoName: "img_haru", review: "정성이 한땀 한땀 느껴지는 음식!\n셰프님 최고!", uploadTime: "5시간"),
+            ReviewModel(storeName: "후지일식", category: "일식", area: "홍대", rating: 3.0, distance: 5, photoName: "img_huji", review: "셰프님의 장인정신,\n직접 경험해보세요!", uploadTime: "6시간")
         ])
     }
     

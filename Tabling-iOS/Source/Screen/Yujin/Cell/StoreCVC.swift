@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class StoreCVC: UICollectionViewCell {
     static let identifier = "StoreCVC"
@@ -88,6 +89,11 @@ class StoreCVC: UICollectionViewCell {
         thumbnailImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         thumbnailImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         thumbnailImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        thumbnailImageView.widthAnchor.constraint(equalToConstant: 140).isActive = true
+        thumbnailImageView.heightAnchor.constraint(equalToConstant: 108).isActive = true
+        
+        thumbnailImageView.layer.masksToBounds = true
+        thumbnailImageView.layer.cornerRadius = 5
         
         nameLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor,constant: 9).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 4).isActive = true
@@ -111,12 +117,33 @@ class StoreCVC: UICollectionViewCell {
         lineImageView.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 4).isActive = true
     }
     
+    func setData(storeData: MainData){
+        thumbnailImageView.kf.setImage(with: URL(string: storeData.titleImage))
+        nameLabel.text = storeData.name
+        ratingLabel.text = String(storeData.rating)
+        numOfReviewLabel.text = "("+String(storeData.reviewCount)+")"
+        categoryLabel.text = storeData.groupType + "·" + storeData.location
+        switch([storeData.reserveFlag,storeData.lineupFlag]){
+        case [true,false]:
+            lineImageView.isHidden = true
+        case [false,true]:
+            bookImageView.isHidden = true
+            lineImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3).isActive = true
+        case [false,false]:
+            bookImageView.isHidden = true
+            lineImageView.isHidden = true
+        default :
+            bookImageView.isHidden = false
+            lineImageView.isHidden = false
+        }
+    }
+    
     func setData(storeData: StoreModel){
+        thumbnailImageView.image = storeData.photo
         nameLabel.text = storeData.storeName
         ratingLabel.text = String(storeData.rating)
         numOfReviewLabel.text = "("+String(storeData.numOfReview)+")"
         categoryLabel.text = storeData.category + "·" + storeData.area
-        
         switch(storeData.option){
         case [true,false]:
             lineImageView.isHidden = true
@@ -129,7 +156,6 @@ class StoreCVC: UICollectionViewCell {
         default :
             bookImageView.isHidden = false
             lineImageView.isHidden = false
-            
         }
     }
 }
