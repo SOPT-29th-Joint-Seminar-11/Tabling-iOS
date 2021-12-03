@@ -7,31 +7,34 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - DetailModel
+
 struct DetailModel: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: StoreData
+    let data: StoreData?
 }
 
-// MARK: - DataClass
+// MARK: - StoreData
+
 struct StoreData: Codable {
     let info: Info
     let detail: Detail
 }
 
 // MARK: - Detail
+
 struct Detail: Codable {
     let tags: [String]
     let pet, wifi, parking: Int
 }
 
 // MARK: - Info
+
 struct Info: Codable {
     let images: [String]
-    let waitingCount: Int
-    let distance: Double
+    let waitingCount, distance: Int
     let name, address: String
     let rating, reviewCount: Int
     let infoDescription: String
