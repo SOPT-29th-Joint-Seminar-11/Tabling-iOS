@@ -11,18 +11,15 @@ import SnapKit
 import Then
 
 class BannerTVC: UITableViewCell, UITableViewRegisterable {
-    
-    // MARK: - DummyData
-    
-    private let bannerList = ["img_uni", "img_uni"]
-    
+        
     // MARK: - Properties
     
-    private var num: Int = 3
-    private var page: Int = 1
+    private var networkMG = DetailManager.shared
     
+    private var bannerList = [""]
+        
     private lazy var bannerCV = UICollectionView(frame: .zero,
-                                                  collectionViewLayout: layout).then {
+                                                 collectionViewLayout: layout).then {
         $0.showsHorizontalScrollIndicator = false
         $0.isPagingEnabled = true
         $0.delegate = self
@@ -41,7 +38,6 @@ class BannerTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     private lazy var teamLabel = UILabel().then {
-        $0.text = "대기 \(num)팀"
         $0.textColor = .white
         $0.font = UIFont.noto(type: .bold, size: 13)
     }
@@ -53,16 +49,21 @@ class BannerTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     private lazy var pageLabel = UILabel().then {
-        $0.text = "\(page)/\(bannerList.count)"
         $0.textColor = .white
         $0.font = UIFont.noto(type: .bold, size: 13)
     }
-
+    
     // MARK: - Initializing
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupAutoLayout()
+        networkMG.fetchDetail {
+            self.pageLabel.text = "1/\(self.bannerList.count)"
+            DispatchQueue.main.async {
+                self.bannerCV.reloadData()
+            }
+        }
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -102,6 +103,12 @@ class BannerTVC: UITableViewCell, UITableViewRegisterable {
             make.trailing.equalTo(pageView.snp.trailing).inset(13)
         }
     }
+    
+    func setData() {
+        guard let info = self.networkMG.detailModel?.data?.info else { return }
+        self.teamLabel.text = "대기 \(info.waitingCount)팀"
+        self.bannerList = info.images
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -136,5 +143,12 @@ extension BannerTVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let xOffset = targetContentOffset.pointee.x
+        let cellWidth = self.contentView.frame.size.width
+        let page = Int((xOffset / cellWidth) + 1)
+        pageLabel.text = "\(page)/\(bannerList.count)"
     }
 }

@@ -11,9 +11,11 @@ import SnapKit
 import Then
 
 class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
-
+    
     // MARK: - Properties
     
+    private var networkMG = DetailManager.shared
+        
     private let infoLabel = SubtitleLabel(title: "영업정보", color: .black)
     
     private let moreButton = UIButton().then {
@@ -52,66 +54,50 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     private lazy var firstTagStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 8
-        $0.addArrangedSubviews([cleanImageView,
-                                quietImageView,
-                                calmImageView])
+        $0.addArrangedSubviews([cleanView, quietView, calmView])
     }
     
     private lazy var secondTagStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 8
-        $0.addArrangedSubviews([dateImageView,
-                                dessertImageView,
-                                groupImageView])
+        $0.addArrangedSubviews([dateView, dessertView, groupView])
     }
     
-    private let cleanImageView = UIImageView().then {
-        $0.image = Const.Tag.clean
-    }
-    
-    private let quietImageView = UIImageView().then {
-        $0.image = Const.Tag.quiet
-    }
-    
-    private let calmImageView = UIImageView().then {
-        $0.image = Const.Tag.calm
-    }
-    
-    private let dateImageView = UIImageView().then {
-        $0.image = Const.Tag.date
-    }
-    
-    private let dessertImageView = UIImageView().then {
-        $0.image = Const.Tag.dessert
-    }
-    
-    private let groupImageView = UIImageView().then {
-        $0.image = Const.Tag.group
-    }
+    private lazy var cleanView = TagView(tag: "깔끔한")
+    private lazy var quietView = TagView(tag: "조용한")
+    private lazy var calmView = TagView(tag: "차분한")
+    private lazy var dateView = TagView(tag: "데이트 하기 좋은")
+    private lazy var dessertView = TagView(tag: "디저트")
+    private lazy var groupView = TagView(tag: "단체석")
     
     private let facilityLabel = SubtitleLabel(title: "편의시설", color: .black)
     
     private lazy var facilityStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 24
-        $0.distribution = .fillEqually
-        $0.addArrangedSubviews([petStackView,
-                                wifiStackView,
-                                carStackView])
+        $0.alignment = .leading
+        $0.addArrangedSubviews(
+            [petStackView,
+             wifiStackView,
+             carStackView])
     }
     
-    private let petStackView = FacilityCardView(image:Const.Icon.dog!,
-                                                title: "반려동물 동반", space: 2)
-    private let wifiStackView = FacilityCardView(image: Const.Icon.wifi!,
-                                                 title: "무선 인터넷", space: 2)
-    private let carStackView = FacilityCardView(image: Const.Icon.car!,
-                                                title: "주차 가능", space: 2)
-
+    private lazy var petStackView = FacilityCardView(
+        image:Const.Icon.dog!,
+        title: "반려동물 동반", space: 2)
+    private lazy var wifiStackView = FacilityCardView(
+        image: Const.Icon.wifi!,
+        title: "무선 인터넷", space: 2)
+    private lazy var carStackView = FacilityCardView(
+        image: Const.Icon.car!,
+        title: "주차 가능", space: 2)
+    
     // MARK: - Initializing
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupAutoLayout()
+        setData()
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -153,13 +139,13 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
         
         [onLabel, offLabel, holidayLabel].forEach {
             $0.snp.makeConstraints { make in
-            make.top.leading.bottom.equalToSuperview()
-        }}
+                make.top.leading.bottom.equalToSuperview()
+            }}
         
         [onTimeLabel, offTimeLabel, sundayLabel].forEach {
             $0.snp.makeConstraints { make in
                 make.top.trailing.bottom.equalToSuperview()
-        }}
+            }}
         
         pickLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(172)
@@ -176,6 +162,12 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
             make.leading.equalToSuperview().inset(20)
         }
         
+        [petStackView, wifiStackView, carStackView].forEach {
+            $0.snp.makeConstraints { make in
+                make.top.bottom.equalToSuperview()
+                make.width.equalTo(96)
+        }}
+        
         facilityLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(306)
             make.leading.equalToSuperview().inset(20)
@@ -183,9 +175,35 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
         
         facilityStackView.snp.makeConstraints { make in
             make.top.equalTo(facilityLabel.snp.bottom).offset(9)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.equalToSuperview().inset(20)
             make.height.equalTo(87)
         }
     }
+    
+    // MARK: - Set Data
+    
+    func setData() {
+        guard let detail = networkMG.detail else { return }
+        self.petStackView.hiddenNum = detail.pet
+        self.wifiStackView.hiddenNum = detail.wifi
+        self.carStackView.hiddenNum = detail.parking
+        
+        if self.petStackView.hiddenNum == 0 {
+            self.petStackView.isHidden = true
+        } else if self.petStackView.hiddenNum == 1 {
+            self.petStackView.isHidden = false
+        }
+        
+        if self.wifiStackView.hiddenNum == 0 {
+            self.wifiStackView.isHidden = true
+        } else if self.wifiStackView.hiddenNum == 1 {
+            self.wifiStackView.isHidden = false
+        }
+        
+        if self.carStackView.hiddenNum == 0 {
+            self.carStackView.isHidden = true
+        } else if self.carStackView.hiddenNum == 1 {
+            self.carStackView.isHidden = false
+        }
+    }
 }
-

@@ -12,12 +12,19 @@ import Then
 
 class TagView: UIView {
     
+    // MARK: - Properties
+    
+    let tagLabel = UILabel().then {
+        $0.font = UIFont.noto(type: .regular, size: 13)
+        $0.textColor = .black
+    }
+    
     // MARK: - Initializing
 
-    init(color: UIColor, height: CGFloat) {
+    init(tag: String) {
         super.init(frame: .zero)
-        configUI(color: color)
-        setupAutoLayout(height: height)
+        configUI(tag: tag)
+        setupAutoLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -26,13 +33,25 @@ class TagView: UIView {
     
     // MARK: - UI + Layout
     
-    private func configUI(color: UIColor) {
-        backgroundColor = color
+    private func configUI(tag: String) {
+        self.backgroundColor = .white
+        self.layer.borderColor = UIColor.main.cgColor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 16
+        tagLabel.text = tag
     }
     
-    private func setupAutoLayout(height: CGFloat) {
+    private func setupAutoLayout() {
+        self.addSubview(tagLabel)
+        
         self.snp.makeConstraints { make in
-            make.height.equalTo(height)
+            make.height.equalTo(32)
+        }
+        
+        tagLabel.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(11)
+            make.center.equalToSuperview()
         }
     }
 }

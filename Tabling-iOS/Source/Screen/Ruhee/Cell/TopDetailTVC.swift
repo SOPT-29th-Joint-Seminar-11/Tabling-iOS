@@ -14,39 +14,35 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - Properties
     
-    var distance: Int = 1
-    var likeNum: Int = 18
-        
+    public var cafeID = 1
+    private var networkMG = DetailManager.shared
+    
+    private var likeFlag = false
+    private var likeNum = 1
+    
     private let nameLabel = UILabel().then {
-        $0.text = "유니유니"
         $0.textColor = .black
         $0.font = UIFont.noto(type: .bold, size: 22)
     }
     
     private let addressLabel = UILabel().then {
-        $0.text = "서울특별시 성북구 길음동 1276"
         $0.textColor = .gray
         $0.font = UIFont.noto(type: .regular, size: 14)
     }
     
-    private let starImageView = UIImageView().then {
-        $0.image = Const.Icon.fiveStar
-    }
+    public lazy var starImageView = UIImageView()
     
     private let rateLabel = UILabel().then {
-        $0.text = "5.0"
         $0.textColor = .main
         $0.font = UIFont.noto(type: .medium, size: 14)
     }
     
     private let numLabel = UILabel().then {
-        $0.text = "(7)"
         $0.textColor = .black
         $0.font = UIFont.noto(type: .medium, size: 14)
     }
     
     private let descriptionLabel = UILabel().then {
-        $0.text = "유니유니는 다양한 스콘, 쿠키, 음료,  자체 제작 케이크로\n보는 즐거움과 더불어 먹는 즐거움을 선사합니다"
         $0.textColor = .gray
         $0.font = UIFont.noto(type: .regular, size: 13)
         $0.numberOfLines = 2
@@ -58,22 +54,19 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     private lazy var distanceLabel = UILabel().then {
-        $0.text = "\(distance)km"
         $0.font = UIFont.noto(type: .medium, size: 13)
         $0.textColor = .gray
     }
     
-    private let mapStackView = ButtonStackView(image: Const.Icon.map!,
-                                               title: "위치", space: 7)
-    private let callStackView = ButtonStackView(image: Const.Icon.call!,
-                                                title: "전화", space: 7)
-    private let shareStackView = ButtonStackView(image: Const.Icon.share!,
-                                                 title: "공유", space: 7)
-    private lazy var likeStackView = ButtonStackView(image: Const.Icon.heartFill!,
-                                                     title: "\(likeNum)", space: 7).then {
-            $0.menuButton.addTarget(self,
-                                    action: #selector(touchupLikeButton(_:)),
-                                    for: .touchUpInside)
+    private let mapStackView = ButtonStackView(
+        image: Const.Icon.map!, title: "위치", space: 7)
+    private let callStackView = ButtonStackView(
+        image: Const.Icon.call!, title: "전화", space: 7)
+    private let shareStackView = ButtonStackView(
+        image: Const.Icon.share!, title: "공유", space: 7)
+    private lazy var likeStackView = ButtonStackView(
+        image: Const.Icon.heart!, title: String(describing: likeNum), space: 7).then {
+            $0.menuButton.addTarget(self, action: #selector(touchupLikeButton(_:)), for: .touchUpInside)
     }
     
     private let firstLine = LineView(color: .line, height: 37)
@@ -86,7 +79,7 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     
     private let menuLineView = LineView(color: .main, height: 2)
     private let lineView = LineView(color: .line, height: 8)
-
+    
     // MARK: - Initializing
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -203,7 +196,7 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
             make.leading.equalTo(shareStackView.snp.trailing).offset(27.5)
             make.width.equalTo(1)
         }
-
+        
         menuLineView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(45)
             make.bottom.equalTo(lineView.snp.top)
@@ -218,12 +211,51 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     // MARK: - @objc
     
     @objc func touchupLikeButton(_ sender: UIButton) {
-        /// 숫자 반영 안됨, 처음 눌렀을 때 바로 하트 채워지지 않음
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            sender.setImage(Const.Icon.heartFill, for: .normal)
+        networkMG.postLike(cafeID: cafeID) {
+            guard var like = self.networkMG.info?.likeCount else { return }
+            sender.isSelected = !sender.isSelected
+            if sender.isSelected {
+                self.likeNum = like
+                self.likeNum += 1
+                sender.setImage(Const.Icon.heartFill, for: .normal)
+                self.likeStackView.menuTitleLabel.text = String(self.likeNum)
+            } else {
+                self.likeNum = like
+                self.likeNum -= 1
+                sender.setImage(Const.Icon.heart, for: .normal)
+                self.likeStackView.menuTitleLabel.text = String(like)
+            }
+        }
+    }
+    
+    // MARK: - Set Data
+    
+    func setStarImage() -> UIImage? {
+        switch rateLabel.text {
+        case "1": return Const.Icon.oneStar
+        case "2": return Const.Icon.twoStar
+        case "3": return Const.Icon.threeStar
+        case "4": return Const.Icon.fourStar
+        default: return Const.Icon.fiveStar
+        }
+    }
+    
+    func setData() {
+        guard var info = self.networkMG.info else { return }
+
+        self.nameLabel.text = info.name
+        self.addressLabel.text = info.address
+        self.distanceLabel.text = "\(info.distance)km"
+        self.numLabel.text = "(\(info.reviewCount))"
+        self.descriptionLabel.text = info.infoDescription
+        self.rateLabel.text = String(info.rating)
+        self.likeStackView.menuTitleLabel.text = String(info.likeCount)
+        self.likeStackView.menuButton.isSelected = info.likeFlag
+        
+        if info.likeFlag == true {
+            self.likeStackView.menuButton.setImage(Const.Icon.heartFill, for: .normal)
         } else {
-            sender.setImage(Const.Icon.heart, for: .normal)
+            self.likeStackView.menuButton.setImage(Const.Icon.heart, for: .normal)
         }
     }
 }
