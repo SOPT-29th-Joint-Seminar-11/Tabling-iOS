@@ -16,7 +16,7 @@ class DetailVC: UIViewController, ReserveButtonDelegate {
     
     public var cafeID = 1
     
-    private var networkMG = DetailManager.shared
+    public var networkMG = DetailManager.shared
     
     private var messeage = ""
     
@@ -81,7 +81,6 @@ class DetailVC: UIViewController, ReserveButtonDelegate {
             let okAction = UIAlertAction(title: "확인", style: .default)
             alertVC.addAction(okAction)
             self.present(alertVC, animated: true, completion: nil)
-            
         }
     }
 }

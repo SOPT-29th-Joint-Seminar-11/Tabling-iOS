@@ -7,22 +7,31 @@
 
 import UIKit
 
-class StoreListTVC: UITableViewCell {
+protocol SelectCellDelegate: AnyObject {
+    func clickStore(index: Int)
+}
 
+class StoreListTVC: UITableViewCell {
+    
+    var id: Int = 0
+    var index: Int = 0
+    weak var selectCellDelegate: SelectCellDelegate?
+    
     static let identifier = "StoreListTVC"
+    var mainData: MainData?
     var storeModelList: [MainData] = []
     var restaurantList: [StoreModel] = []
     
     var kind: String = "Cafe"
-
+    
     let collectionView: UICollectionView = {
-           
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-            
-            return cv
-        }()
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        return cv
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,21 +39,17 @@ class StoreListTVC: UITableViewCell {
         initRestaurantData()
         setupAutoLayout()
         setupCollectionView()
-       
+        
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
-    
     
     func setupCollectionView(){
         collectionView.register(StoreCVC.self, forCellWithReuseIdentifier: "StoreCVC")
@@ -52,7 +57,7 @@ class StoreListTVC: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-
+    
     func initRestaurantData(){
         restaurantList.append(contentsOf:[
             StoreModel(photoName: "img_egg", storeName: "애드에그", rating: 4.9, numOfReview: 9, category: "버거", area: "마곡", option: [false,true]),
@@ -60,17 +65,16 @@ class StoreListTVC: UITableViewCell {
             StoreModel(photoName: "img_little", storeName: "리틀넥 연남", rating: 4.8, numOfReview: 2, category: "양식", area: "연남", option: [true,true]),
             StoreModel(photoName: "img-woodong", storeName: "우동 카덴", rating: 5.0, numOfReview: 1, category: "일식", area: "합정", option: [true,true])
         ])
-
     }
     
-    func fetchCafeList(){
-       
-        YJMainService.shared.requestGetCafeList(){responseData in
-            switch responseData{
+    func fetchCafeList() {
+        YJMainService.shared.requestGetCafeList() { responseData in
+            switch responseData {
             case .success(let getResponse):
-                guard let response = getResponse as? MainModel else {return}
-                if let cafeList = response.data{
+                guard let response = getResponse as? MainModel else { return }
+                if let cafeList = response.data {
                     self.storeModelList = cafeList
+                    self.index = cafeList[0].id
                 }
                 self.collectionView.reloadData()
             case .requestErr(let msg):
@@ -82,16 +86,12 @@ class StoreListTVC: UITableViewCell {
             case .networkFail:
                 print("networkFail")
             }
-            
-            
         }
-        
     }
-    
     
     func setupAutoLayout() {
         contentView.addSubview(collectionView)
-
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 0).isActive = true
@@ -99,16 +99,10 @@ class StoreListTVC: UITableViewCell {
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 0).isActive = true
         
         collectionView.showsHorizontalScrollIndicator = false
-        
-        
     }
-    
-    
 }
 
 extension StoreListTVC: UICollectionViewDataSource{
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch self.kind{
         case "cafe":
@@ -122,7 +116,6 @@ extension StoreListTVC: UICollectionViewDataSource{
         default :
             return UICollectionViewCell()
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -156,3 +149,10 @@ extension StoreListTVC: UICollectionViewDelegateFlowLayout{
     }
 }
 
+extension StoreListTVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        index = indexPath.row
+        selectCellDelegate?.clickStore(index: index)
+        print(indexPath.row, "ㅇㅇㅇㅇㅇ")
+    }
+}

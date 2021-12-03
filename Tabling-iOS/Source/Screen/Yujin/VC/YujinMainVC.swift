@@ -7,19 +7,16 @@
 
 import UIKit
 
-class YujinMainVC: UIViewController {
+class YujinMainVC: UIViewController, SelectCellDelegate {
     
     // MARK: - Properties
+    
     let tableView = UITableView()
     let locationModel = LocationModel()
     let titleModel = TitleModel()
     let adBannerModel = AdBannerModel()
     
     // MARK: - Lifecycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
 
     override func viewDidLoad() {
         setupAutoLayout()
@@ -27,10 +24,6 @@ class YujinMainVC: UIViewController {
     }
     
     // MARK: - UI + Layout
-
-    func configUI() {
-        
-    }
     
     func setupAutoLayout() {
         view.addSubview(tableView)
@@ -47,7 +40,6 @@ class YujinMainVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    
 
     func setupTableView(){
         tableView.dataSource = self
@@ -58,6 +50,19 @@ class YujinMainVC: UIViewController {
         tableView.register(StoreListTVC.self, forCellReuseIdentifier: "StoreListTVC")
         tableView.register(ReviewListTVC.self, forCellReuseIdentifier: "ReviewListTVC")
         tableView.register(AdBannerTVC.self, forCellReuseIdentifier: "AdBannerTVC")
+    }
+    
+    func clickStore(index: Int) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "DetailVC")
+                as? DetailVC else { return }
+        nextVC.networkMG.cafeID = index
+        if index == 0 {
+            nextVC.networkMG.cafeID = 3
+        } else if index == 3 {
+            nextVC.networkMG.cafeID = 4
+        }
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 
@@ -133,6 +138,7 @@ extension YujinMainVC: UITableViewDataSource{
             case 1://카페 목록 셀
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTVC.identifier, for: indexPath) as? StoreListTVC
                 else { return UITableViewCell() }
+                cell.selectCellDelegate = self
                 cell.kind = "cafe"
                 return cell
             case 3: //리뷰 셀
@@ -161,7 +167,8 @@ extension YujinMainVC: UITableViewDataSource{
     }
 }
 
-    //MARK: - UITableViewDelegate
+//MARK: - UITableViewDelegate
+
 extension YujinMainVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section{
@@ -190,5 +197,3 @@ extension YujinMainVC: UITableViewDelegate{
         }
     }
 }
-
-
