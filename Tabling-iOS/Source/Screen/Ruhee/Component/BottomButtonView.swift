@@ -10,9 +10,15 @@ import UIKit
 import SnapKit
 import Then
 
+protocol ReserveButtonDelegate: AnyObject {
+    func clickReserveButton()
+}
+
 class BottomButtonView: UIView {
     
     // MARK: - Properties
+    
+    weak var reserveDelegate: ReserveButtonDelegate?
     
     private let lineView = LineView(color: .headerLineGray, height: 1)
     
@@ -40,6 +46,7 @@ class BottomButtonView: UIView {
         $0.setTitle("즉시예약", for: .normal)
         $0.titleLabel!.font = UIFont.noto(type: .bold, size: 16)
         $0.titleLabel?.addSpacing(kernValue: -0.6, paragraphValue: 0)
+        $0.addTarget(self, action: #selector(touchupReservationButton(_:)), for: .touchUpInside)
     }
     
     // MARK: - Initializing
@@ -82,5 +89,11 @@ class BottomButtonView: UIView {
             make.top.trailing.bottom.equalToSuperview()
             make.height.equalTo(53)
         }
+    }
+    
+    // MARK: - @objc
+    
+    @objc func touchupReservationButton(_ sender: UIButton) {
+        reserveDelegate?.clickReserveButton()
     }
 }

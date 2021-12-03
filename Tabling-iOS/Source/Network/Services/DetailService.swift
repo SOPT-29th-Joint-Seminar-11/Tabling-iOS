@@ -11,8 +11,8 @@ import Moya
 
 enum DetailService {
     case detail(Int)
-    case like(param: DetailRequest)
-    case reserve(param: DetailRequest)
+    case like(Int)
+    case reserve(Int)
 }
 
 extension DetailService: TargetType {
@@ -55,8 +55,10 @@ extension DetailService: TargetType {
         switch self {
         case .detail:
             return .requestPlain
-        case .like(let param), .reserve(let param):
-            return .requestJSONEncodable(param)
+        case .like:
+            return .requestPlain
+        case .reserve:
+            return .requestPlain
         }
     }
     

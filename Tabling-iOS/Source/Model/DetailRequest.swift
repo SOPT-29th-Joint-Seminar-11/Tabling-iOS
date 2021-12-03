@@ -10,7 +10,7 @@ import Foundation
 struct DetailRequest: Codable {
     var cafeId: Int
     
-    init(_ cafeID: Int) {
-        self.cafeId = cafeID
+    init(_ cafeId: Int) {
+        self.cafeId = cafeId
     }
 }

@@ -34,7 +34,8 @@ struct Detail: Codable {
 
 struct Info: Codable {
     let images: [String]
-    let waitingCount, distance: Int
+    let waitingCount: Int
+    let distance: Double
     let name, address: String
     let rating, reviewCount: Int
     let infoDescription: String

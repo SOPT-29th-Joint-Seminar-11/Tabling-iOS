@@ -10,10 +10,16 @@ import UIKit
 import SnapKit
 import Then
 
-class DetailVC: UIViewController {
+class DetailVC: UIViewController, ReserveButtonDelegate {
     
     // MARK: - Properties
-
+    
+    public var cafeID = 1
+    
+    private var networkMG = DetailManager.shared
+    
+    private var messeage = ""
+    
     private lazy var detailTV = UITableView().then {
         $0.allowsSelection = false
         $0.separatorStyle = .none
@@ -24,18 +30,26 @@ class DetailVC: UIViewController {
         BottomDetailTVC.register(target: $0)
     }
     
-    private let bottomView = BottomButtonView()
-
+    private lazy var bottomView = BottomButtonView().then {
+        $0.reserveDelegate = self
+    }
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
         setupAutoLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        networkMG.fetchDetail {
+            self.detailTV.reloadData()
+        }
+    }
+    
     // MARK: - UI + Layout
-
+    
     func configUI() {
         tabBarController?.tabBar.isHidden = true
     }
@@ -51,6 +65,26 @@ class DetailVC: UIViewController {
         bottomView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
+    }
+    
+    // MARK: - Custom Method
+    
+    func clickReserveButton() {
+        networkMG.postReserve(cafeID: cafeID) {
+            guard let reserveData = self.networkMG.reserveData else { return }
+            
+            if reserveData.flag == false {
+                self.messeage = "즉시 예약하겠습니다."
+            } else if reserveData.flag == true {
+                self.messeage = "이미 예약하셨습니다."
+            }
+            
+            let alertVC = UIAlertController(title: "예약 가능 여부", message: self.messeage, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default)
+            alertVC.addAction(okAction)
+            self.present(alertVC, animated: true, completion: nil)
+            
         }
     }
 }
@@ -79,14 +113,18 @@ extension DetailVC: UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: BannerTVC.className, for: indexPath) as? BannerTVC
             else { return UITableViewCell() }
+            cell.setData()
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopDetailTVC.className, for: indexPath) as? TopDetailTVC
             else { return UITableViewCell() }
+            cell.setData()
+            cell.starImageView.image = cell.setStarImage()
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: BottomDetailTVC.className, for: indexPath) as? BottomDetailTVC
             else { return UITableViewCell() }
+            cell.setData()
             return cell
         }
     }

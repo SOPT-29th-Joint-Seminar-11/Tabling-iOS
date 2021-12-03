@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Kingfisher
+import SnapKit
+
 class BannerPhotoCVC: UICollectionViewCell, UICollectionViewRegisterable {
     
     // MARK: - Properties
@@ -38,10 +41,10 @@ class BannerPhotoCVC: UICollectionViewCell, UICollectionViewRegisterable {
     
     // MARK: - Set Data
     
-    func setData(banner: String) {
-        /// 서버에서 데이터 넘겨주면 kingfisher 사용해서 반영
-        if let banner = UIImage(named: banner) {
-            bannerImageView.image = banner
+    func setData(banner: String) {        
+
+        if let banner = URL(string: banner) {
+            bannerImageView.kf.setImage(with: banner)
         }
     }
 }
