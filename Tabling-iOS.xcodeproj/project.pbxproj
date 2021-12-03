@@ -297,13 +297,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5B429A3A27483CAA00D4F65D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		5B723136273F92B300BB4FDE = {
 			isa = PBXGroup;
 			children = (
@@ -464,7 +457,6 @@
 		5B723162273FA6D900BB4FDE /* Ruhee */ = {
 			isa = PBXGroup;
 			children = (
-				5B429A3A27483CAA00D4F65D /* Model */,
 				5B092B262740D11900F5C35F /* Component */,
 				5B092B252740D11400F5C35F /* Cell */,
 				5B723163273FA6DD00BB4FDE /* VC */,

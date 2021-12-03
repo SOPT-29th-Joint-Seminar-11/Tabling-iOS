@@ -17,7 +17,7 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     public var cafeID = 1
     private var networkMG = DetailManager.shared
     
-    private lazy var likeNum = networkMG.info?.likeCount
+    private lazy var likeNum = 1
     
     private let nameLabel = UILabel().then {
         $0.textColor = .black
@@ -214,13 +214,14 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         /// 좋아요 수 올라가는 거 반영하기
         networkMG.postLike(cafeID: cafeID) {
             sender.isSelected = !sender.isSelected
-            //        guard let like = self.likeNum else { return }
+            guard let like = self.networkMG.info?.likeCount else { return }
+            self.likeNum = like
             if sender.isSelected {
                 sender.setImage(Const.Icon.heartFill, for: .normal)
-                //            self.likeNum += 1
+                self.likeNum += 1
             } else {
                 sender.setImage(Const.Icon.heart, for: .normal)
-                //            self.likeNum -= 1
+                self.likeNum -= 1
             }
         }
     }
