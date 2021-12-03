@@ -40,7 +40,7 @@ struct Info: Codable {
     let rating, reviewCount: Int
     let infoDescription: String
     let likeFlag: Bool
-    let likeCount: Int
+    var likeCount: Int
 
     enum CodingKeys: String, CodingKey {
         case images, waitingCount, distance, name, address, rating, reviewCount

@@ -184,7 +184,6 @@ class BottomDetailTVC: UITableViewCell, UITableViewRegisterable {
     
     func setData() {
         guard let detail = networkMG.detail else { return }
-
         self.petStackView.hiddenNum = detail.pet
         self.wifiStackView.hiddenNum = detail.wifi
         self.carStackView.hiddenNum = detail.parking

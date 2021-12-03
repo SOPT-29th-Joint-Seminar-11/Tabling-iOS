@@ -17,6 +17,7 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     public var cafeID = 1
     private var networkMG = DetailManager.shared
     
+    private var likeFlag = false
     private var likeNum = 1
     
     private let nameLabel = UILabel().then {
@@ -65,7 +66,7 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         image: Const.Icon.share!, title: "공유", space: 7)
     private lazy var likeStackView = ButtonStackView(
         image: Const.Icon.heart!, title: String(describing: likeNum), space: 7).then {
-        $0.menuButton.addTarget(self, action: #selector(touchupLikeButton(_:)), for: .touchUpInside)
+            $0.menuButton.addTarget(self, action: #selector(touchupLikeButton(_:)), for: .touchUpInside)
     }
     
     private let firstLine = LineView(color: .line, height: 37)
@@ -213,12 +214,14 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         networkMG.postLike(cafeID: cafeID) {
             guard var like = self.networkMG.info?.likeCount else { return }
             sender.isSelected = !sender.isSelected
-            self.likeNum = like
             if sender.isSelected {
+                self.likeNum = like
+                self.likeNum += 1
                 sender.setImage(Const.Icon.heartFill, for: .normal)
-                like += 1
-                self.likeStackView.menuTitleLabel.text = String(like)
+                self.likeStackView.menuTitleLabel.text = String(self.likeNum)
             } else {
+                self.likeNum = like
+                self.likeNum -= 1
                 sender.setImage(Const.Icon.heart, for: .normal)
                 self.likeStackView.menuTitleLabel.text = String(like)
             }
@@ -238,7 +241,8 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
     }
     
     func setData() {
-        guard let info = self.networkMG.info else { return }
+        guard var info = self.networkMG.info else { return }
+
         self.nameLabel.text = info.name
         self.addressLabel.text = info.address
         self.distanceLabel.text = "\(info.distance)km"
@@ -247,5 +251,11 @@ class TopDetailTVC: UITableViewCell, UITableViewRegisterable {
         self.rateLabel.text = String(info.rating)
         self.likeStackView.menuTitleLabel.text = String(info.likeCount)
         self.likeStackView.menuButton.isSelected = info.likeFlag
+        
+        if info.likeFlag == true {
+            self.likeStackView.menuButton.setImage(Const.Icon.heartFill, for: .normal)
+        } else {
+            self.likeStackView.menuButton.setImage(Const.Icon.heart, for: .normal)
+        }
     }
 }
