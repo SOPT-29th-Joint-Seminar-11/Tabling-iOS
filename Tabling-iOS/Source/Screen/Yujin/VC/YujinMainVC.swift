@@ -130,14 +130,21 @@ extension YujinMainVC: UITableViewDataSource{
                 
                 cell.setData(titleData: titleModel, index: indexPath.row/2)
                 return cell
-            case 1,5://상점 목록 셀
+            case 1://카페 목록 셀
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTVC.identifier, for: indexPath) as? StoreListTVC
                 else { return UITableViewCell() }
+                cell.kind = "cafe"
                 return cell
             case 3: //리뷰 셀
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewListTVC.identifier,for: indexPath) as? ReviewListTVC
                 else { return UITableViewCell()}
                 return cell
+            case 5: //식당 목록 셀
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTVC.identifier, for: indexPath) as? StoreListTVC
+                else { return UITableViewCell() }
+                cell.kind = "restaurant"
+                return cell
+                
             case 6:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: AdBannerTVC.identifier, for: indexPath) as? AdBannerTVC
                 else { return UITableViewCell() }

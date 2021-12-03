@@ -5,7 +5,7 @@
 //  Created by 이유진 on 2021/11/26.
 //
 
-import Foundation
+
 import UIKit
 
 struct ReviewModel {

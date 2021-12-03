@@ -135,7 +135,27 @@ class StoreCVC: UICollectionViewCell {
         default :
             bookImageView.isHidden = false
             lineImageView.isHidden = false
-            
+        }
+    }
+    
+    func setData(storeData: StoreModel){
+        thumbnailImageView.image = storeData.photo
+        nameLabel.text = storeData.storeName
+        ratingLabel.text = String(storeData.rating)
+        numOfReviewLabel.text = "("+String(storeData.numOfReview)+")"
+        categoryLabel.text = storeData.category + "·" + storeData.area
+        switch(storeData.option){
+        case [true,false]:
+            lineImageView.isHidden = true
+        case [false,true]:
+            bookImageView.isHidden = true
+            lineImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3).isActive = true
+        case [false,false]:
+            bookImageView.isHidden = true
+            lineImageView.isHidden = true
+        default :
+            bookImageView.isHidden = false
+            lineImageView.isHidden = false
         }
     }
 }

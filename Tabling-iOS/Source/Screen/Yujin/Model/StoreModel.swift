@@ -5,9 +5,11 @@
 //  Created by 이유진 on 2021/11/22.
 //
 
-import Foundation
+import UIKit
 
 struct StoreModel {
+    var photo: UIImage?
+    var photoName: String
     var storeName: String
     var rating: Double
     var numOfReview: Int
@@ -15,7 +17,9 @@ struct StoreModel {
     var area: String
     var option: [Bool]
     
-    init(storeName: String,rating: Double,numOfReview: Int,category: String,area: String,option: [Bool]){
+    init(photoName: String,storeName: String,rating: Double,numOfReview: Int,category: String,area: String,option: [Bool]){
+        self.photoName = photoName
+        self.photo = UIImage(named: photoName)
         self.storeName = storeName
         self.rating = rating
         self.numOfReview = numOfReview
