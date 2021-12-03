@@ -13,8 +13,8 @@ class NJReviewTVC: UITableViewCell, UITableViewRegisterable {
     
     var reviewList: [Review] = [
         Review(name: "이태리집", category: "이탈리안", location: "김포", reviewCount: 4, fromHere: 1, imageName: "img_italy", description: "다음날도 생각나는 맛,\n모든 요리가 다 괜찮았습니다.", fromNow: "46초전"),
-        Review(name: "하루", category: "일식", location: "방화", reviewCount: 5, fromHere: 3, imageName: "img_italy", description: "정성이 한땀한땀 느껴지는 음식!\n셰프님 최고!", fromNow: "5시간 전"),
-        Review(name: "후지일식", category: "일식", location: "홍대", reviewCount: 3, fromHere: 5, imageName: "img_italy", description: "셰프님의 장인정신,\n직접 경험해보세요!", fromNow: "6시간 전")
+        Review(name: "하루", category: "일식", location: "방화", reviewCount: 5, fromHere: 3, imageName: "img_haru", description: "정성이 한땀한땀 느껴지는 음식!\n셰프님 최고!", fromNow: "5시간 전"),
+        Review(name: "후지일식", category: "일식", location: "홍대", reviewCount: 3, fromHere: 5, imageName: "img_huji", description: "셰프님의 장인정신,\n직접 경험해보세요!", fromNow: "6시간 전")
     ]
     
     var reviewTitleLabel: UILabel = {

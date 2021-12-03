@@ -9,17 +9,13 @@ import UIKit
 
 struct Store {
     var name: String
-    var imageName: String
+    var imageLink: String
     var score: Int
     var reviewCount: Int
     var category: String
     var location: String
     var canBookNow: Bool
     var canLineUpNow: Bool
-    
-    func makeImage() -> UIImage? {
-        return UIImage(named: imageName)
-    }
 }
 
 struct Review {
@@ -31,10 +27,6 @@ struct Review {
     var imageName: String
     var description: String
     var fromNow: String
-    
-    func makeImage() -> UIImage? {
-        return UIImage(named: imageName)
-    }
 }
 
 struct Banner {
