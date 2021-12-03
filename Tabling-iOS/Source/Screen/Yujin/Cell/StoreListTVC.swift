@@ -39,8 +39,6 @@ class StoreListTVC: UITableViewCell {
         initRestaurantData()
         setupAutoLayout()
         setupCollectionView()
-        
-        
     }
     
     required init?(coder: NSCoder) {

@@ -60,7 +60,9 @@ class BannerTVC: UITableViewCell, UITableViewRegisterable {
         setupAutoLayout()
         networkMG.fetchDetail {
             self.pageLabel.text = "1/\(self.bannerList.count)"
-            self.bannerCV.reloadData()
+            DispatchQueue.main.async {
+                self.bannerCV.reloadData()
+            }
         }
     }
     
